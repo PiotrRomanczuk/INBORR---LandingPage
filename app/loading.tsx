@@ -1,6 +1,10 @@
 import Image from 'next/image';
 
 export default function Loading() {
-	// You can add any UI inside Loading, including a Skeleton.
-	return <Image alt='logo' src='/logo.png' width={460} height={200} />;
+	return (
+		<div className='fixed inset-0 bg-blue-500 z-[10000] flex flex-1 items-center justify-center'>
+			Loading return{' '}
+			<Image alt='logo' src='/logo.png' width={460} height={200} />;
+		</div>
+	);
 }

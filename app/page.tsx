@@ -1,11 +1,11 @@
 import Image from 'next/image';
-import { Suspense } from 'react';
+
 import { NavBar } from './(components)/NavBar';
 import { Footer } from './(components)/Footer';
 
 export default function Home() {
 	return (
-		<Suspense>
+		<>
 			<div className='flex flex-col gap-2 bg-white justify-between relative h-[100vh]'>
 				<NavBar />
 				<div className='  bg-neutral-500 lg:mx-auto w-full min-h-[60vh] mt-0'>
@@ -19,6 +19,10 @@ export default function Home() {
 				</div>
 				<Footer />
 			</div>
-		</Suspense>
+		</>
 	);
 }
+
+const Loader = () => {
+	return <Image alt='logo' src='/logo.png' width={460} height={200} />;
+};
