@@ -1,13 +1,16 @@
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
 
-import './globals.css';
+import "./globals.css";
 
-import { Suspense } from 'react';
-import Loading from './loading';
+import { Suspense } from "react";
+import Loading from "./loading";
+
+import { NavBar } from "./components/NavBar";
+import { Footer } from "./components/Footer";
 
 export const metadata: Metadata = {
-	title: 'Inborr',
-	description: `Inborr Apartment - noclegi warszawa, apartamenty w Warszawie,
+  title: "Inborr",
+  description: `Inborr Apartment - noclegi warszawa, apartamenty w Warszawie,
     apartamenty na doby, wynajem krótkoterminowy,
     najem krótkoterminowy, zakwaterowanie,
     nocleg w Warszawie, wysoka jakość i komfort noclegów,
@@ -16,15 +19,19 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-	children,
+  children,
 }: {
-	children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-	return (
-		<html lang='en'>
-			<body>
-				<Suspense fallback={<Loading />}>{children}</Suspense>
-			</body>
-		</html>
-	);
+  return (
+    <html lang="en">
+      <body>
+        <Suspense fallback={<Loading />}>
+          <NavBar />
+          {children}
+          <Footer />
+        </Suspense>
+      </body>
+    </html>
+  );
 }
