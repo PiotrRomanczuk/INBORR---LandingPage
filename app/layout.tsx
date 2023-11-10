@@ -8,6 +8,8 @@ import Loading from "./loading";
 import { NavBar } from "./components/NavBar";
 import { Footer } from "./components/Footer";
 
+import { Roboto } from "next/font/google";
+
 export const metadata: Metadata = {
   title: "Inborr",
   description: `Inborr Apartment - noclegi warszawa, apartamenty w Warszawie,
@@ -18,13 +20,20 @@ export const metadata: Metadata = {
     świetnie wyposażone w dobrym standardzie.Sprawdź nas - odwiedź nas!`,
 };
 
+const roboto = Roboto({
+  weight: ["100", "300", "500", "700"],
+  style: "normal",
+  preload: false,
+  // subsets: latin,
+});
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={roboto.className}>
       <body>
         <Suspense fallback={<Loading />}>
           <NavBar />
