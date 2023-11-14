@@ -33,9 +33,11 @@ export const NavBar = () => {
   return (
     <nav className="sticky top-0 z-10 border-black bg-white py-4 text-black shadow-xl">
       <div className="container mx-auto flex items-center justify-between">
-        <Image alt="logo" src="/logo.png" width={100} height={60} />
+        <Link href="/">
+          <Image alt="logo" src="/logo.png" width={120} height={60} />
+        </Link>
 
-        <div className="hidden gap-4  md:flex">
+        <div className="hidden gap-4 md:flex">
           {NavItems.map((item) => (
             <Link
               href={item.href}
