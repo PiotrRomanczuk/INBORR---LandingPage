@@ -1,0 +1,9 @@
+import { FaBedPulse } from "react-icons/fa6";
+<FaBedPulse />
+
+
+import { MdCoffee } from "react-icons/md";
+<MdCoffee />
+
+import { FaWifi } from "react-icons/fa";
+<FaWifi />

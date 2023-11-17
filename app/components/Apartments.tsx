@@ -1,3 +1,10 @@
+import CardVertical from "./CardVertical";
 export const Apartments = () => {
-  return <div>Apartments</div>;
+  return (
+    <div>
+      {/* CardVertical
+      CardVertical
+      CardVertical */}
+    </div>
+  );
 };
