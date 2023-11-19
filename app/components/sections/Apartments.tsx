@@ -1,4 +1,4 @@
-import CardVertical from "../reusable/CardVertical";
+import { CardVertical } from "../reusable/CardVertical";
 export const Apartments = () => {
   return (
     <div>

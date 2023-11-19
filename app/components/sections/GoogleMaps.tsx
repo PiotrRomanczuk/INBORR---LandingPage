@@ -9,10 +9,9 @@ const containerStyle = {
 };
 
 const center = {
-  lat: -3.745,
-  lng: -38.523,
+  lat: 52.23780815166671,
+  lng: 20.991911280983203,
 };
-
 export const GoogleMaps = () => {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
@@ -21,7 +20,7 @@ export const GoogleMaps = () => {
 
   const [map, setMap] = useState(null);
 
-  const onLoad = useCallback(function callback(map) {
+  const onLoad = useCallback(function callback(map: any) {
     // This is just an example of getting and using the map instance!!! don't just blindly copy!
     const bounds = new window.google.maps.LatLngBounds(center);
     map.fitBounds(bounds);
@@ -29,7 +28,7 @@ export const GoogleMaps = () => {
     setMap(map);
   }, []);
 
-  const onUnmount = useCallback(function callback(map) {
+  const onUnmount = useCallback(function callback(map: any) {
     setMap(null);
   }, []);
 
@@ -37,12 +36,11 @@ export const GoogleMaps = () => {
     <GoogleMap
       mapContainerStyle={containerStyle}
       center={center}
-      zoom={10}
+      zoom={11}
       onLoad={onLoad}
       onUnmount={onUnmount}
     >
       {/* Child components, such as markers, info windows, etc. */}
-      <></>
     </GoogleMap>
   ) : (
     <></>
