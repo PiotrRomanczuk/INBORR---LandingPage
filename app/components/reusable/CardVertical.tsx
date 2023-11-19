@@ -1,36 +1,11 @@
-import React, { FC } from "react";
-import Image from "next/image";
-
-interface CardVerticalProps {
-  imageSrc?: string;
-  title: string;
-  description: string;
-  icon?: () => void;
-  // onClick: () => void;
-}
-
-const CardVertical: FC<CardVerticalProps> = ({
-  imageSrc,
-  title,
-  description,
-  // onClick,
-  icon,
-}) => {
+export const CardVertical = ({ title, description, icon }) => {
   return (
-    <div className="flex flex-col rounded-md bg-white p-4 shadow-md">
-      <Image
-        src={imageSrc}
-        alt={title}
-        className="mb-4 h-auto w-full rounded-md"
-      />
-      {/* <FontAwesomeIcon icon="fa-solid fa-ruler-combined" /> */}
-      {/* {icon} */}
-      <div>
-        <h3 className="mb-2 text-xl font-semibold text-gray-600">{title}</h3>
-        <p className="text-gray-600">{description}</p>
+    <div className="m-4 flex flex-col items-center rounded-md border border-red-100  bg-white text-center uppercase text-black">
+      <div className="flex h-24 justify-center">{icon}</div>
+      <div className="m-12">
+        <h3 className="text-xl font-semibold">{title}</h3>
+        <p>{description}</p>
       </div>
     </div>
   );
 };
-
-export default CardVertical;
