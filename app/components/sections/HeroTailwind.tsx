@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export const HeroTailwind = () => {
   return (
     <div className="bg-white">
@@ -30,9 +32,11 @@ export const HeroTailwind = () => {
           </div>
         </div>
         <div className="bg-gray-50 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-          <img
+          <Image
             className="aspect-[3/2] object-cover lg:aspect-auto lg:h-full lg:w-full"
-            src="./warsaw.jpg"
+            src="/warsaw.jpg"
+            width={800}
+            height={1200}
             alt=""
           />
         </div>

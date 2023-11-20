@@ -12,7 +12,7 @@ export const CardVertical: React.FC<CardVerticalProps> = ({
   icon,
 }) => {
   return (
-    <div className="m-4 flex flex-col items-center rounded-md border border-red-100  bg-white text-center uppercase text-black">
+    <div className="m-4 flex flex-col items-center rounded-md  bg-white text-center uppercase text-black">
       <div className="flex h-24 justify-center">{icon}</div>
       <div className="m-12">
         <h3 className="text-xl font-semibold">{title}</h3>
