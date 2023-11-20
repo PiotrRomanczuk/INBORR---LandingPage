@@ -20,11 +20,11 @@ const CardHorizontal: FC<CardHorizontalProps> = ({
   return (
     <div className="flex rounded-md bg-white p-12 shadow-md">
       <Image
-        src={imageSrc}
+        src={imageSrc || ""}
         alt="image"
-        width={300}
+        width={200}
         height={100}
-        className="mr-12"
+        className="mr-12 rounded-2xl"
       />
       <div className="flex flex-col ">
         <h3 className="mb-10 text-xl font-semibold text-gray-600">{title}</h3>

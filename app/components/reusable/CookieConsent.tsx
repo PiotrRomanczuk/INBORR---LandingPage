@@ -20,15 +20,18 @@ export const CookieConsent = (props: any) => {
   }
 
   return (
-    <div className="fixed inset-0 bg-slate-700 bg-opacity-70">
-      <div className="fixed bottom-0 left-0 right-0 flex items-center justify-between bg-gray-100 px-4 py-8">
+    <div className="fixed inset-0 z-10 bg-blue-300 bg-opacity-70">
+      <div className="fixed bottom-0 left-0 right-0 mx-28 flex items-center justify-between bg-gray-100 px-4 py-8">
         <span className="text-dark mr-16 text-base">
-          This website uses cookies to improve user experience. By using our
-          website you consent to all cookies in accordance with our Cookie
-          Policy.
+          Cookies pozwalają nam zmieniać tę stronę dla Ciebie, czyli
+          spersonalizować ją. Możemy też ulepszać nasze kampanie reklamowe i
+          mniej irytować Cię nietrafionymi reklamami. <br />
+          Administratorem Twoich danych osobowych jest INBORR z siedzibą w
+          Warszawie. Cele przetwarzania danych osobowych, okresy przechowywania
+          opisane są w Polityce Prywatności.
         </span>
         <button
-          className="rounded bg-green-500 px-8 py-2 text-white"
+          className="rounded bg-blue-500 px-8 py-2 text-white"
           onClick={() => acceptCookie()}
         >
           Accept
