@@ -18,14 +18,15 @@ export const CardHorizontal: FC<CardHorizontalProps> = ({
   icon,
 }) => {
   return (
-    <div className="flex rounded-md bg-white p-12 shadow-md">
+    <div className=" flex w-full rounded-md bg-white p-6 shadow-md">
       <Image
         src={imageSrc || ""}
+        width={80}
+        height={80}
         alt="image"
-        width={200}
-        height={100}
-        className="mr-12 rounded-2xl"
+        className="mr-12 h-12 w-20 rounded-2xl"
       />
+
       <div className="flex flex-col ">
         <h3 className="mb-10 text-xl font-semibold text-gray-600">{title}</h3>
         <p className="text-gray-600">{description}</p>

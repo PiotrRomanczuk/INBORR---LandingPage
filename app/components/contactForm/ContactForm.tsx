@@ -8,6 +8,8 @@ export const ContactForm = () => {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {};
+
   return (
     <form
       onSubmit={handleSubmit}
