@@ -5,8 +5,8 @@ import "./globals.css";
 import { Suspense } from "react";
 import Loading from "./loading";
 
-import { NavBar } from "./components/reusable/NavBar";
-import { Footer } from "./components/reusable/Footer";
+import { NavBar } from "../components/reusable/NavBar";
+import { Footer } from "../components/reusable/Footer";
 
 import { Roboto } from "next/font/google";
 

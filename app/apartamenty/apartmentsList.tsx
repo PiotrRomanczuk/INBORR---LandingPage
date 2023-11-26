@@ -1,4 +1,4 @@
-export const apartmentList = [
+export const apartmentsList = [
   {
     name: "Chlodna apartment",
     description:

@@ -1,11 +1,11 @@
-import { apartmentList } from "@/app/apartmentsList";
-import { CardHorizontal } from "../reusable/CardHorizontal";
-import { CardVertical } from "../reusable/CardVertical";
+import { apartmentsList } from "@/app/apartamenty/apartmentsList";
+import { CardHorizontal } from "@/components/reusable/CardHorizontal";
+import { CardVertical } from "@/components/reusable/CardVertical";
 export const Apartments = () => {
   return (
     <div className=" z-10 mx-auto min-w-full  lg:w-full lg:max-w-5xl ">
       <div className="align-center mx-auto flex flex-col justify-center gap-12 px-10 py-20 md:px-0">
-        {apartmentList.map((apartment) => (
+        {apartmentsList.map((apartment) => (
           <CardHorizontal
             key={apartment.name}
             title={apartment.name}
