@@ -20,10 +20,6 @@ export const NavBar = () => {
       name: "Kontakt",
       href: "/kontakt",
     },
-    // {
-    //   name: "Rezerwacje",
-    //   href: "/rezerwacje",
-    // },
   ];
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -43,7 +39,13 @@ export const NavBar = () => {
           >
             <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Inborr</span>
-              <img alt="Your Company" className="h-8 w-auto" src="./logo.png" />
+              <Image
+                alt="Your Company"
+                className="h-8 w-auto"
+                src="/logo.png"
+                width={100}
+                height={100}
+              />
             </a>
             <button
               type="button"
@@ -55,13 +57,13 @@ export const NavBar = () => {
             </button>
             <div className="hidden lg:ml-12 lg:flex lg:gap-x-14">
               {navigation.map((item) => (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
                   className="text-sm font-semibold leading-6 text-gray-900"
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </div>
           </nav>
@@ -78,7 +80,13 @@ export const NavBar = () => {
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img className="h-8 w-auto" src="./logo.png" alt="" />
+              <Image
+                className="h-8 w-auto"
+                src="/logo.png"
+                alt=""
+                width={100}
+                height={100}
+              />
             </a>
             <button
               type="button"
@@ -93,13 +101,13 @@ export const NavBar = () => {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 {navigation.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
                     href={item.href}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
               {/* <div className="py-6">

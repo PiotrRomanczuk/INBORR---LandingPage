@@ -10,7 +10,7 @@ interface CardHorizontalProps {
   // onClick: () => void;
 }
 
-const CardHorizontal: FC<CardHorizontalProps> = ({
+export const CardHorizontal: FC<CardHorizontalProps> = ({
   imageSrc,
   title,
   description,
@@ -34,5 +34,3 @@ const CardHorizontal: FC<CardHorizontalProps> = ({
     </div>
   );
 };
-
-export default CardHorizontal;

@@ -1,5 +1,7 @@
 "use client";
 
+// NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string;
+
 import React, { useCallback, useState } from "react";
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 
@@ -12,10 +14,15 @@ const center = {
   lat: 52.23780815166671,
   lng: 20.991911280983203,
 };
+
+console.log(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string);
+
 export const GoogleMaps = () => {
+  console.log(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string);
+
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY as string,
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
   });
 
   const [map, setMap] = useState(null);
@@ -36,11 +43,12 @@ export const GoogleMaps = () => {
     <GoogleMap
       mapContainerStyle={containerStyle}
       center={center}
-      zoom={11}
+      zoom={10.5}
       onLoad={onLoad}
       onUnmount={onUnmount}
     >
       {/* Child components, such as markers, info windows, etc. */}
+      {/* <GoogleMap /> */}
     </GoogleMap>
   ) : (
     <></>

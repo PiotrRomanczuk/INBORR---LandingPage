@@ -37,7 +37,7 @@ export default function RootLayout({
       <body>
         <Suspense fallback={<Loading />}>
           <NavBar />
-          <div className="min-h-screen bg-white">{children}</div>
+          <div className=" bg-white">{children}</div>
           <Footer />
         </Suspense>
       </body>
