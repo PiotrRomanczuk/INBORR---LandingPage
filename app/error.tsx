@@ -18,8 +18,8 @@ export default function Error({
     <div className="flex h-screen flex-col items-center justify-center pt-20">
       <div className="pb-10 text-5xl">Something went wrong!</div>
       <button
-        as="a"
-        href="/"
+        // as="a"
+        // href="/"
         className="tansition rounded-2xl bg-blue-300 p-20 text-3xl uppercase duration-300 hover:bg-blue-500"
       >
         Try again
