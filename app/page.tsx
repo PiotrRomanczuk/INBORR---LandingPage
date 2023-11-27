@@ -1,8 +1,8 @@
 import { HeroTailwind } from "@/components/sections/HeroTailwind";
 import { Information } from "@/components/sections/Information";
 import { Apartments } from "@/components/sections/Apartments";
-import { GoogleMaps } from "@/components/sections/GoogleMaps";
-import { CookieConsent } from "@/components/reusable/CookieConsent";
+
+import { CookieConsent } from "@/components/CookieConsent";
 import { GoogleMaps1 } from "@/components/sections/GoogleMaps1";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 

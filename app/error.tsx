@@ -15,13 +15,12 @@ export default function Error({
   }, [error]);
 
   return (
-    <div>
-      <h2>Something went wrong!</h2>
+    <div className="flex h-screen flex-col items-center justify-center pt-20">
+      <div className="pb-10 text-5xl">Something went wrong!</div>
       <button
-        onClick={
-          // Attempt to recover by trying to re-render the segment
-          () => reset()
-        }
+        as="a"
+        href="/"
+        className="tansition rounded-2xl bg-blue-300 p-20 text-3xl uppercase duration-300 hover:bg-blue-500"
       >
         Try again
       </button>

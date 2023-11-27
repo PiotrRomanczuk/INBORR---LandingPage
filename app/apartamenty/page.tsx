@@ -1,4 +1,4 @@
-import { CardHorizontal } from "@/components/reusable/CardHorizontal";
+import { CardHorizontal } from "@/components/CardApartment";
 import { apartmentsList } from "./apartmentsList";
 
 export default function Home() {
