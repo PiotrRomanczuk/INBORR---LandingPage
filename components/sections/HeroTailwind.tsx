@@ -28,7 +28,7 @@ export const HeroTailwind = () => {
                   Krótkoterminowe wynajmy mieszkań dla wyjątkowego pobytu w
                   Warszawie!
                 </p>
-                <p className="text-black">Media query: useMediaQuery(768)</p>
+                {/* <p className="text-black">Media query: useMediaQuery(768)</p> */}
               </div>
             </div>
           </div>

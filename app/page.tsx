@@ -12,10 +12,10 @@ export default function Home() {
       <div className="flex flex-col justify-between bg-white">
         <HeroTailwind />
         <div className="mx-auto max-w-7xl">
-          <Information />
-          <Apartments />
-          <GoogleMaps1 />
-          <CookieConsent />
+        <Information />
+        <Apartments />
+        <GoogleMaps1 />
+        <CookieConsent />
         </div>
       </div>
     </>

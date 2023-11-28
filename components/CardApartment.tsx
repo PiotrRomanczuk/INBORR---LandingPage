@@ -6,6 +6,8 @@ import realEstatePlanIcon from "../public/icons/real-estate-plan.svg";
 import securityKeyIcon from "../public/icons/security-key.svg";
 import weatherIcon from "../public/icons/weather-snow.svg";
 
+import bedIcon from "../public/icons/bedroom.svg";
+
 interface CardHorizontalProps {
   imageSrc?: string;
   title: string;
@@ -22,66 +24,45 @@ export const CardApartment: FC<CardHorizontalProps> = ({
   icon,
 }) => {
   return (
-    <div className=" flex w-full flex-col items-center rounded-md bg-white  shadow-md">
-      <Image
-        src={imageSrc || ""}
-        width={1250}
-        height={800}
-        alt="image"
-        className="h-auto w-80 rounded-2xl"
-      />
+    <div className=" flex w-full flex-col rounded-md bg-white ">
+      <div className="items-center justify-center">
+        <Image
+          src={imageSrc || ""}
+          width={1600}
+          height={800}
+          alt="image"
+          className="h-auto w-auto"
+        />
+      </div>
+      <div className="flex flex-col items-start pt-4 text-lg">
+        <div>Skyline Cool Space at Chłodna</div>
 
-      <div className="flex flex-col items-center pt-8">
-        <h3 className="mb-10 text-3xl font-semibold text-gray-600 ">{title}</h3>
-        <div className="grid grid-cols-2">
-          <p className="p-10 text-xl text-gray-600">{description}</p>
-          <div className="grid grid-cols-2">
-            <div className="flex items-center">
-              <Image
-                src={realEstatePlanIcon}
-                alt="desk"
-                width={50}
-                height={50}
-                className="mr-2"
-              />
-              <div className="items-center text-center">40 m2</div>
-            </div>
-            <div className="flex items-center">
-              <Image
-                src={securityKeyIcon}
-                alt="desk"
-                width={50}
-                height={50}
-                className="mr-2"
-              />
-              <div className="text-center">Self Check-In</div>
-            </div>
-            <div className="flex items-center">
-              <Image
-                src={weatherIcon}
-                alt="desk"
-                width={50}
-                height={50}
-                className="mr-2"
-              />
-              <div className="text-center">Klimatyzowane</div>
-            </div>
-            <div className="flex items-center">
-              <Image
-                src={deskIcon}
-                alt="desk"
-                width={50}
-                height={50}
-                className="mr-2"
-              />
-              <div className="text-center">Miejsce do pracy</div>
-            </div>
+        <div className="text-sm font-light text-gray-700">
+          Warszawa, Śródmieście, Chłodna
+        </div>
+        <div className="flex gap-3 pt-4 text-sm text-gray-900">
+          <div className="flex justify-center">
+            <Image
+              src={bedIcon}
+              alt="desk"
+              width={30}
+              height={30}
+              className="mr-2"
+            />
+            <div className="pt-1">2 sypialnie</div>
+          </div>
+          <div className="flex content-center">
+            <Image
+              src={realEstatePlanIcon}
+              alt="desk"
+              width={30}
+              height={30}
+              className="mr-2"
+            />
+            <div className="pt-1">40m2</div>
           </div>
         </div>
       </div>
-      <button className="my-10 rounded-2xl bg-blue-300 px-28 py-10 text-3xl uppercase transition duration-300 hover:bg-blue-500">
-        More Info
-      </button>
     </div>
   );
 };
