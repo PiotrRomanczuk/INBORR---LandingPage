@@ -9,8 +9,10 @@ export const Apartments = () => {
           <CardApartment
             key={apartment.name}
             title={apartment.name}
+            location={apartment.location}
             description={apartment.description}
             imageSrc={apartment.mainPic}
+            hrefLink={apartment.hrefLink}
           />
         ))}
       </div>

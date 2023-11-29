@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import Link from "next/link";
 
 import Image from "next/image";
 import deskIcon from "../public/icons/furniture-desk.svg";
@@ -11,7 +12,9 @@ import bedIcon from "../public/icons/bedroom.svg";
 interface CardHorizontalProps {
   imageSrc?: string;
   title: string;
+  location: string;
   description: string;
+  hrefLink: string;
   icon?: () => void;
   // onClick: () => void;
 }
@@ -20,26 +23,28 @@ export const CardApartment: FC<CardHorizontalProps> = ({
   imageSrc,
   title,
   description,
+  location,
+  hrefLink,
   // onClick,
-  icon,
+  // icon,
 }) => {
   return (
     <div className=" flex w-full flex-col rounded-md bg-white ">
       <div className="items-center justify-center">
-        <Image
-          src={imageSrc || ""}
-          width={1600}
-          height={800}
-          alt="image"
-          className="h-auto w-auto"
-        />
+        <Link href={hrefLink} className="pointer">
+          <Image
+            src={imageSrc || ""}
+            width={1600}
+            height={800}
+            alt="image"
+            className="h-auto w-auto"
+          />
+        </Link>
       </div>
       <div className="flex flex-col items-start pt-4 text-lg">
-        <div>Skyline Cool Space at Chłodna</div>
+        <div>{title}</div>
 
-        <div className="text-sm font-light text-gray-700">
-          Warszawa, Śródmieście, Chłodna
-        </div>
+        <div className="text-sm font-light text-gray-700">{location}</div>
         <div className="flex gap-3 pt-4 text-sm text-gray-900">
           <div className="flex justify-center">
             <Image
@@ -49,7 +54,7 @@ export const CardApartment: FC<CardHorizontalProps> = ({
               height={30}
               className="mr-2"
             />
-            <div className="pt-1">2 sypialnie</div>
+            <div className="pt-2">2 bedrooms</div>
           </div>
           <div className="flex content-center">
             <Image
@@ -59,7 +64,7 @@ export const CardApartment: FC<CardHorizontalProps> = ({
               height={30}
               className="mr-2"
             />
-            <div className="pt-1">40m2</div>
+            <div className="pt-2">40m2</div>
           </div>
         </div>
       </div>

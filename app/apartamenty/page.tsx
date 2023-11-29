@@ -12,6 +12,8 @@ export default function Home() {
               title={apartment.name}
               description={apartment.description}
               imageSrc={apartment.mainPic}
+              location={apartment.location}
+              hrefLink={apartment.hrefLink}
             />
           ))}
         </div>
