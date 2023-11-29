@@ -1,9 +1,10 @@
 import React from "react";
+import Image from "next/image";
 
 interface CardVerticalProps {
   title: string;
   description: string;
-  icon: React.ReactNode;
+  icon: any;
 }
 
 export const CardUtils: React.FC<CardVerticalProps> = ({
@@ -13,12 +14,18 @@ export const CardUtils: React.FC<CardVerticalProps> = ({
 }) => {
   return (
     <div
-      className=" mx-6 mt-10 flex flex-col items-center gap-10 
-    rounded-md bg-white pt-2 text-center uppercase text-black shadow-lg lg:mx-0"
+      className="flex flex-col items-center rounded-md 
+    bg-white p-2 text-center uppercase text-black shadow-lg lg:mx-0"
     >
-      <div className="flex h-24 justify-center">{icon}</div>
+      <Image
+        src={icon}
+        alt="desk"
+        width={30}
+        height={30}
+        className="h-10 w-10"
+      />
       <h3 className=" font-semibold lg:text-xl">{title}</h3>
-      <p>{description}</p>
+      {/* <p>{description}</p> */}
     </div>
   );
 };

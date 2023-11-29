@@ -42,30 +42,38 @@ export const CardApartment: FC<CardHorizontalProps> = ({
         </Link>
       </div>
       <div className="flex flex-col items-start pt-4 text-lg">
-        <div>{title}</div>
+        <Link href={hrefLink} className="pointer">
+          <div>{title}</div>
+        </Link>
 
-        <div className="text-sm font-light text-gray-700">{location}</div>
+        <Link href={hrefLink} className="pointer">
+          <div className="text-sm font-light text-gray-700">{location}</div>
+        </Link>
         <div className="flex gap-3 pt-4 text-sm text-gray-900">
-          <div className="flex justify-center">
-            <Image
-              src={bedIcon}
-              alt="desk"
-              width={30}
-              height={30}
-              className="mr-2"
-            />
-            <div className="pt-2">2 bedrooms</div>
-          </div>
-          <div className="flex content-center">
-            <Image
-              src={realEstatePlanIcon}
-              alt="desk"
-              width={30}
-              height={30}
-              className="mr-2"
-            />
-            <div className="pt-2">40m2</div>
-          </div>
+          <Link href={hrefLink} className="pointer">
+            <div className="flex justify-center">
+              <Image
+                src={bedIcon}
+                alt="desk"
+                width={30}
+                height={30}
+                className="mr-2"
+              />
+              <div className="pt-2">2 bedrooms</div>
+            </div>
+          </Link>
+          <Link href={hrefLink} className="pointer">
+            <div className="flex content-center">
+              <Image
+                src={realEstatePlanIcon}
+                alt="desk"
+                width={30}
+                height={30}
+                className="mr-2"
+              />
+              <div className="pt-2">40m2</div>
+            </div>
+          </Link>
         </div>
       </div>
     </div>
