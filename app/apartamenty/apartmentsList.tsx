@@ -1,6 +1,7 @@
 export const apartmentsList = [
   {
-    name: "Chlodna apartment",
+    apartmentId: 1,
+    name: "Skyline Cool Space at Chłodna",
     location: "Warszawa, Śródmieście, Chłodna",
     description:
       "Stylowe, nowoczesne miejsce na pobyt w samym centrum Warszawy",
@@ -18,7 +19,8 @@ export const apartmentsList = [
     hrefLink: "/apartamenty/chlodna",
   },
   {
-    name: "Pereca apartment",
+    apartmentId: 2,
+    name: "Sky Apartment Comfy Suite Pereca",
     location: "Warszawa, Śródmieście, Pereca",
     description:
       "Apartament na 14 piętrze tuż przy Rondzie ONZ to stylowe miejsce na pobyt w samym centrum Warszawy.",

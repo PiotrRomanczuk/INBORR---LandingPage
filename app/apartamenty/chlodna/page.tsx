@@ -15,7 +15,7 @@ export default function Home() {
   const chlodna = apartmentsList[0];
 
   return (
-    <div className="px-4 pt-24">
+    <div className="px-4">
       <div className=" flex w-full flex-col rounded-md bg-white ">
         <div className="items-center justify-center ">
           <Image

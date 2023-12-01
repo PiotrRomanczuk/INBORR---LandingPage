@@ -3,3 +3,9 @@ className={`flex ${someCondition ? 'special-class' : ''} items-start pt-4 text-l
 >
   {/*...*/}
 </div>
+
+
+FAQ
+
+PRZEWODNIK I INSTRUKCJE
+
