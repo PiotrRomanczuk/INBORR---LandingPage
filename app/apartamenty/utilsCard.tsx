@@ -14,7 +14,14 @@ export const UtilsCard: React.FC<UtilsCardProps> = ({
   return (
     <div className="flex flex-col">
       <div className=" font-light">{title}</div>
-      <Image src={icon} alt="desk" width={30} height={30} className="mr-2" />
+      <Image
+        src={icon}
+        alt="desk"
+        width={30}
+        height={30}
+        className="mr-2"
+        loading="lazy"
+      />
       <div className="pt-2">{description}</div>
     </div>
   );

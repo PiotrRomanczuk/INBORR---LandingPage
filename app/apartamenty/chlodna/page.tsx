@@ -24,6 +24,7 @@ export default function Home() {
             height={800}
             alt="image"
             className="h-auto w-auto"
+            loading="lazy"
           />
           <div className="-mt-3 flex justify-center gap-4 text-sm text-black">
             <button className="rounded-lg border border-blue-400 bg-white p-1 transition duration-300 hover:bg-blue-100">

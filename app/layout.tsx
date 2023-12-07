@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 
+import { ThemeProvider } from "@/components/theme-provider";
+
 import { Suspense } from "react";
 import Loading from "./loading";
 
@@ -37,7 +39,16 @@ export default function RootLayout({
       <body>
         <Suspense fallback={<Loading />}>
           <NavBar />
-          <div className=" bg-white pt-24">{children}</div>
+          <div className=" bg-white pt-24">
+            {/* <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              // disableTransitionOnChange
+            > */}
+            {children}
+            {/* </ThemeProvider> */}
+          </div>
           <Footer />
         </Suspense>
       </body>
