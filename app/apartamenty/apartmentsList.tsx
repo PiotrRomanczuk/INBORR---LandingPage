@@ -22,7 +22,7 @@ export const apartmentsList = [
       },
       {
         value: "item-2",
-        question: "Dupa dupa dupa?",
+        question: "????????????",
         answer:
           "Yes. It comes with default styles that match the other components' aesthetic.",
       },
