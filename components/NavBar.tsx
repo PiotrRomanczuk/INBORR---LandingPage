@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { ModeToggle } from "./ModeToggle";
+// import { ModeToggle } from "./ModeToggle";
 
 export const NavBar = () => {
   const navigation = [
