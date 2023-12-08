@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { apartmentsList } from "../app/apartamenty/apartmentsList";
 import GalleryLightbox from "./YARL/GalleryLightbox";
+import { ReserveDialog } from "@/components/ReserveDialog";
 
 export const Mainpic = (imageSrc: any) => {
   return (
@@ -17,9 +18,7 @@ export const Mainpic = (imageSrc: any) => {
       />
       <div className="-mt-3 flex justify-center gap-4 text-sm text-black">
         <GalleryLightbox />
-        <button className="rounded-lg border border-blue-400 bg-white px-6 py-2 transition duration-300 hover:bg-blue-300">
-          Mapa
-        </button>
+        <ReserveDialog />
       </div>
     </div>
   );

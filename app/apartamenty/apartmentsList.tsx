@@ -1,6 +1,7 @@
 export const apartmentsList = [
   {
     apartmentId: 1,
+
     name: "Skyline Cool Space at Chłodna",
     location: "Warszawa, Śródmieście, Chłodna",
     description: {
@@ -17,20 +18,36 @@ export const apartmentsList = [
     accordionData: [
       {
         value: "item-1",
-        question: "Jakie to mieszkanie?",
-        answer: "Yes. It adheres to the WAI-ARIA design pattern.",
+        question:
+          "Czy mogą Państwo wystawić fakturę proforma, celem opłacenia pobytu?",
+        answer:
+          "Tak, wystawienie faktury proforma jest możliwe, w momencie dokonania rezerwacji. Wtedy jestem w stanie określić wartość z przysługującymi zniżkami i ofertami. Proszę o informację (wiadomość systemową) o takiej potrzebie.",
       },
       {
         value: "item-2",
-        question: "????????????",
+        question: "Mogę tam zaparkować? Ile kosztuje parking za noc?",
         answer:
-          "Yes. It comes with default styles that match the other components' aesthetic.",
+          "Tak, budynek znajduje się na terenie płatnego parkingu. Dzienna opłata za parking wynosi około 57 PLN (od 08:00 do 20:00), noc jest bezpłatna. W pobliżu (20m) znajduje się płatny parking (144 PLN/dzień), lub 250 m kolejny jeden 70-80PLN/dzień.",
       },
       {
         value: "item-3",
-        question: "Is it animated?",
+        question:
+          "Jak daleko obiekt Sky Apartment Comfy Suite Pereca znajduje się od centrum miasta Warszawa?",
         answer:
-          "Yes. It's animated by default, but you can disable it if you prefer.",
+          "Sky Apartment Comfy Suite Pereca znajduje się 1,1 km od centrum miasta Warszawa. Wszystkie odległości podane są w linii prostej. Właściwy dystans do pokonania może się różnić.",
+      },
+      {
+        value: "item-4",
+        question:
+          "Jakie są godziny zameldowania i wymeldowania w obiekcie Sky Apartment Comfy Suite Pereca?",
+        answer:
+          "Zameldowanie w obiekcie Sky Apartment Comfy Suite Pereca rozpoczyna się o 15:00, a wymeldować się można do 11:00.",
+      },
+      {
+        value: "item-5",
+        question: "Ilu gości może się zatrzymać w tym obiekcie?",
+        answer:
+          "Obiekt Sky Apartment Comfy Suite Pereca udostępnia jedną opcję zakwaterowania. Pomieści ona 4 gości",
       },
     ],
     rooms: ["kuchnia", "salon", "sypialnia", "lazienka"],
@@ -97,7 +114,7 @@ export const apartmentsList = [
           "Zameldowanie w obiekcie Sky Apartment Comfy Suite Pereca rozpoczyna się o 15:00, a wymeldować się można do 11:00.",
       },
       {
-        value: "item-4",
+        value: "item-5",
         question: "Ilu gości może się zatrzymać w tym obiekcie?",
         answer:
           "Obiekt Sky Apartment Comfy Suite Pereca udostępnia jedną opcję zakwaterowania. Pomieści ona 4 gości",

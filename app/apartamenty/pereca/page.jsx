@@ -3,24 +3,32 @@ import { apartmentsList } from "../apartmentsList";
 import { GoogleMaps } from "@/components/sections/GoogleMaps";
 import { Mainpic } from "../../../components/Mainpic";
 import { ReserveExt } from "../../../components/ReserveExt";
-import { UtilsSection } from "../../../components/sections/UtilsSection";
+import { UtilsSection } from "@/components/sections/UtilsSection";
 import { AccordionComp } from "../../../components/AccordionComp";
 
 export default function Home() {
   const apartment = apartmentsList[1];
+
+  console.log(apartment.airbnbLink);
+  console.log(apartment.bookingLink);
 
   return (
     <div className="px-4">
       <div className=" flex w-full flex-col rounded-md bg-white ">
         <Mainpic imageSrc={apartment.mainPic} />
 
-        <ReserveExt />
-
-        <div className="flex flex-col items-start pt-4 text-lg text-black">
+        <div className="flex flex-col items-start py-4 text-lg text-black">
           {apartment.name}
           <div className="text-sm font-light text-gray-700">
             {apartment.location}
           </div>
+          {/* <div className="w-full">
+            <ReserveExt
+              airbnbHref={apartment.airbnbLink}
+              bookingHref={apartment.bookingHref}
+            />
+          </div> */}
+
           <UtilsSection
             bedroomsNb={apartment.bedrooms}
             area={apartment.area}
@@ -30,10 +38,10 @@ export default function Home() {
             builtYear={apartment.builtYear}
           />
         </div>
-        <div className="my-2 border-y-2 border-black py-4">
+        <div className="border-y-2 border-blue-400 py-4">
           {apartment.description.long.map((paragraph, idx) => {
             return (
-              <div className="pt-4 text-sm font-light text-gray-900" key={idx}>
+              <div className="pt-2 text-sm text-gray-900" key={idx}>
                 {paragraph}
               </div>
             );

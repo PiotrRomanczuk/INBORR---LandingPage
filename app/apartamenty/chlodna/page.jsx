@@ -3,7 +3,7 @@ import { apartmentsList } from "../apartmentsList";
 import { GoogleMaps } from "@/components/sections/GoogleMaps";
 import { Mainpic } from "../../../components/Mainpic";
 import { ReserveExt } from "../../../components/ReserveExt";
-import { UtilsSection } from "../../../components/sections/UtilsSection";
+import { UtilsSection } from "@/components/sections/UtilsSection";
 import { AccordionComp } from "../../../components/AccordionComp";
 
 export default function Home() {
@@ -22,12 +22,12 @@ export default function Home() {
           <div className="text-sm font-light text-gray-700">
             {apartment.location}
           </div>
-          <div className="w-full">
+          {/* <div className="w-full">
             <ReserveExt
               airbnbHref={apartment.airbnbLink}
               bookingHref={apartment.bookingHref}
             />
-          </div>
+          </div> */}
 
           <UtilsSection
             bedroomsNb={apartment.bedrooms}
