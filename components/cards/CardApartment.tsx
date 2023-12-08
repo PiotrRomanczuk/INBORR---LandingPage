@@ -3,11 +3,11 @@ import Link from "next/link";
 
 import Image from "next/image";
 
-import deskIcon from "../public/icons/furniture-desk.svg";
-import realEstatePlanIcon from "../public/icons/real-estate-plan.svg";
-import securityKeyIcon from "../public/icons/security-key.svg";
-import weatherIcon from "../public/icons/weather-snow.svg";
-import bedIcon from "../public/icons/bedroom.svg";
+import deskIcon from "@/public/icons/furniture-desk.svg";
+import realEstatePlanIcon from "@/public/icons/real-estate-plan.svg";
+import securityKeyIcon from "@/public/icons/security-key.svg";
+import weatherIcon from "@/public/icons/weather-snow.svg";
+import bedIcon from "@/public/icons/bedroom.svg";
 
 interface CardHorizontalProps {
   imageSrc?: string;
@@ -69,7 +69,7 @@ export const CardApartment: FC<CardHorizontalProps> = ({
           <div className="flex content-center">
             <Link href={hrefLink} className="pointer">
               <Image
-                src={realEstatePlanIcon}
+                src={bedIcon}
                 alt="desk"
                 width={30}
                 height={30}

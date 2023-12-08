@@ -6,7 +6,7 @@ import securityKeyIcon from "@/public/icons/security-key.svg";
 import weatherIcon from "@/public/icons/weather-snow.svg";
 import bedIcon from "@/public/icons/bedroom.svg";
 
-import { UtilsCard } from "../../app/apartamenty/utilsCard";
+import { UtilsCard } from "../cards/utilsCard";
 
 interface UtilsSectionProps {
   bedroomsNb: any;
@@ -26,7 +26,7 @@ export const UtilsSection: React.FC<UtilsSectionProps> = ({
   builtYear,
 }) => {
   return (
-    <div className="grid w-full grid-cols-2 justify-between gap-4 pt-4 text-xs text-gray-900">
+    <div className="grid w-full grid-cols-2 justify-between gap-4 p-4 text-xs text-gray-900">
       <UtilsCard
         title="Liczba sypialni:"
         description={bedroomsNb}

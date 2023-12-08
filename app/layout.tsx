@@ -11,6 +11,7 @@ import { NavBar } from "../components/NavBar";
 import { Footer } from "../components/Footer";
 
 import { Roboto } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "Inborr",
@@ -29,13 +30,19 @@ const roboto = Roboto({
   // subsets: latin,
 });
 
+const openSans = Open_Sans({
+  weight: ["300", "500", "700"],
+  style: "normal",
+  preload: false,
+});
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={roboto.className}>
+    <html lang="en" className={openSans.className}>
       <body>
         <Suspense fallback={<Loading />}>
           <NavBar />

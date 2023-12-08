@@ -9,7 +9,7 @@ function CustomAccordionItem({ question, answer, value }) {
   return (
     <AccordionItem value={value}>
       <AccordionTrigger>{question}</AccordionTrigger>
-      <AccordionContent>{answer}</AccordionContent>
+      <AccordionContent className="font-light">{answer}</AccordionContent>
     </AccordionItem>
   );
 }

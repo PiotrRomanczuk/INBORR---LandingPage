@@ -1,5 +1,5 @@
 import React from "react";
-import { CardUtils } from "../cards/CardUtils";
+import { CardUtils } from "@/components/cards/CardUtils";
 
 import bed from "@/public/icons/bedroom.svg";
 import wifi from "@/public/icons/mobile-full-wifi.svg";

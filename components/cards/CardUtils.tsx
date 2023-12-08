@@ -14,7 +14,7 @@ export const CardUtils: React.FC<CardVerticalProps> = ({
 }) => {
   return (
     <div
-      className="flex flex-col items-center rounded-md 
+      className="flex flex-col items-center rounded-md
     bg-white p-2 text-center uppercase text-black shadow-lg lg:mx-0"
     >
       <Image

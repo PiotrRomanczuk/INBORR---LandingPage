@@ -1,6 +1,7 @@
-"use client";
+// https://yet-another-react-lightbox.com/
 
-import * as React from "react";
+"use client";
+import { useState } from "react";
 
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
@@ -18,11 +19,15 @@ const slides = [image1, image2, image3];
  * https://codesandbox.io/p/sandbox/yet-another-react-lightbox-nextjs-bfjgb0?file=%2Fpages%2Findex.jsx
  */
 export default function GalleryLightbox() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <>
-      <button type="button" onClick={() => setOpen(true)}>
+      <button
+        className="rounded-lg border border-blue-400 bg-white px-6 py-2 transition duration-300 hover:bg-blue-300"
+        type="button"
+        onClick={() => setOpen(true)}
+      >
         Galeria
       </button>
 

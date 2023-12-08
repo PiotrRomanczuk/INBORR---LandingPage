@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { apartmentsList } from "../app/apartamenty/apartmentsList";
+import GalleryLightbox from "./YARL/GalleryLightbox";
 
 export const Mainpic = (imageSrc: any) => {
   return (
@@ -15,9 +16,7 @@ export const Mainpic = (imageSrc: any) => {
         loading="lazy"
       />
       <div className="-mt-3 flex justify-center gap-4 text-sm text-black">
-        <button className="rounded-lg border border-blue-400 bg-white px-6 py-2 transition duration-300 hover:bg-blue-300">
-          Galeria
-        </button>
+        <GalleryLightbox />
         <button className="rounded-lg border border-blue-400 bg-white px-6 py-2 transition duration-300 hover:bg-blue-300">
           Mapa
         </button>
