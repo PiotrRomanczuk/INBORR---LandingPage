@@ -1,24 +1,25 @@
+Apartment dynamic routes
+
+Testimonials section
+
+Email contact form
+
+Dialog - share'ing button
+    Toast - as an confirmation for copying link
+
+Implementation of the reservations dashboard
+
 Spinner on loading page ✅
 
 Image in the background ✅
 
 Card component on main page✅
 
-Apartment dynamic routes
-Apartments model site
+Apartments model site ✅
 
-Email contact
+Gallery!!! ✅
 
-Implementation of the reservations dashboard
-
-UI
-
-Gallery!!!
-
-Accordion for a FAQ apartments
-
-Dialog - share'ing button
-    Toast - as an confirmation for copying link
+Accordion for a FAQ apartments ✅
 
 OPT:
     Hover Card on main apartment Card
