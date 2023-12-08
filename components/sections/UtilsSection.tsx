@@ -30,25 +30,33 @@ export const UtilsSection: React.FC<UtilsSectionProps> = ({
       <UtilsCard
         title="Liczba sypialni:"
         description={bedroomsNb}
-        icon={bedIcon}
+        icon={realEstatePlanIcon}
       />
       <UtilsCard
         title="Powierzchnia:"
         description={area + " m2"}
         icon={realEstatePlanIcon}
       />
-      <UtilsCard title="Pietro:" description={floor} icon={bedIcon} />
+      <UtilsCard
+        title="Pietro:"
+        description={floor}
+        icon={realEstatePlanIcon}
+      />
       <UtilsCard
         title="Typ kuchni:"
         description={kitchenStyle}
-        icon={bedIcon}
+        icon={realEstatePlanIcon}
       />
       <UtilsCard
         title="Typ budynku:"
         description={buildingType}
-        icon={bedIcon}
+        icon={realEstatePlanIcon}
       />
-      <UtilsCard title="Rok budowy:" description={builtYear} icon={bedIcon} />
+      <UtilsCard
+        title="Rok budowy:"
+        description={builtYear}
+        icon={realEstatePlanIcon}
+      />
     </div>
   );
 };
