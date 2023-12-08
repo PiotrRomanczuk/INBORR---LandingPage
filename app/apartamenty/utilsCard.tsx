@@ -13,7 +13,7 @@ export const UtilsCard: React.FC<UtilsCardProps> = ({
 }) => {
   return (
     <div className="flex flex-col">
-      <div className=" font-light">{title}</div>
+      <div className="">{title}</div>
       <Image
         src={icon}
         alt="desk"
@@ -22,7 +22,7 @@ export const UtilsCard: React.FC<UtilsCardProps> = ({
         className="mr-2"
         loading="lazy"
       />
-      <div className="pt-2">{description}</div>
+      <div className="pt-2 font-light">{description}</div>
     </div>
   );
 };

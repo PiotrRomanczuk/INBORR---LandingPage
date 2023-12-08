@@ -1,5 +1,5 @@
 import { apartmentsList } from "@/app/apartamenty/apartmentsList";
-import { CardApartment } from "@/components/CardApartment";
+import { CardApartment } from "@/components/cards/CardApartment";
 
 export const Apartments = () => {
   return (

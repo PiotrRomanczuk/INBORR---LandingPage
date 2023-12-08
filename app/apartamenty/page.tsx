@@ -1,4 +1,4 @@
-import { CardApartment } from "@/components/CardApartment";
+import { CardApartment } from "@/components/cards/CardApartment";
 import { apartmentsList } from "./apartmentsList";
 
 export default function Home() {

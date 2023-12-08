@@ -28,7 +28,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "components/sections/GoogleMaps1.jsx",
-    "app/apartamenty/chlodna/AccordionComp.jsx",
+    "components/AccordionComp.jsx",
     "app/apartamenty/chlodna/page.jsx"
   ],
   "exclude": ["node_modules"]

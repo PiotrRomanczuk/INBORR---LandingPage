@@ -4,7 +4,9 @@ import { GoogleMaps } from "@/components/sections/GoogleMaps";
 import { Mainpic } from "../../../components/Mainpic";
 import { ReserveExt } from "../../../components/ReserveExt";
 import { UtilsSection } from "../../../components/sections/UtilsSection";
-import { AccordionComp } from "./AccordionComp";
+import { AccordionComp } from "../../../components/AccordionComp";
+
+import { LightboxImage } from "../../../components/YARL/LightboxImage";
 
 export default function Home() {
   const apartment = apartmentsList[0];
@@ -43,6 +45,7 @@ export default function Home() {
 
       <AccordionComp data={apartment.accordionData} />
 
+      <LightboxImage />
       <GoogleMaps />
     </div>
   );
