@@ -31,6 +31,6 @@
     "components/AccordionComp.jsx",
     "app/apartamenty/chlodna/page.jsx",
     "app/apartamenty/pereca/page.jsx"
-  ],
+, "app/apartamenty/[apartmentId]/page.jsx"  ],
   "exclude": ["node_modules"]
 }

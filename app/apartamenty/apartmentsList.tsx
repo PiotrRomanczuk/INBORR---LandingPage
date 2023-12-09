@@ -1,7 +1,7 @@
 export const apartmentsList = [
   {
     apartmentId: 1,
-
+    shortName: "chlodna",
     name: "Skyline Cool Space at Chłodna",
     location: "Warszawa, Śródmieście, Chłodna",
     description: {
@@ -72,6 +72,7 @@ export const apartmentsList = [
   },
   {
     apartmentId: 2,
+    shortName: "pereca",
     name: "Sky Apartment Comfy Suite Pereca",
     location: "Warszawa, Śródmieście, Pereca",
     description: {
