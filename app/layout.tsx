@@ -48,18 +48,18 @@ export default function RootLayout({
       <body>
         <Suspense fallback={<Loading />}>
           <NavBar />
-          <div className=" bg-white pt-24">
-            {/* <ThemeProvider
+          {/* <ThemeProvider
               attribute="class"
               defaultTheme="system"
               enableSystem
               // disableTransitionOnChange
             > */}
+          <div className=" bg-white pt-24">
             {children}
             <SpeedInsights />
             <Analytics />
-            {/* </ThemeProvider> */}
           </div>
+          {/* </ThemeProvider> */}
           <Footer />
         </Suspense>
       </body>

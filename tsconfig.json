@@ -29,8 +29,9 @@
     ".next/types/**/*.ts",
     "components/sections/GoogleMaps1.jsx",
     "components/AccordionComp.jsx",
-    "app/apartamenty/chlodna/page.jsx",
-    "app/apartamenty/pereca/page.jsx"
-, "app/apartamenty/[apartmentId]/page.jsx"  ],
+    "app/kontakt/chlodna/page.jsx",
+    "app/kontakt/pereca/page.jsx",
+    "app/apartamenty/[apartmentId]/page.jsx"
+  ],
   "exclude": ["node_modules"]
 }
