@@ -1,4 +1,6 @@
-export const apartmentsList = [
+import { IApartment } from "./apartmentInterface";
+
+export const apartmentsList: IApartment[] = [
   {
     apartmentId: 1,
     shortName: "chlodna",
