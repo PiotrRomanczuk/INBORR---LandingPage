@@ -9,8 +9,8 @@ import "./globals.css";
 import { Suspense } from "react";
 import Loading from "./loading";
 
-import { NavBar } from "../components/NavBar";
-import { Footer } from "../components/Footer";
+import { NavBar } from "../components/ui/NavBar";
+import { Footer } from "../components/ui/Footer";
 
 import { Roboto } from "next/font/google";
 import { Open_Sans } from "next/font/google";
@@ -45,7 +45,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={openSans.className}>
-      <body>
+      <body className="mx-auto max-w-7xl">
         <Suspense fallback={<Loading />}>
           <NavBar />
           {/* <ThemeProvider

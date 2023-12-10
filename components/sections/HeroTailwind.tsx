@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export const HeroTailwind = () => {
   return (
-    <div className="bg-white">
+    <section className="bg-white">
       <div className="relative">
         <div className="mx-auto max-w-7xl">
           <div className="relative z-10 pt-14 lg:w-full lg:max-w-2xl">
@@ -44,6 +44,6 @@ export const HeroTailwind = () => {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };

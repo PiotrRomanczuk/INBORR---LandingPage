@@ -1,10 +1,10 @@
 import { apartmentsList } from "../apartmentsList";
 
-import { GoogleMaps } from "@/components/sections/GoogleMaps";
-import { Mainpic } from "../../../components/Mainpic";
-import { ReserveExt } from "../../../components/ReserveExt";
+import { Mainpic } from "./MainPic";
 import { UtilsSection } from "@/components/sections/UtilsSection";
 import { AccordionComp } from "../../../components/AccordionComp";
+import { GoogleMaps } from "@/components/sections/GoogleMaps";
+import Link from "next/link";
 
 export default function Page({ params }: { params: { apartmentId: string } }) {
   const apartment = apartmentsList.find(
@@ -14,11 +14,26 @@ export default function Page({ params }: { params: { apartmentId: string } }) {
   return (
     <>
       {apartment === undefined ? (
-        <div>There is no apartment like that</div>
+        <>
+          <div>
+            Przepraszamy! Najwyraźniej nie mamy w ofercie mieszkania, którego
+            szukasz.
+          </div>
+          <div>Mieszkania, które obecnie znajdują się w naszej ofercie to:</div>
+          <ul>
+            {apartmentsList.map((apartment) => (
+              <li key={apartment.shortName}>
+                <Link href={`/apartamenty/${apartment.shortName}`}>
+                  <a>{apartment.name}</a>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </>
       ) : (
-        <div>
+        <>
           <div className="px-4">
-            <div className=" flex w-full flex-col rounded-md bg-white ">
+            <div className="flex w-full flex-col rounded-md bg-white">
               <Mainpic imageSrc={apartment.mainPic} />
 
               <div className="flex flex-col items-start py-4 text-lg text-black">
@@ -26,12 +41,6 @@ export default function Page({ params }: { params: { apartmentId: string } }) {
                 <div className="text-sm font-light text-gray-700">
                   {apartment.location}
                 </div>
-                {/* <div className="w-full">
-            <ReserveExt
-              airbnbHref={apartment.airbnbLink}
-              bookingHref={apartment.bookingHref}
-            />
-          </div> */}
 
                 <UtilsSection
                   bedroomsNb={apartment.bedrooms}
@@ -57,8 +66,7 @@ export default function Page({ params }: { params: { apartmentId: string } }) {
 
             <GoogleMaps />
           </div>
-          ;
-        </div>
+        </>
       )}
     </>
   );

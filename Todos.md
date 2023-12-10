@@ -1,11 +1,19 @@
-Apartment dynamic routes
+TODO's:
+
+Apartment dynamic routes ✅
+    googleMaps dynamic
+    gallery
 
 Testimonials section
 
-Email contact form
+Icons
 
 Dialog - share'ing button
     Toast - as an confirmation for copying link
+
+Email contact form
+
+Styling for the desktop
 
 Implementation of the reservations dashboard
 

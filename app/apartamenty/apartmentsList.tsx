@@ -1,4 +1,4 @@
-import { IApartment } from "./apartmentInterface";
+import { IApartment } from "../../interfaces/IApartment";
 
 export const apartmentsList: IApartment[] = [
   {
@@ -67,10 +67,12 @@ export const apartmentsList: IApartment[] = [
       { src: "/chlodna/3.jpeg", alt: "image" },
     ],
     hrefLink: "/apartamenty/chlodna",
-    airbnbLink:
+    airbnbLink: new URL(
       "https://www.airbnb.pl/rooms/1024727561187007898?_set_bev_on_new_domain=1700305802_ZWNlMmZlODc0OTMy&source_impression_id=p3_1701941187_lcWLDPPjA3yPukzD",
-    bookingLink:
+    ),
+    bookingLink: new URL(
       "https://www.airbnb.pl/rooms/1024727561187007898?_set_bev_on_new_domain=1700305802_ZWNlMmZlODc0OTMy&source_impression_id=p3_1701941187_lcWLDPPjA3yPukzD",
+    ),
   },
   {
     apartmentId: 2,

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { ContactForm } from "@/components/ContactForm";
+import { ContactForm } from "./ContactForm";
 
 const Home = () => {
   return (

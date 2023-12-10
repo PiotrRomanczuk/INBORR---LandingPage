@@ -30,12 +30,13 @@ export const CardApartment: FC<CardHorizontalProps> = ({
 }) => {
   return (
     <div className=" flex w-full flex-col rounded-md bg-white ">
-      <div className="items-center justify-center">
+      <div className="fixed max-h-64 items-center justify-center">
         <Link href={hrefLink} className="pointer">
           <Image
             src={imageSrc || ""}
-            width={1600}
-            height={800}
+            fill
+            // width={1600}
+            // height={800}
             alt="image"
             className="h-auto w-auto"
             loading="lazy"

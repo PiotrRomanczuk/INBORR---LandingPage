@@ -8,11 +8,11 @@ import realEstate from "@/public/icons/real-estate-plan.svg";
 
 export const Information = () => {
   return (
-    <div className=" grid w-full max-w-7xl grid-cols-2 flex-row justify-between gap-2 bg-white p-2 text-sm lg:grid-cols-4 lg:gap-2">
+    <section className=" grid w-full max-w-7xl grid-cols-2 flex-row justify-between gap-2 bg-white p-2 text-sm lg:grid-cols-4 lg:gap-2">
       <CardUtils icon={wifi} title="Szybkie Wi-Fi" description="" />
       <CardUtils icon={bed} title="Wygodne łóżka" description="" />
       <CardUtils icon={snow} title="Klimatyzowane" description="" />
       <CardUtils icon={realEstate} title="W pełni wyposażone" description="" />
-    </div>
+    </section>
   );
 };
