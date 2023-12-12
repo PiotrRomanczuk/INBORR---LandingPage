@@ -34,11 +34,11 @@ export const CardApartment: FC<CardHorizontalProps> = ({
         <Link href={hrefLink} className="pointer">
           <Image
             src={imageSrc || ""}
-            fill
-            // width={1600}
-            // height={800}
+            // fill
+            width={1600}
+            height={800}
             alt="image"
-            className="h-auto w-auto"
+            className="h-auto w-full rounded-md"
             loading="lazy"
           />
         </Link>
@@ -55,7 +55,7 @@ export const CardApartment: FC<CardHorizontalProps> = ({
           <div className="flex justify-center">
             <Link href={hrefLink} className="pointer">
               <Image
-                src={bedIcon}
+                src={securityKeyIcon}
                 alt="desk"
                 width={30}
                 height={30}
@@ -70,7 +70,7 @@ export const CardApartment: FC<CardHorizontalProps> = ({
           <div className="flex content-center">
             <Link href={hrefLink} className="pointer">
               <Image
-                src={bedIcon}
+                src={securityKeyIcon}
                 alt="desk"
                 width={30}
                 height={30}

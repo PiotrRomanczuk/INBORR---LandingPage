@@ -22,7 +22,7 @@ export const CardUtils: React.FC<CardVerticalProps> = ({
         alt="desk"
         width={30}
         height={30}
-        className="h-10 w-10"
+        className="h-10 w-10 fill-white"
         loading="lazy"
       />
       <div className=" font-semibold lg:text-xl">{title}</div>
