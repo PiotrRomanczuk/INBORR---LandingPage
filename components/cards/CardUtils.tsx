@@ -14,15 +14,17 @@ export const CardUtils: React.FC<CardVerticalProps> = ({
 }) => {
   return (
     <div
-      className="flex flex-col items-center rounded-md
-    bg-white p-2 text-center uppercase text-black shadow-lg lg:mx-0"
+
+      className="max-w-40 flex flex-col items-center border border-black"
+    //   className="max-w-40 flex flex-col items-center
+    // rounded-md p-2 text-center uppercase text-black shadow-xl "
     >
       <Image
         src={icon}
-        alt="desk"
-        width={30}
-        height={30}
-        className="h-10 w-10 fill-white"
+        alt="icon"
+        width={100}
+        height={100}
+        className="h-48 w-48"
         loading="lazy"
       />
       <div className=" font-semibold lg:text-xl">{title}</div>

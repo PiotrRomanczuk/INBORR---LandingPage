@@ -14,7 +14,7 @@ export default function Home() {
       <div className="flex flex-col justify-between bg-white">
         <HeroTailwind />
 
-        {/* <Information /> */}
+        <Information />
         {/* <Carousel /> */}
         {/* <Testimonials /> */}
         <Apartments />
