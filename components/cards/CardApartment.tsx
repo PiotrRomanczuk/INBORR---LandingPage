@@ -16,7 +16,6 @@ interface CardHorizontalProps {
   description: any;
   hrefLink: string;
   icon?: () => void;
-  // onClick: () => void;
 }
 
 export const CardApartment: FC<CardHorizontalProps> = ({
@@ -25,34 +24,34 @@ export const CardApartment: FC<CardHorizontalProps> = ({
   description,
   location,
   hrefLink,
-  // onClick,
-  // icon,
 }) => {
   return (
-    <div className=" flex w-full flex-col rounded-md bg-white ">
-      <div className="fixed max-h-64 items-center justify-center">
+    <div className="">
+      <div className="">
         <Link href={hrefLink} className="pointer">
           <Image
             src={imageSrc || ""}
-            // fill
-            width={1600}
-            height={800}
+            layout="responsive"
+            width={1200}
+            height={900}
             alt="image"
-            className="h-auto w-full rounded-md"
+            className="lg:rounded-2xl"
             loading="lazy"
           />
         </Link>
       </div>
-      <div className="flex flex-col items-start pt-4 text-lg text-black">
+      <div className="flex flex-col items-center pt-4 text-center text-black lg:text-2xl">
         <Link href={hrefLink} className="pointer">
           <div>{title}</div>
         </Link>
 
         <Link href={hrefLink} className="pointer">
-          <div className="text-sm font-light text-gray-700">{location}</div>
+          <div className="text-sm font-light text-gray-700 lg:text-lg">
+            {location}
+          </div>
         </Link>
         <div className="flex gap-3 pt-4 text-sm text-gray-900">
-          <div className="flex justify-center">
+          <div className="flex justify-center lg:text-lg">
             <Link href={hrefLink} className="pointer">
               <Image
                 src={securityKeyIcon}
@@ -63,12 +62,12 @@ export const CardApartment: FC<CardHorizontalProps> = ({
                 loading="lazy"
               />
             </Link>
-            <Link href={hrefLink} className="pointer">
+            <Link href={hrefLink} className="pointer lg:text-lg">
               <div className="pt-2">2 bedrooms</div>
             </Link>
           </div>
           <div className="flex content-center">
-            <Link href={hrefLink} className="pointer">
+            <Link href={hrefLink} className="pointer ">
               <Image
                 src={securityKeyIcon}
                 alt="desk"
@@ -78,7 +77,7 @@ export const CardApartment: FC<CardHorizontalProps> = ({
                 loading="lazy"
               />
             </Link>
-            <Link href={hrefLink} className="pointer">
+            <Link href={hrefLink} className="pointer lg:text-lg">
               <div className="pt-2">40m2</div>
             </Link>
           </div>
