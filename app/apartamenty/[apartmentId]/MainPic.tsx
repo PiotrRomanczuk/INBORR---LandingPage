@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { apartmentsList } from "../apartmentsList";
-import GalleryLightbox from "../../../components/YARL/GalleryLightbox";
+import GalleryLightbox from "../../../components/gallery/GalleryLightbox";
 import { ReserveDialog } from "@/app/apartamenty/[apartmentId]/ReserveDialog";
 
 export const Mainpic = (imageSrc: any) => {

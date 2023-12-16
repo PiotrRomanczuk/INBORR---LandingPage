@@ -6,7 +6,7 @@ import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
-import NextJsImage from "@/components/YARL/NextJsImage";
+import NextJsImage from "@/components/gallery/NextJsImage";
 
 import image1 from "public/chlodna/1.jpeg";
 import image2 from "public/chlodna/2.jpeg";
