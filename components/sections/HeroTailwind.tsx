@@ -21,8 +21,8 @@ export const HeroTailwind = () => {
             </svg>
             <div className="relative px-6 py-20 sm:py-40 lg:px-8 lg:py-56 lg:pr-0">
               <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
-                <div className="hidden sm:mb-10 sm:flex"></div>
-                <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                <div className=" sm:mb-10 sm:flex"></div>
+                <h1 className=" text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
                   <TextAnimation />
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-gray-600">
