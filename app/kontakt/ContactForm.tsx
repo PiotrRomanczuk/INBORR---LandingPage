@@ -8,15 +8,15 @@ export const ContactForm = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     try {
-      const response = await fetch("https://inborr.pl/api/send", {
+      const response = await fetch(`/api/send"`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ email, content }),
       });
-      console.log(response.body);
 
       if (response.ok) {
         console.log("Data sent successfully!");

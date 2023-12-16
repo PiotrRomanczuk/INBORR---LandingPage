@@ -10,8 +10,6 @@ export async function POST(req: NextRequest, res: NextResponse){
         res.headers.set('Access-Control-Allow-Methods', 'POST');
         res.headers.set('Access-Control-Allow-Headers', 'Content-Type');
 
-    
-    
     const resend = new Resend(process.env.RESEND_API_KEY);
     
     try {
