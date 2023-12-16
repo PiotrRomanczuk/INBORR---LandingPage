@@ -9,7 +9,7 @@ export const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://inborr.pl/api/send", {
+      const response = await fetch("https://inborr.pl/api/send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
