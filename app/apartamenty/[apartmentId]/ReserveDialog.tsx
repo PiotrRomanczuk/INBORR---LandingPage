@@ -15,7 +15,7 @@ export function ReserveDialog() {
       <DialogTrigger asChild>
         <Button
           variant="outline"
-          className="rounded-lg border border-blue-400 bg-white px-6 py-2 transition duration-300 hover:bg-blue-300"
+          className="rounded-lg border border-blue-400 bg-blue-400 px-6 py-2 text-white transition duration-300 hover:bg-pink-400"
         >
           Zarezerwuj
         </Button>

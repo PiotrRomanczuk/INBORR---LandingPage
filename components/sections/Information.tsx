@@ -8,7 +8,7 @@ import realEstate from "@/public/icons/real-estate-plan.svg";
 
 export const Information = () => {
   return (
-    <section className="grid w-full max-w-7xl grid-cols-1 lg:grid-cols-2 lg:gap-20">
+    <section className="grid w-full max-w-7xl grid-cols-2 lg:gap-20 ">
       <CardUtils icon={wifi} title="Szybkie Wi-Fi" />
       <CardUtils icon={bed} title="Wygodne łóżka" />
       <CardUtils icon={snow} title="Klimatyzowane" />

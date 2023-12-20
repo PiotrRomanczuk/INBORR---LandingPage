@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+
 // import { ModeToggle } from "./ModeToggle";
 
 export const NavBar = () => {
@@ -29,15 +30,13 @@ export const NavBar = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
-  console.log(mobileMenuOpen);
-
   return (
     // <nav className="sticky top-0 z-10 border-black bg-white py-8 text-black shadow-xl">
     <header className="absolute inset-x-0 top-0 z-50">
       <div className="mx-auto max-w-7xl">
         <div className="px-6 pt-6 lg:max-w-2xl lg:pl-8 lg:pr-0">
           <nav
-            className="flex items-center justify-between lg:justify-start"
+            className="flex items-center justify-between "
             aria-label="Global"
           >
             <a href="/" className="-m-1.5 p-1.5">
@@ -67,7 +66,9 @@ export const NavBar = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-sm font-semibold leading-6 text-gray-900"
+                  className="relative block w-fit text-sm font-semibold leading-6 text-gray-900 
+                  after:absolute after:block after:h-[3px] after:w-full after:origin-left after:scale-x-0
+                   after:bg-blue-300 after:transition after:duration-300 after:content-[''] after:hover:scale-x-100"
                 >
                   {item.name}
                 </a>
@@ -111,7 +112,7 @@ export const NavBar = () => {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    className="relative -mx-3 block  w-fit rounded-lg px-3 py-2 text-xl font-semibold leading-7 text-gray-900 after:absolute after:block after:h-[3px] after:w-full after:origin-left after:scale-x-0 after:bg-black after:transition after:duration-300 after:content-[''] hover:bg-gray-50 after:hover:scale-x-100"
                   >
                     {item.name}
                   </a>
