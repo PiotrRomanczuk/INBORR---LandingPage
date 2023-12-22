@@ -8,20 +8,18 @@ import { useMediaQuery } from "@/hooks/useMediaQuery";
 import Testimonials from "@/components/sections/testimonials/Testimonials";
 import { Carousel } from "@/components/sections/testimonials/Carousel";
 import { Services } from "@/components/sections/Services";
+import Content from "@/components/sections/content/Content";
 
 export default function Home() {
   return (
     <>
       <div className="flex flex-col justify-between bg-white">
         <HeroTailwind />
-
-        <Services />
-        {/* <Information /> */}
-        {/* <Carousel /> */}
-        {/* <Testimonials /> */}
+        <Content />
         <Apartments />
-        {/* <GoogleMaps1 /> */}
-        {/* <CookieConsent /> */}
+        <Services />
+        {/* <Testimonials /> */}
+        <CookieConsent />
       </div>
     </>
   );
