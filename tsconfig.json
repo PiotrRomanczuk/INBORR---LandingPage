@@ -31,7 +31,8 @@
     "components/AccordionComp.jsx",
     "app/kontakt/chlodna/page.jsx",
     "app/kontakt/pereca/page.jsx",
-    "app/apartamenty/[apartmentId]/page.jsx"
+    "app/apartamenty/[apartmentId]/page.jsx",
+    "components/sections/content/ImageSideTilt.jsx"
   ],
   "exclude": ["node_modules"]
 }

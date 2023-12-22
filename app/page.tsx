@@ -3,11 +3,8 @@ import { Information } from "@/components/sections/Information1";
 import { Apartments } from "@/components/sections/Apartments";
 
 import { CookieConsent } from "@/components/CookieConsent";
-import { GoogleMaps1 } from "@/components/sections/GoogleMaps1";
-import { useMediaQuery } from "@/hooks/useMediaQuery";
-import Testimonials from "@/components/sections/testimonials/Testimonials";
 import { Carousel } from "@/components/sections/testimonials/Carousel";
-import { Services } from "@/components/sections/Services";
+import { Services } from "@/components/sections/services/Services";
 import Content from "@/components/sections/content/Content";
 
 export default function Home() {
@@ -18,7 +15,6 @@ export default function Home() {
         <Content />
         <Apartments />
         <Services />
-        {/* <Testimonials /> */}
         <CookieConsent />
       </div>
     </>

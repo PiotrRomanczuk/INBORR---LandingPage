@@ -26,20 +26,19 @@ export const CardApartment: FC<CardHorizontalProps> = ({
   hrefLink,
 }) => {
   return (
-    <div className="px-8 transition duration-200 hover:scale-105 lg:px-0">
-      <div className="">
-        <Link href={hrefLink} className="pointer">
-          <Image
-            src={imageSrc || ""}
-            layout="responsive"
-            width={1200}
-            height={900}
-            alt="image"
-            className="lg:rounded-2xl"
-            loading="lazy"
-          />
-        </Link>
-      </div>
+    <div className=" border-2 px-8 transition duration-200 hover:scale-105 lg:px-0">
+      <Link href={hrefLink} className="pointer">
+        <Image
+          src={imageSrc || ""}
+          layout="responsive"
+          width={1200}
+          height={900}
+          alt="image"
+          className=" lg:rounded-2xl"
+          loading="lazy"
+        />
+      </Link>
+
       <div className="flex flex-col items-center pt-4 text-center text-black lg:text-2xl">
         <Link href={hrefLink} className="pointer">
           <div>{title}</div>
@@ -51,7 +50,7 @@ export const CardApartment: FC<CardHorizontalProps> = ({
           </div>
         </Link>
         <div className="flex gap-3 pt-4 text-sm text-gray-900">
-          <div className="flex justify-center lg:text-lg">
+          <div className="flex items-center justify-center lg:text-lg">
             <Link href={hrefLink} className="pointer">
               <Image
                 src={securityKeyIcon}

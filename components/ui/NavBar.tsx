@@ -44,7 +44,7 @@ export const NavBar = () => {
               <span className="sr-only">Inborr</span>
               <Image
                 alt="Your Company"
-                className="h-8 w-auto"
+                className="h-8 w-auto transition duration-200 hover:scale-110"
                 src="/logo.png"
                 width={100}
                 height={100}
@@ -67,7 +67,7 @@ export const NavBar = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="relative block w-fit text-sm font-semibold leading-6 text-gray-900 
+                  className="relative block w-fit text-lg font-semibold leading-6 text-gray-900 
                   after:absolute after:block after:h-[3px] after:w-full after:origin-left after:scale-x-0
                    after:bg-blue-300 after:transition after:duration-300 after:content-[''] after:hover:scale-x-100"
                 >
