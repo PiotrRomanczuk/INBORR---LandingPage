@@ -2,7 +2,7 @@
 // import AnimatedNumbers from "react-animated-numbers";
 
 const stats = [
-  { label: "Załozono", value: 2023 },
+  { label: "Założono", value: 2023 },
   { label: "Zadowolonych klientów", value: 50 },
   { label: "Z krajów", value: 12 },
   { label: "Średnia ocen", value: 4.7 },
@@ -43,7 +43,7 @@ export const TextInfoSide = () => {
             diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices
             hac adipiscing egestas. Iaculis convallis ac tempor et ut. Ac lorem
             vel integer orci.
-          </p> 
+          </p>
         </div>
       </div>
       {/* <StatsAnimation /> */}
