@@ -6,7 +6,8 @@ import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-// import { ModeToggle } from "./ModeToggle";
+import { ThemeChanger } from "../ThemeChanger";
+import { ModeToggle } from "../ModeToggle";
 
 export const NavBar = () => {
   const navigation = [
@@ -49,13 +50,13 @@ export const NavBar = () => {
                 height={100}
               />
             </a>
+            {/* <ThemeChanger /> */}
             {/* <ModeToggle /> */}
             <button
               type="button"
               className="z-10 -m-2.5 rounded-md p-2.5 text-gray-700 lg:hidden"
               onClick={() => {
                 toggleMobileMenu();
-                console.log(mobileMenuOpen);
               }}
             >
               <span className="sr-only">Open main menu</span>
@@ -81,7 +82,7 @@ export const NavBar = () => {
         as="div"
         className="lg:hidden"
         open={mobileMenuOpen}
-        onClose={() => setMobileMenuOpen(false)} // Corrected onClose function
+        onClose={() => setMobileMenuOpen(false)}
       >
         <div className="fixed inset-0 z-50" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">

@@ -3,8 +3,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 
 import "./globals.css";
-
-// import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "next-themes";
 
 import { Suspense } from "react";
 import Loading from "./loading";
@@ -46,22 +45,22 @@ export default function RootLayout({
   return (
     <html lang="en" className={openSans.className}>
       <body className="mx-auto max-w-7xl">
-        <Suspense fallback={<Loading />}>
-          <NavBar />
-          {/* <ThemeProvider
-              attribute="class"
-              defaultTheme="system"
-              enableSystem
-              // disableTransitionOnChange
-            > */}
-          <div className=" bg-white pt-24">
-            {children}
-            <SpeedInsights />
-            <Analytics />
-          </div>
-          {/* </ThemeProvider> */}
-          <Footer />
-        </Suspense>
+        {/* <Suspense fallback={<Loading />}> */}
+        <NavBar />
+        {/* <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          // disableTransitionOnChange
+        > */}
+        <div className="bg-white pt-24">
+          {children}
+          {/* <SpeedInsights /> */}
+          {/* <Analytics /> */}
+        </div>
+        {/* </ThemeProvider> */}
+        <Footer />
+        {/* </Suspense> */}
       </body>
     </html>
   );

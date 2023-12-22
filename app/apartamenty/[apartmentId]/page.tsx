@@ -31,42 +31,41 @@ export default function Page({ params }: { params: { apartmentId: string } }) {
           </ul>
         </>
       ) : (
-        <>
-          <div className="px-4">
-            <div className="flex w-full flex-col rounded-md bg-white">
+        <div className="px-4">
+          <div className="flex w-full flex-col rounded-md border bg-white pb-4 md:flex-row-reverse">
+            <div className="md:w-2/3">
               <Mainpic imageSrc={apartment.mainPic} />
-
-              <div className="flex flex-col items-start py-4 text-lg text-black">
-                {apartment.name}
-                <div className="text-sm font-light text-gray-700">
-                  {apartment.location}
-                </div>
-
-                <UtilsSection
-                  bedroomsNb={apartment.bedrooms}
-                  area={apartment.area}
-                  floor={apartment.floor}
-                  kitchenStyle={apartment.kitchenStyle}
-                  buildingType={apartment.buildingType}
-                  builtYear={apartment.builtYear}
-                />
-              </div>
-              <div className="border-y-2 border-blue-400 py-4">
-                {apartment.description.long.map((paragraph, idx) => {
-                  return (
-                    <div className="pt-2 text-sm text-gray-900" key={idx}>
-                      {paragraph}
-                    </div>
-                  );
-                })}
-              </div>
             </div>
+            <div className="flex flex-col items-start py-4 text-lg text-black md:w-1/3 md:text-xl">
+              {apartment.name}
+              <div className="text-sm font-light text-gray-700 xl:text-lg">
+                {apartment.location}
+              </div>
 
-            <AccordionComp data={apartment.accordionData} />
-
-            <GoogleMaps />
+              <UtilsSection
+                bedroomsNb={apartment.bedrooms}
+                area={apartment.area}
+                floor={apartment.floor}
+                kitchenStyle={apartment.kitchenStyle}
+                buildingType={apartment.buildingType}
+                builtYear={apartment.builtYear}
+              />
+            </div>
           </div>
-        </>
+          <div className="border-y-2 border-blue-400 py-4">
+            {apartment.description.long.map((paragraph, idx) => {
+              return (
+                <div className="pt-2 text-sm text-gray-900" key={idx}>
+                  {paragraph}
+                </div>
+              );
+            })}
+          </div>
+
+          <AccordionComp data={apartment.accordionData} />
+
+          <GoogleMaps />
+        </div>
       )}
     </>
   );

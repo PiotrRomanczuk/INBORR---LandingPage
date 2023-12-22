@@ -26,7 +26,7 @@ export const UtilsSection: React.FC<UtilsSectionProps> = ({
   builtYear,
 }) => {
   return (
-    <section className="grid w-full grid-cols-2 justify-between gap-4 pt-4 text-xs text-gray-900">
+    <section className="grid w-full grid-cols-2 justify-between gap-4 pt-4 text-xs text-gray-900 xl:text-xl">
       <UtilsCard
         title="Liczba sypialni:"
         description={bedroomsNb}
