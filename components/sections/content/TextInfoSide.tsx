@@ -9,7 +9,7 @@ const stats = [
 
 export const TextInfoSide = () => {
   return (
-    <div>
+    <div className="px-6 lg:px-0">
       <div className="text-base leading-7 text-gray-700 lg:max-w-lg">
         <p className="text-base font-semibold leading-7 text-indigo-600">
           Wartosci INBORR

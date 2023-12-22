@@ -5,7 +5,7 @@ export const Services = () => {
   return (
     <section className="dark:bg-dark pb-12 lg:pb-[90px] lg:pt-[60px]">
       <div className="container mx-auto">
-        <div className="-mx-4 flex flex-wrap">
+        <div className=" flex flex-wrap">
           <div className="w-full px-4">
             <div className="mx-auto mb-12 max-w-[510px] text-center lg:mb-20">
               <h2 className="text-dark mb-3 pt-6 text-3xl font-bold leading-[1.2] dark:text-white sm:text-4xl md:text-[40px]">
@@ -19,7 +19,7 @@ export const Services = () => {
           </div>
         </div>
 
-        <div className="-mx-4 flex flex-wrap">
+        <div className="flex flex-wrap ">
           <ServiceCard
             title="Bezpłatne Wi-Fi"
             details="Zapewniamy szybki i nieograniczony dostęp do bezpłatnego Wi-Fi dla wszystkich naszych gości."

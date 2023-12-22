@@ -5,7 +5,17 @@ import Tilt from "react-parallax-tilt";
 
 export const ImageSideTilt = () => {
   return (
-    <Tilt gyroscope={true} scale={1.05} max={25} glareEnable={true}>
+    <Tilt
+      gyroscope={true}
+      scale={1.05}
+      max={25}
+      glareEnable={true}
+      glarePosition="left"
+      className="parallax-effect-glare-scale z-10 px-6 lg:px-0"
+      // ReactParallaxTiltProps={
+      //   children: 2
+      // }
+    >
       <div className="relative overflow-hidden rounded-3xl  bg-gray-900 p-6 shadow-2xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 lg:pr-4 lg:pt-64 xl:px-10 xl:pb-10">
         <img
           className="absolute inset-0 h-full w-full object-cover"
