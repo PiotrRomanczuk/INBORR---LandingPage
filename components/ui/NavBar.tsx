@@ -6,8 +6,8 @@ import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-import { ThemeChanger } from "../ThemeChanger";
-import { ModeToggle } from "../ModeToggle";
+import { ThemeChanger } from "../theme/ThemeChanger";
+import { ModeToggle } from "../theme/ModeToggle";
 
 export const NavBar = () => {
   const navigation = [

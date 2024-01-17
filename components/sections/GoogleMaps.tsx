@@ -10,15 +10,17 @@ const containerStyle = {
   height: "600px",
 };
 
-const center = {
-  lat: 52.23780815166671,
-  lng: 20.991911280983203,
-};
+
 
 console.log(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string);
 
 export const GoogleMaps = () => {
   console.log(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string);
+
+  const center = {
+    lat: 52.23780815166671,
+    lng: 20.991911280983203,
+  };
 
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
@@ -26,6 +28,9 @@ export const GoogleMaps = () => {
   });
 
   const [map, setMap] = useState(null);
+
+
+  
 
   const onLoad = useCallback(function callback(map: any) {
     // This is just an example of getting and using the map instance!!! don't just blindly copy!

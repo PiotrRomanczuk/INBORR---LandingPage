@@ -1,5 +1,5 @@
 import { Resend } from 'resend';
-import { EmailTemplate } from '../../../components/email/email-template';
+import { EmailTemplate } from '../../kontakt/email/email-template';
 import { NextResponse, NextRequest } from 'next/server';
 
 
