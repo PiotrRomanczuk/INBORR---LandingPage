@@ -3,7 +3,7 @@ import { CardApartment } from "@/components/cards/CardApartment";
 
 export const Apartments = () => {
   return (
-    <section className="my-6 flex flex-col justify-between gap-4 md:gap-10 lg:flex-row lg:gap-20 lg:rounded-2xl ">
+    <section className="my-6 flex flex-col justify-between gap-12 lg:flex-row lg:rounded-2xl ">
       {apartmentsList.map((apartment) => (
         <CardApartment
           key={apartment.name}

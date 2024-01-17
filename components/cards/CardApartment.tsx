@@ -26,11 +26,11 @@ export const CardApartment: FC<CardHorizontalProps> = ({
   hrefLink,
 }) => {
   return (
-    <div className="px-8 transition duration-300 hover:scale-105 lg:px-0">
+    <div className="transition duration-300 hover:scale-105 ">
       <Link href={hrefLink} className="pointer">
         <Image
           src={imageSrc || ""}
-          layout="responsive"
+          // layout="responsive"
           width={1200}
           height={900}
           alt="image"
