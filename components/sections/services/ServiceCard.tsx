@@ -11,7 +11,7 @@ export const ServiceCard = ({
     <>
       <div className="w-full px-6 py-4 md:w-1/2 md:py-2 lg:w-1/3 lg:py-0">
         <div className="dark:bg-dark-2 mb-9 h-full flex-col rounded-[20px] border-2  bg-white p-10  transition duration-500 hover:shadow-2xl md:px-7 xl:px-10">
-          <div className="bg-primary mx-auto mb-8 flex h-[70px] w-full items-center justify-center rounded-2xl text-blue-300">
+          <div className="mx-auto mb-8 flex h-[70px] w-full items-center justify-center rounded-2xl text-blue-300">
             {icon}
           </div>
           <div className="text-center">

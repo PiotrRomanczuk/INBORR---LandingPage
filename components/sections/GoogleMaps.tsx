@@ -10,8 +10,6 @@ const containerStyle = {
   height: "600px",
 };
 
-
-
 console.log(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string);
 
 export const GoogleMaps = () => {
@@ -28,9 +26,6 @@ export const GoogleMaps = () => {
   });
 
   const [map, setMap] = useState(null);
-
-
-  
 
   const onLoad = useCallback(function callback(map: any) {
     // This is just an example of getting and using the map instance!!! don't just blindly copy!

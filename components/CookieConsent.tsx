@@ -20,7 +20,7 @@ export const CookieConsent = (props: any) => {
   }
 
   return (
-    <div className="fixed inset-0 z-10 bg-blue-300 bg-opacity-70">
+    <div className="fixed inset-0 z-10 bg-blue-200 bg-opacity-70">
       <div className="fixed bottom-0 flex w-full justify-between gap-4 bg-gray-100 px-4 py-8 text-black">
         <span className="text-dark flex text-xs">
           Ta stronka uźywa ciasteczek (cookies) do przechowywania informacji o

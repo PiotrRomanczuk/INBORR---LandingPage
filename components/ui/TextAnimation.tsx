@@ -5,10 +5,10 @@ export const TextAnimation = () => {
     <div className="h-32">
       <TypeAnimation
         sequence={[
-          "Twój dom na chwilę",
+          "Miło Cię widzieć",
           //    - komfort i przyjemność w sercu Warszawy!
           1000,
-          `Warszawska chwila luksusu`,
+          `U nas poczujesz się jak w domu`,
           //  - wynajmij z nami!
           1000,
           "Twoje miejsce w Warszawie",

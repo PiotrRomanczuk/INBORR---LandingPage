@@ -26,8 +26,8 @@ export const HeroTailwind = () => {
                   <TextAnimation />
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-gray-600">
-                  Krótkoterminowe wynajmy mieszkań dla wyjątkowego pobytu w
-                  Warszawie!
+                  Wynajem na dni i tygodnie – city break, workation , czy pobyt
+                  biznesowy – zadbamy o jakość i Twój komfort.
                 </p>
                 {/* <p className="text-black">Media query: useMediaQuery(768)</p> */}
               </div>

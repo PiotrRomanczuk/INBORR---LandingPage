@@ -23,12 +23,12 @@ export const TextInfoSide = () => {
         </h1>
         <div className="max-w-xl">
           <p className="mt-6">
-            Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus
-            enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor
-            praesent donec est. Odio penatibus risus viverra tellus varius sit
-            neque erat velit. Faucibus commodo massa rhoncus, volutpat.
-            Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae
-            sed turpis id.
+            Każdy ma swoje oczekiwania w podróży. Naszym celem jest zapewnienie
+            komfortowego pobytu, tak, abyś po wejściu do naszych miejsc poczuł
+            się jak w domu, albo jak z wizytą u przyjaciół. Nasze własne
+            doświadczenia z podróży przełożyły się na pomysł stworzenia
+            apartamentów, w których znajdziesz większość potrzebnych rzeczy na
+            miejscu.
           </p>
           {/* {/* <p className="mt-8">
             Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis
@@ -38,12 +38,12 @@ export const TextInfoSide = () => {
             vel integer orci.
           </p> */}
           <p className="mt-8">
-            Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis
-            odio id et. Id blandit molestie auctor fermentum dignissim. Lacus
-            diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices
-            hac adipiscing egestas. Iaculis convallis ac tempor et ut. Ac lorem
-            vel integer orci.
+            U nas możesz liczyć na jakość pobytu. W standardzie jest wygodne,
+            podwójne łóżko, rozkładana sofa, nowoczesna łazienka i w pełni
+            wyposażony aneks kuchenny. Zmęczeni po podróży? Zapraszamy na
+            kanapę, kawa i herbata czeka w kuchni.
           </p>
+          <p className="mt-8">Zobacz, co oferują nasze apartamenty.</p>
         </div>
       </div>
       {/* <StatsAnimation /> */}

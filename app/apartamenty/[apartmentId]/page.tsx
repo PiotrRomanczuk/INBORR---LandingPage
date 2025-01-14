@@ -5,6 +5,7 @@ import { UtilsSection } from "@/components/sections/UtilsSection";
 import { AccordionComp } from "../../../components/AccordionComp";
 import { GoogleMaps } from "@/components/sections/GoogleMaps";
 import Link from "next/link";
+import ApartNotFound from "./ApartNotFound";
 
 export default function Page({ params }: { params: { apartmentId: string } }) {
   const apartment = apartmentsList.find(
@@ -14,25 +15,10 @@ export default function Page({ params }: { params: { apartmentId: string } }) {
   return (
     <>
       {apartment === undefined ? (
-        <>
-          <div>
-            Przepraszamy! Najwyraźniej nie mamy w ofercie mieszkania, którego
-            szukasz.
-          </div>
-          <div>Mieszkania, które obecnie znajdują się w naszej ofercie to:</div>
-          <ul>
-            {apartmentsList.map((apartment) => (
-              <li key={apartment.shortName}>
-                <Link href={`/apartamenty/${apartment.shortName}`}>
-                  <a>{apartment.name}</a>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </>
+        <ApartNotFound />
       ) : (
         <div className="px-4">
-          <div className="flex w-full flex-col justify-between rounded-md border bg-white pb-4 md:flex-row-reverse">
+          <div className="flex w-full flex-col justify-between rounded-md bg-white pb-4 md:flex-row-reverse">
             <div className="md:w-2/3 lg:ml-32 xl:ml-52">
               <Mainpic imageSrc={apartment.mainPic} />
             </div>

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { lazy } from "react";
 
 export default function Loading() {
   return (
@@ -11,7 +10,6 @@ export default function Loading() {
         height={200}
         loading="lazy"
       />
-      ;
     </div>
   );
 }

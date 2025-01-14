@@ -15,7 +15,7 @@ export default function Home() {
         <Content />
         <Apartments />
         <Services />
-        <CookieConsent />
+        {/* <CookieConsent /> */}
       </div>
     </>
   );
