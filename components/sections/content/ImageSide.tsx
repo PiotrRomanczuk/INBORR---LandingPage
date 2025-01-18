@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 import React from "react";
 // import Tilt from "react-vanilla-tilt";
@@ -6,7 +7,7 @@ import React from "react";
 export const ImageSide = () => {
   return (
     <div className="relative overflow-hidden rounded-3xl border-2 bg-gray-900 p-6 shadow-2xl transition duration-200 hover:scale-105 sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 lg:pr-4 lg:pt-64 xl:px-10 xl:pb-10">
-      <img
+      <Image
         className="absolute inset-0 h-full w-full object-cover"
         src="/chlodna/3.jpeg"
         alt=""

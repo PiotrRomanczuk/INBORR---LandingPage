@@ -1,7 +1,7 @@
 "use client"; // Error components must be Client Components
 
 import { useEffect } from "react";
-import ApartNotFound from "./[apartmentId]/ApartNotFound";
+import ApartNotFound from "./chlodna/ApartNotFound";
 
 export default function Error({
   error,
