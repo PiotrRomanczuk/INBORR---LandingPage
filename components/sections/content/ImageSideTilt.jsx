@@ -13,6 +13,9 @@ export const ImageSideTilt = () => {
       glareEnable={true}
       glarePosition="left"
       className="parallax-effect-glare-scale z-10 px-6 lg:px-0"
+      tiltMaxAngleX={40}
+      tiltMaxAngleY={40}
+      perspective={800}
       // ReactParallaxTiltProps={
       //   children: 2
       // }
@@ -21,15 +24,12 @@ export const ImageSideTilt = () => {
         <Image
           className="absolute inset-0 h-full w-full object-cover"
           src="/chlodna/3.jpeg"
+          width={1000}
+          height={1000}
           alt=""
         />
 
         <figure className="scale3d-90 relative isolate rounded-2xl bg-white bg-opacity-40 p-6  text-black backdrop-blur-lg lg:ml-36 lg:mt-12">
-          {/* <img
-            src="https://tailwindui.com/img/logos/workcation-logo-white.svg"
-            alt=""
-            className="h-12 w-auto"
-          /> */}
           <blockquote className="text-xl font-semibold leading-8 text-gray-900">
             <p>
               “Kochaliśmy nasz pobyt! Mieszkanie było łatwe do znalezienia;

@@ -9,14 +9,12 @@ import Content from "@/components/sections/content/Content";
 
 export default function Home() {
   return (
-    <>
-      <div className="flex flex-col justify-between bg-white">
-        <HeroTailwind />
-        <Content />
-        <Apartments />
-        <Services />
-        {/* <CookieConsent /> */}
-      </div>
-    </>
+    <main className="flex flex-col justify-between bg-white">
+      <HeroTailwind />
+      <Content />
+      <Apartments />
+      <Services />
+      {/* <CookieConsent /> */}
+    </main>
   );
 }

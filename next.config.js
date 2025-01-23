@@ -24,7 +24,7 @@ const nextConfig = {
   // api: {
   //   bodyParser: false,
   // },
-  output: "export",
+  // output: "export",
 };
 
 module.exports = nextConfig;

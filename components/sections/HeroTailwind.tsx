@@ -1,6 +1,5 @@
 "use client";
 
-import { useMediaQuery } from "@/hooks/useMediaQuery";
 import Image from "next/image";
 import { TextAnimation } from "../ui/TextAnimation";
 
@@ -41,7 +40,7 @@ export const HeroTailwind = () => {
             width={800}
             height={1200}
             alt=""
-            loading="lazy"
+            // loading="lazy"
           />
         </div>
       </div>

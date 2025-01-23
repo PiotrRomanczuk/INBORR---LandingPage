@@ -3,16 +3,13 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 
 import "./globals.css";
-import { ThemeProvider } from "next-themes";
 
-import { Suspense } from "react";
-import Loading from "./loading";
-
-import { NavBar } from "../components/ui/NavBar";
+import { NavBar } from "../components/navBar/NavBar";
 import { Footer } from "../components/ui/Footer";
 
 import { Roboto } from "next/font/google";
 import { Open_Sans } from "next/font/google";
+import { ThemeProvider } from "@/theme-provider";
 
 export const metadata: Metadata = {
   title: "Inborr",
@@ -47,18 +44,18 @@ export default function RootLayout({
       <body className="mx-auto max-w-7xl">
         {/* <Suspense fallback={<Loading />}> */}
         <NavBar />
-        {/* <ThemeProvider
+        <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           // disableTransitionOnChange
-        > */}
-        <div className="bg-white pt-24">
-          {children}
-          {/* <SpeedInsights /> */}
-          {/* <Analytics /> */}
-        </div>
-        {/* </ThemeProvider> */}
+        >
+          <div className="bg-white pt-24">
+            {children}
+            {/* <SpeedInsights /> */}
+            {/* <Analytics /> */}
+          </div>
+        </ThemeProvider>
         <Footer />
         {/* </Suspense> */}
       </body>
