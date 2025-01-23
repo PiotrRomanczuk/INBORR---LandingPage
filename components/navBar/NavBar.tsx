@@ -28,8 +28,10 @@ export const NavBar = () => {
                 alt="Your Company"
                 className="h-8 w-auto transition duration-200 hover:scale-110"
                 src="/logo.png"
-                width={100}
-                height={100}
+                width={300}
+                height={300}
+                // TODO: Fix the size of an icons
+                sizes=""
               />
             </Link>
             {/* Mobile menu button */}

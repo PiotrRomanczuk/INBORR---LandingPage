@@ -2,6 +2,8 @@ TODO's:
 
 Testimonials section
 
+AirBnb & Booking Section
+
 Icons
 
 Dialog - share'ing button

@@ -4,7 +4,7 @@ export const ServiceCard = ({
   details,
   ariaLabel,
 }: {
-  icon: React.ReactNode;
+  icon: any;
   title: string;
   details: string;
   ariaLabel: string;
@@ -18,6 +18,7 @@ export const ServiceCard = ({
           aria-label={ariaLabel}
           tabIndex={0}
         >
+          {/*  TODO: Fix the size of an icons */}
           <div className="mx-auto mb-8 flex h-[70px] w-full items-center justify-center rounded-2xl text-blue-300">
             {icon}
           </div>

@@ -1,5 +1,9 @@
+"use client";
+
 import { ServiceCard } from "./ServiceCard";
-import { wifiIcon, airIcon, kitchenIcon } from "./IconList";
+// import { wifiIcon, airIcon, kitchenIcon } from "./IconList";
+
+import { Wifi, AirVent, Microwave } from "lucide-react";
 
 export const Services = () => {
   return (
@@ -23,19 +27,19 @@ export const Services = () => {
           <ServiceCard
             title="Bezpłatne Wi-Fi"
             details="Zapewniamy szybki i nieograniczony dostęp do bezpłatnego Wi-Fi dla wszystkich naszych gości."
-            icon={wifiIcon}
+            icon={<Wifi />}
             ariaLabel="Bezpłatne Wi-Fi"
           />
           <ServiceCard
             title="Ogrzewanie i klimatyzacja"
             details="Twój komfort jest naszym priorytetem. Nasze apartamenty są wyposażone w zaawansowane systemy ogrzewania i klimatyzacji, abyś zawsze czuł się idealnie w każdej sytuacji."
-            icon={airIcon}
+            icon={<AirVent />}
             ariaLabel="Ogrzewanie i klimatyzacja"
           />
           <ServiceCard
             title="Wyposażenie kuchenne"
             details="W naszych apartamentach znajdziesz kompleksowe wyposażenie kuchenne, które umożliwi Ci samodzielne przygotowywanie posiłków."
-            icon={kitchenIcon}
+            icon={<Microwave />}
             ariaLabel="Wyposażenie kuchenne"
           />
         </div>

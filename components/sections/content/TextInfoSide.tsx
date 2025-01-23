@@ -8,9 +8,9 @@ export const TextInfoSide = () => {
         <p className="text-lg font-semibold leading-7 text-blue-400">
           Wartości INBORR
         </p>
-        {/* <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          Nasz sposób na stworzenie Twojego domu
-        </h1> */}
+        <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          Jakość i komfort
+        </h1>
         <div className="max-w-xl">
           <p className="mt-6">
             Naszym celem jest zapewnienie komfortowego pobytu, tak, abyś po
