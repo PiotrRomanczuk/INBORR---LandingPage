@@ -25,14 +25,14 @@ export const NavBar = () => {
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Inborr</span>
               <Image
-                alt="Your Company"
-                className="h-8 w-auto transition duration-200 hover:scale-110"
+                alt="Inborr"
+                className="h-12 w-auto transition duration-200 hover:scale-110"
                 src="/logo.png"
-                width={300}
-                height={300}
-                // TODO: Fix the size of an icons
-                sizes=""
+                width={400}
+                height={400}
+                sizes="(max-width: 768px) 100vw, 400px"
               />
+              {/* // TODO: Fix the size of an icons */}
             </Link>
             {/* Mobile menu button */}
             <button
@@ -71,11 +71,12 @@ export const NavBar = () => {
             <Link href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <Image
-                className="h-8 w-auto"
+                alt="Inborr"
+                className="h-12 w-auto transition duration-200 hover:scale-110"
                 src="/logo.png"
-                alt=""
-                width={100}
-                height={100}
+                width={400}
+                height={400}
+                sizes="(max-width: 768px) 100vw, 400px"
               />
             </Link>
             <button

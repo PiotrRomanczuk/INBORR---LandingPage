@@ -2,17 +2,15 @@
 
 import React from "react";
 import Image from "next/image";
-import { apartmentsList } from "../apartmentsList";
 import GalleryLightbox from "../../../components/gallery/GalleryLightbox";
 import { ReserveDialog } from "@/app/apartamenty/[apartmentId]/ReserveDialog";
-import { useParams } from "next/navigation";
 
 export const Mainpic = (imageSrc: any) => {
   return (
     <div className=" items-center justify-center px-10">
       <Image
         //TODO  Passing the correct prop
-        src={imageSrc.mainPic}
+        src={imageSrc}
         width={1600}
         height={800}
         alt="main-picture"

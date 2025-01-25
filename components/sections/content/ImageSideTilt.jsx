@@ -13,8 +13,8 @@ export const ImageSideTilt = () => {
       glareEnable={true}
       glarePosition="left"
       className="parallax-effect-glare-scale z-10 px-6 lg:px-0"
-      tiltMaxAngleX={40}
-      tiltMaxAngleY={40}
+      tiltMaxAngleX={20}
+      tiltMaxAngleY={20}
       perspective={800}
       // ReactParallaxTiltProps={
       //   children: 2

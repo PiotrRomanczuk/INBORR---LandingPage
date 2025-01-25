@@ -41,7 +41,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={openSans.className}>
-      <body className="mx-auto max-w-7xl">
+      <body className="relative mx-auto max-w-screen-xl overflow-x-hidden scroll-smooth">
         {/* <Suspense fallback={<Loading />}> */}
         <NavBar />
         <ThemeProvider

@@ -21,6 +21,7 @@ interface UtilsSectionProps {
   builtYear: any;
 }
 
+// TODO: Make every utilSection comes after another
 export const UtilsSection: React.FC<UtilsSectionProps> = ({
   bedroomsNb,
   area,

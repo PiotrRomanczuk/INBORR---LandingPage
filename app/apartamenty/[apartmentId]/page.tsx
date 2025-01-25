@@ -4,26 +4,8 @@ import { Mainpic } from "./MainPic";
 import { UtilsSection } from "@/components/sections/UtilsSection";
 import { AccordionComp } from "../../../components/AccordionComp";
 import { GoogleMaps } from "@/components/sections/GoogleMaps";
-import Link from "next/link";
+
 import ApartNotFound from "./ApartNotFound";
-import { IApartment } from "@/interfaces/IApartment";
-
-// export const dynamic = "force-static";
-
-export async function generateStaticParams() {
-  try {
-    const apartments = await fetch("http://localhost:3000/api/apartments").then(
-      (res) => res.json(),
-    );
-
-    return apartments.map((apartment: IApartment) => ({
-      apartmentId: apartment.shortName,
-    }));
-  } catch (error) {
-    console.error("Error fetching apartments:", error);
-    return [];
-  }
-}
 
 export default function Page({ params }: { params: { apartmentId: string } }) {
   const apartment = apartmentsList.find(
