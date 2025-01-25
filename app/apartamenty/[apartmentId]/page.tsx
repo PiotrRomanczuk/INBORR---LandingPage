@@ -49,7 +49,7 @@ export default function Page({ params }: { params: { apartmentId: string } }) {
           </div>
 
           <AccordionComp data={apartment.accordionData} />
-
+          <div></div>
           <GoogleMaps />
         </div>
       )}
