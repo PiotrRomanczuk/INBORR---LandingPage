@@ -8,80 +8,100 @@ import realEstatePlanIcon from "@/public/icons/real-estate-plan.svg";
 import securityKeyIcon from "@/public/icons/security-key.svg";
 import weatherIcon from "@/public/icons/weather-snow.svg";
 import bedIcon from "@/public/icons/bedroom.svg";
+import { UtilsSection } from "../sections/UtilsSection";
 
-interface CardHorizontalProps {
+interface CardVerticalProps {
   imageSrc?: string;
   title: string;
   location: string;
   description: any;
   hrefLink: string;
   icon?: () => void;
+  imagePosition?: "left" | "right";
+  // Add new props
+  bedroomsNb: number;
+  area: number;
+  floor: number;
+  kitchenStyle: string;
+  buildingType: string;
+  builtYear: number;
 }
-
-export const CardApartment: FC<CardHorizontalProps> = ({
+export const CardApartment: FC<CardVerticalProps> = ({
   imageSrc,
   title,
   description,
   location,
   hrefLink,
+  imagePosition = "left",
+  // Add new props
+  bedroomsNb,
+  area,
+  floor,
+  kitchenStyle,
+  buildingType,
+  builtYear,
 }) => {
-  return (
-    <div className="transition duration-300 hover:scale-105 ">
-      <Link href={hrefLink} className="pointer">
-        <Image
-          src={imageSrc || ""}
-          // layout="responsive"
-          width={1200}
-          height={900}
-          alt="image"
-          className=" lg:rounded-2xl"
-          loading="lazy"
-        />
-      </Link>
+  const ImageSection = (
+    <Link href={hrefLink} className="pointer w-3/5">
+      <Image
+        src={imageSrc || ""}
+        width={1200}
+        height={800}
+        alt="image"
+        className="h-full w-full object-cover"
+        loading="lazy"
+      />
+    </Link>
+  );
 
-      <div className="flex flex-col items-center pt-4 text-center text-black lg:text-2xl">
+  const ContentSection = (
+    <div className="flex w-2/5 flex-col justify-between">
+      <div className="flex flex-col p-6">
         <Link href={hrefLink} className="pointer">
-          <div>{title}</div>
-        </Link>
+          <div className="flex flex-col">
+            <div className="text-xl font-semibold lg:text-2xl">{title}</div>
 
-        <Link href={hrefLink} className="pointer">
-          <div className="text-sm font-light text-gray-700 lg:text-lg">
-            {location}
+            <div className="mt-2 text-sm font-light text-gray-700 lg:text-lg">
+              {location}
+            </div>
+          </div>
+
+          <div className="animate-fade-in">
+            <UtilsSection
+              bedroomsNb={bedroomsNb}
+              area={area}
+              floor={floor}
+              kitchenStyle={kitchenStyle}
+              buildingType={buildingType}
+              builtYear={builtYear}
+            />
           </div>
         </Link>
-        <div className="flex gap-3 pt-4 text-sm text-gray-900">
-          <div className="flex items-center justify-center lg:text-lg">
-            <Link href={hrefLink} className="pointer">
-              <Image
-                src={securityKeyIcon}
-                alt="desk"
-                width={30}
-                height={30}
-                className="mr-2"
-                loading="lazy"
-              />
-            </Link>
-            <Link href={hrefLink} className="pointer lg:text-lg">
-              <div className="pt-2">2 bedrooms</div>
-            </Link>
-          </div>
-          <div className="flex content-center">
-            <Link href={hrefLink} className="pointer ">
-              <Image
-                src={securityKeyIcon}
-                alt="desk"
-                width={30}
-                height={30}
-                className="mr-2"
-                loading="lazy"
-              />
-            </Link>
-            <Link href={hrefLink} className="pointer lg:text-lg">
-              <div className="pt-2">40m2</div>
-            </Link>
-          </div>
-        </div>
       </div>
+      {/* <Link
+        href={hrefLink}
+        className={`mt-4 inline-block rounded-md bg-blue-500 px-4 py-6 text-center text-xl text-white transition-colors hover:bg-blue-600 ${
+          imagePosition === "left" ? "ml-2" : "mr-2"
+        }`}
+      >
+        Wiecej Szczegółów
+      </Link> */}
+    </div>
+  );
+
+  return (
+    <div className="flex w-full flex-row  transition duration-300 hover:scale-105">
+      {imagePosition === "left" ? (
+        <>
+          {ImageSection}
+          {ContentSection}
+        </>
+      ) : (
+        <>
+          {ContentSection}
+          {ImageSection}
+        </>
+      )}
     </div>
   );
 };

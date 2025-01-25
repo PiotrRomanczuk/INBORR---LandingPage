@@ -4,12 +4,13 @@ import { Mainpic } from "./MainPic";
 import { UtilsSection } from "@/components/sections/UtilsSection";
 import { AccordionComp } from "../../../components/AccordionComp";
 import { GoogleMaps } from "@/components/sections/GoogleMaps";
+
 import ApartNotFound from "./ApartNotFound";
 
-// export const dynamic = "force-static";
-
-export default function Page() {
-  const apartment = apartmentsList[1];
+export default function Page({ params }: { params: { apartmentId: string } }) {
+  const apartment = apartmentsList.find(
+    (apartment) => apartment.shortName === params.apartmentId,
+  );
 
   return (
     <>
@@ -48,7 +49,7 @@ export default function Page() {
           </div>
 
           <AccordionComp data={apartment.accordionData} />
-
+          <div></div>
           <GoogleMaps />
         </div>
       )}

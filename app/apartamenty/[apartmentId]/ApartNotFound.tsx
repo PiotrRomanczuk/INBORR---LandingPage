@@ -1,6 +1,6 @@
+import { apartmentsList } from "@/app/apartamenty/apartmentsList";
 import Link from "next/link";
 import React from "react";
-import { apartmentsList } from "../apartmentsList";
 
 const ApartNotFound = () => {
   return (

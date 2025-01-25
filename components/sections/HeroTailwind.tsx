@@ -1,13 +1,12 @@
 "use client";
 
-import { useMediaQuery } from "@/hooks/useMediaQuery";
 import Image from "next/image";
 import { TextAnimation } from "../ui/TextAnimation";
 
 export const HeroTailwind = () => {
   return (
     <section className="bg-white">
-      <div className="relative">
+      <div className="animate-fade-in animate-fill-forwards relative opacity-0">
         <div className="mx-auto max-w-7xl">
           <div className="relative z-10 lg:w-full lg:max-w-2xl lg:pt-14">
             {/* // Horizontal cut */}
@@ -41,7 +40,7 @@ export const HeroTailwind = () => {
             width={800}
             height={1200}
             alt=""
-            loading="lazy"
+            // loading="lazy"
           />
         </div>
       </div>

@@ -3,7 +3,7 @@ import Image from "next/image";
 interface UtilsCardProps {
   title: string;
   description: any;
-  icon: any; // You might want to use a more specific type for the icon
+  icon: React.ReactNode; // Updated to accept React nodes
 }
 
 export const UtilsCard: React.FC<UtilsCardProps> = ({
@@ -14,15 +14,11 @@ export const UtilsCard: React.FC<UtilsCardProps> = ({
   return (
     <div className="flex flex-col dark:fill-white">
       <div className="">{title}</div>
-      <Image
-        src={icon}
-        alt="desk"
-        width={30}
-        height={30}
-        className="mr-2 dark:fill-white"
-        loading="lazy"
-      />
-      <div className="pt-2 font-light">{description}</div>
+
+      <div className="flex gap-4 pt-2 font-light">
+        {icon}
+        {description}
+      </div>
     </div>
   );
 };

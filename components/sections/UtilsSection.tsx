@@ -1,10 +1,14 @@
+"use client";
+
 import React from "react";
 
-import deskIcon from "@/public/icons/furniture-desk.svg";
-import realEstatePlanIcon from "@/public/icons/real-estate-plan.svg";
-import securityKeyIcon from "@/public/icons/security-key.svg";
-import weatherIcon from "@/public/icons/weather-snow.svg";
-import bedIcon from "@/public/icons/bedroom.svg";
+import {
+  BedDouble,
+  Building,
+  Maximize,
+  ArrowUp10,
+  ChefHat,
+} from "lucide-react";
 
 import { UtilsCard } from "@/components/cards/utilsCard";
 
@@ -17,6 +21,7 @@ interface UtilsSectionProps {
   builtYear: any;
 }
 
+// TODO: Make every utilSection comes after another
 export const UtilsSection: React.FC<UtilsSectionProps> = ({
   bedroomsNb,
   area,
@@ -30,32 +35,28 @@ export const UtilsSection: React.FC<UtilsSectionProps> = ({
       <UtilsCard
         title="Liczba sypialni:"
         description={bedroomsNb}
-        icon={realEstatePlanIcon}
+        icon={<BedDouble />}
       />
       <UtilsCard
         title="Powierzchnia:"
         description={area + " m2"}
-        icon={realEstatePlanIcon}
+        icon={<Maximize />}
       />
-      <UtilsCard
-        title="Pietro:"
-        description={floor}
-        icon={realEstatePlanIcon}
-      />
+      <UtilsCard title="Pietro:" description={floor} icon={<ArrowUp10 />} />
       <UtilsCard
         title="Typ kuchni:"
         description={kitchenStyle}
-        icon={realEstatePlanIcon}
+        icon={<ChefHat />}
       />
       <UtilsCard
         title="Typ budynku:"
         description={buildingType}
-        icon={realEstatePlanIcon}
+        icon={<Building />}
       />
       <UtilsCard
         title="Rok budowy:"
         description={builtYear}
-        icon={realEstatePlanIcon}
+        icon={<BedDouble />}
       />
     </section>
   );
