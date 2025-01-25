@@ -1,7 +1,5 @@
 "use client";
 
-// NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string;
-
 import React, { useCallback, useState } from "react";
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 
@@ -10,11 +8,7 @@ const containerStyle = {
   height: "600px",
 };
 
-console.log(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string);
-
 export const GoogleMaps = () => {
-  console.log(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string);
-
   const center = {
     lat: 52.23780815166671,
     lng: 20.991911280983203,
@@ -25,21 +19,24 @@ export const GoogleMaps = () => {
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
   });
 
-  const [map, setMap] = useState(null);
+  const [map, setMap] = useState<google.maps.Map | null>(null);
 
-  const onLoad = useCallback(function callback(map: any) {
-    // This is just an example of getting and using the map instance!!! don't just blindly copy!
-    const bounds = new window.google.maps.LatLngBounds(center);
-    map.fitBounds(bounds);
-
+  const onLoad = useCallback((map: google.maps.Map) => {
+    const bounds = new window.google.maps.LatLngBounds();
+    bounds.extend(center);
+    map.setCenter(center);
     setMap(map);
   }, []);
 
-  const onUnmount = useCallback(function callback(map: any) {
+  const onUnmount = useCallback(() => {
     setMap(null);
   }, []);
 
-  return isLoaded ? (
+  if (!isLoaded) {
+    return <div>Loading...</div>;
+  }
+
+  return (
     <GoogleMap
       mapContainerStyle={containerStyle}
       center={center}
@@ -48,9 +45,6 @@ export const GoogleMaps = () => {
       onUnmount={onUnmount}
     >
       {/* Child components, such as markers, info windows, etc. */}
-      {/* <GoogleMap /> */}
     </GoogleMap>
-  ) : (
-    <></>
   );
 };
