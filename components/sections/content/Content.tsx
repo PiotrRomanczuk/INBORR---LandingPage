@@ -4,7 +4,7 @@ import { ImageSideTilt } from "./ImageSideTilt.jsx";
 import { TextInfoSide } from "./TextInfoSide";
 import { motion } from "framer-motion"; // Add this import
 
-export default function Content() {
+export function Content() {
   return (
     <section className="bg-white pb-4 pt-6 md:py-24">
       <div className="mx-auto max-w-7xl ">
