@@ -27,6 +27,8 @@ export const GoogleMaps = () => {
   return (
     <div className="flex h-full w-full items-center justify-between">
       <div>To mieszkanie znajduje się: </div>
+      <div>{apiKey}</div>
+      <div>{process.env.NODE_ENV}</div>
       <APIProvider apiKey={apiKey}>
         <Map
           style={{

@@ -20,12 +20,13 @@ export interface IApartment {
   kitchenStyle: string;
   buildingType: string;
   builtYear: number;
+  localization: string;
   mainPic: string;
   pics: {
     src: string;
     alt: string;
   }[];
   hrefLink: string;
-  airbnbLink?: URL;
-  bookingLink?: URL;
+  airbnbLink: URL;
+  bookingLink: URL;
 }

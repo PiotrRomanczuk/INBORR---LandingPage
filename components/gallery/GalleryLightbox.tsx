@@ -8,17 +8,17 @@ import "yet-another-react-lightbox/styles.css";
 
 import NextJsImage from "@/components/gallery/NextJsImage";
 
-import image1 from "public/chlodna/1.jpeg";
-import image2 from "public/chlodna/2.jpeg";
-import image3 from "public/chlodna/3.jpeg";
+// import image1 from "public/chlodna/1.jpeg";
+// import image2 from "public/chlodna/2.jpeg";
+// import image3 from "public/chlodna/3.jpeg";
 
-const slides = [image1, image2, image3];
+// const slides = [image1, image2, image3];
 
-/*
- * For JavaScript version of this sandbox please visit
- * https://codesandbox.io/p/sandbox/yet-another-react-lightbox-nextjs-bfjgb0?file=%2Fpages%2Findex.jsx
- */
-export default function GalleryLightbox() {
+export default function GalleryLightbox({
+  slides,
+}: {
+  slides: { src: string; alt: string }[];
+}) {
   const [open, setOpen] = useState(false);
 
   return (

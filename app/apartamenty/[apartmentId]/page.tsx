@@ -20,7 +20,7 @@ export default function Page({ params }: { params: { apartmentId: string } }) {
         <div className="px-4">
           <div className="flex w-full flex-col justify-between rounded-md bg-white pb-4 md:flex-row-reverse">
             <div className="md:w-2/3 lg:ml-32 xl:ml-52">
-              <Mainpic imageSrc={apartment.mainPic} />
+              <Mainpic imageSrc={apartment.mainPic} slides={apartment.pics} />
             </div>
             <div className="flex flex-col items-start py-4 text-lg text-black md:w-1/3 md:text-xl">
               {apartment.name}

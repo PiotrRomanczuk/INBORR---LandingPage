@@ -3,11 +3,6 @@ import Link from "next/link";
 
 import Image from "next/image";
 
-import deskIcon from "@/public/icons/furniture-desk.svg";
-import realEstatePlanIcon from "@/public/icons/real-estate-plan.svg";
-import securityKeyIcon from "@/public/icons/security-key.svg";
-import weatherIcon from "@/public/icons/weather-snow.svg";
-import bedIcon from "@/public/icons/bedroom.svg";
 import { UtilsSection } from "../sections/UtilsSection";
 
 interface CardVerticalProps {
@@ -25,6 +20,8 @@ interface CardVerticalProps {
   kitchenStyle: string;
   buildingType: string;
   builtYear: number;
+  airbnbLink: URL;
+  bookingLink: URL;
 }
 export const CardApartment: FC<CardVerticalProps> = ({
   imageSrc,
@@ -33,6 +30,8 @@ export const CardApartment: FC<CardVerticalProps> = ({
   location,
   hrefLink,
   imagePosition = "left",
+  airbnbLink,
+  bookingLink,
   // Add new props
   bedroomsNb,
   area,
@@ -78,14 +77,18 @@ export const CardApartment: FC<CardVerticalProps> = ({
           </div>
         </Link>
       </div>
-      {/* <Link
-        href={hrefLink}
-        className={`mt-4 inline-block rounded-md bg-blue-500 px-4 py-6 text-center text-xl text-white transition-colors hover:bg-blue-600 ${
+      <div
+        className={`mt-4 flex  justify-between gap-4 rounded-md border border-blue-500 px-4 py-6 text-center text-xl transition-colors ${
           imagePosition === "left" ? "ml-2" : "mr-2"
         }`}
       >
-        Wiecej Szczegółów
-      </Link> */}
+        <Link href={airbnbLink} className="border ">
+          AirBnb
+        </Link>
+        <Link href={bookingLink} className="border ">
+          Booking
+        </Link>
+      </div>
     </div>
   );
 

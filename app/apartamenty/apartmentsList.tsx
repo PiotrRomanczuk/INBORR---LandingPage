@@ -9,12 +9,11 @@ export const apartmentsList: IApartment[] = [
     description: {
       short: "Stylowe, nowoczesne miejsce na pobyt w samym centrum Warszawy",
       long: [
-        "Stylowe, nowoczesne miejsce na pobyt w samym centrum Warszawy.",
-        "Podniebny apartament blisko Ronda ONZ mieści się pomiędzy Browarami i Norblinem, a Halą Mirowską.",
-        "Widok z okien oszałamia - tu poczujesz magię centrum biznesowego stolicy.",
-        "Świetna komunikacja. Stacja metra 800 m od budynku, tramwaj 300 m, dojedziesz szybko na Starówkę, Stadion, czy na bulwary nad Wisłą.",
-        "Dokoła tętni życie centrum, a jednak tu, na Chłodnej, jest urokliwie cicho.",
-        "Tuż obok świetne knajpki, bary, restauracje i bistra.",
+        "Stylowe, nowoczesne miejsce na pobyt w samym centrum Warszawy. Podniebny apartament blisko Ronda ONZ mieści się pomiędzy Browarami i Norblinem, a Halą Mirowską. Widok z okien oszałamia - tu poczujesz magię centrum biznesowego stolicy.",
+        "Świetna komunikacja. Stacja metra 800 m od budynku, tramwaj 300 m, dojedziesz szybko na Starówkę, Stadion, czy na bulwary nad Wisłą. Dokoła tętni życie centrum, a jednak tu, na Chłodnej, jest urokliwie cicho. Tuż obok świetne knajpki, bary, restauracje i bistra.",
+        "Apartament składa się z 2 pokoi. Oddzielna, przytulna sypialnia z podwójnym łóżkiem i szafą na potrzebne w podróży ubrania, ma również kącik do racy z biurkiem i lampą. Salon z aneksem kuchennym pozwoli wygodnie odpocząć przed telewizorem.",
+        "W lecie jest do Twojej dyspozycji klimatyzacja oraz ciemniejsze zasłony. Sofa może służyć jako dodatkowe, wygodne podwójne łóżko. W salonie znajdziesz również fotel typu futon, na którym wygodnie usiądziesz, lub -po rozłożeniu - położysz się. Miłego wypoczynku.",
+        "W kuchni znajdziesz wszystkie potrzebne naczynia i wyposażenie. Dostępna jest kuchenka combo - z funkcją mikrofali, płyta indukcyjna, ekspres do kawy typu nespresso i czajnik. Zadbaliśmy o kawę i herbatę, jest też cukier i podstawowe przyprawy. W lodówce znajdziesz kostki lodu",
       ],
     },
     accordionData: [
@@ -60,6 +59,7 @@ export const apartmentsList: IApartment[] = [
     kitchenStyle: "aneks",
     buildingType: "blok",
     builtYear: 1950,
+    localization: "Centrum, Mirów",
     mainPic: "/chlodna/1.jpeg",
     pics: [
       { src: "/chlodna/1.jpeg", alt: "image" },
@@ -82,12 +82,13 @@ export const apartmentsList: IApartment[] = [
     description: {
       short: "Stylowe, nowoczesne miejsce na pobyt w samym centrum Warszawy",
       long: [
-        "Stylowe, nowoczesne miejsce na pobyt w samym centrum Warszawy.",
-        "Podniebny apartament blisko Ronda ONZ mieści się pomiędzy Browarami i Norblinem, a Halą Mirowską.",
-        "Widok z okien oszałamia - tu poczujesz magię centrum biznesowego stolicy.",
-        "Świetna komunikacja. Stacja metra 800 m od budynku, tramwaj 300 m, dojedziesz szybko na Starówkę, Stadion, czy na bulwary nad Wisłą.",
-        "Dokoła tętni życie centrum, a jednak tu, na Chłodnej, jest urokliwie cicho.",
-        "Tuż obok świetne knajpki, bary, restauracje i bistra.",
+        "Apartament na 14 piętrze tuż przy Rondzie ONZ to stylowe miejsce na pobyt w samym centrum Warszawy. Wschodnie okna pokażą perspektywę centrum z widokiem na panoramę miasta..",
+        "Świetnie skomunikowane, znajdujące się 100 m od wejścia do metra linii 2, pozwala szybko znaleźć się na Starówce, czy na bulwarach nad Wisłą. Dokoła tętni życie centrum, a w okolicy znajdziesz wiele ciekawych miejsc, świetne knajpki, bary, restauracje i bistra. To jest świetne miejsce do zwiedzania, knajpingu, a także na zakupy.",
+        "Jesteś 400 metrów do Food court Fabryka Norblina, 600 m do centrum Browary Warszawskie, 1 przystanek do centrum handlowego Złote Tarasy i dworca kolejowego Warszawa Centralna.",
+        "Zmęczony po zwiedzaniu? Na dole w budynku masz 3 bardzo fajne, sprawdzone knajpki. Możesz też kupić coś na szybko w Carrefour express. Wszystko pod ręką. Jeśli zdecydujesz się ruszyć na 10 minutowy spacer, znajdziesz w pobliżu chyba większość kuchni świata.",
+        "W mieszkaniu znajdziesz w pełni wyposażony aneks kuchenny ze zmywarką, nowoczesną łazienkę z pralką, Wifi, telewizję kablową, klimatyzację.",
+        "Dla Twojej wygody są tutaj też: żelazko i deska, mała suszarka na pranie, szafa wnękowa za kotarą, łóżko dwuosobowe i sofa. Sypialnia jest oddzielona przesuwanymi drzwiami, dla wygody i maksymalnej prywatności",
+        "W kuchni znajdziesz naczynia i przybory pozwalające przygotować zarówno śniadanie jak i pełnowymiarowy posiłek dla podróżujących. Do dyspozycji masz płytę indukcyjną, piekarnik combo (z funkcją mikrofali), ekspres do kawy. Zadbaliśmy też o herbatę, kawę i cukier. W łazience możesz cieszyć się prysznicem z deszczownicą.",
       ],
     },
     accordionData: [
@@ -133,6 +134,7 @@ export const apartmentsList: IApartment[] = [
     kitchenStyle: "aneks",
     buildingType: "blok",
     builtYear: 1950,
+    localization: "Centrum, Rondo ONZ",
     mainPic: "/pereca/1.jpeg",
     pics: [
       { src: "/pereca/1.jpeg", alt: "image" },
@@ -140,5 +142,11 @@ export const apartmentsList: IApartment[] = [
       { src: "/pereca/3.jpeg", alt: "image" },
     ],
     hrefLink: "/apartamenty/pereca",
+    airbnbLink: new URL(
+      "https://www.airbnb.pl/rooms/1024727561187007898?_set_bev_on_new_domain=1700305802_ZWNlMmZlODc0OTMy&source_impression_id=p3_1701941187_lcWLDPPjA3yPukzD",
+    ),
+    bookingLink: new URL(
+      "https://www.airbnb.pl/rooms/1024727561187007898?_set_bev_on_new_domain=1700305802_ZWNlMmZlODc0OTMy&source_impression_id=p3_1701941187_lcWLDPPjA3yPukzD",
+    ),
   },
 ];
