@@ -6,6 +6,7 @@ import { CookieConsent } from "@/components/CookieConsent";
 import { Carousel } from "@/components/sections/testimonials/Carousel";
 import { Services } from "@/components/sections/services/Services";
 import Content from "@/components/sections/content/Content";
+import Testimonials from "@/components/testimonials/Testimonials";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Content />
       <Apartments />
       <Services />
+      <Testimonials />
       {/* <CookieConsent /> */}
     </main>
   );
