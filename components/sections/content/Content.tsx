@@ -1,8 +1,8 @@
 "use client";
 
-import { ImageSideTilt } from "./ImageSideTilt.jsx";
+import { ImageSideTilt } from "./ImageSideTilt";
 import { TextInfoSide } from "./TextInfoSide";
-import { motion } from "framer-motion"; // Add this import
+import { motion } from "framer-motion";
 
 export function Content() {
   return (

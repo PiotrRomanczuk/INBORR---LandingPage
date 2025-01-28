@@ -1,12 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { TextAnimation } from "../ui/TextAnimation";
+import { TextAnimation } from "@/components/ui/TextAnimation";
 
 export const HeroTailwind = () => {
   return (
     <section className="bg-white">
-      <div className="animate-fade-in animate-fill-forwards relative opacity-0">
+      <div className="animate-fill-forwards relative animate-fade-in opacity-0">
         <div className="mx-auto max-w-7xl">
           <div className="relative z-10 lg:w-full lg:max-w-2xl lg:pt-14">
             {/* // Horizontal cut */}
@@ -28,7 +28,6 @@ export const HeroTailwind = () => {
                   Wynajem na dni i tygodnie – city break, workation , czy pobyt
                   biznesowy – zadbamy o jakość i Twój komfort.
                 </p>
-                {/* <p className="text-black">Media query: useMediaQuery(768)</p> */}
               </div>
             </div>
           </div>
@@ -40,7 +39,6 @@ export const HeroTailwind = () => {
             width={800}
             height={1200}
             alt=""
-            // loading="lazy"
           />
         </div>
       </div>
