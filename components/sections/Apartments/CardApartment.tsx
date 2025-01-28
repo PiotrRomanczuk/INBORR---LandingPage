@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import Image from "next/image";
 
-import { UtilsSection } from "../sections/UtilsSection";
+import { UtilsSection } from "./UtilsSection";
 
 interface CardVerticalProps {
   imageSrc?: string;

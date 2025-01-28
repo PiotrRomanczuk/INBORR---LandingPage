@@ -12,7 +12,7 @@ import {
 export const GoogleMaps = () => {
   const [markerRef, marker] = useMarkerRef();
 
-  const apiKey = process.env.GOOGLE_MAPS_API_KEY;
+  const apiKey = "AIzaSyBYUnqb46_-4Rpwcxf7yxMVvQwOG8Ikp40";
 
   if (!apiKey) {
     return <div> Google Maps API key not found</div>;

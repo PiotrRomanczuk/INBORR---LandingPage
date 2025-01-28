@@ -1,6 +1,6 @@
 import { HeroTailwind } from "@/components/sections/Hero/HeroTailwind";
 import { Content } from "@/components/sections/Content/Content";
-import { Apartments } from "@/components/sections/Apartments";
+import { Apartments } from "@/components/sections/Apartments/Apartments";
 import { Services } from "@/components/sections/Services/Services";
 import { Testimonials } from "@/components/sections/Testimonials/Testimonials";
 

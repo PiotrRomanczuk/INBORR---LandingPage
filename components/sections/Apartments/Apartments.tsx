@@ -1,7 +1,7 @@
 "use client";
 
 import { apartmentsList } from "@/app/apartamenty/apartmentsList";
-import { CardApartment } from "@/components/cards/CardApartment";
+import { CardApartment } from "@/components/sections/Apartments/CardApartment";
 import { motion } from "framer-motion";
 
 export const Apartments = () => {
