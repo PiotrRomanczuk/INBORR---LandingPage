@@ -2,7 +2,7 @@
 
 import { ServiceCard } from "./ServiceCard";
 import { motion } from "framer-motion";
-import { cardVariants, containerVariants } from "./serviceVariants";
+import { cardVariants, containerVariants } from "./ServiceVariants";
 import ServiceHeader from "./ServiceHeader";
 import servicesData from "./ServicesData";
 

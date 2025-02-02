@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
-import { containerVariants, textVariants } from "./serviceVariants";
+import { containerVariants, textVariants } from "./ServiceVariants";
 
 const ServiceHeader = () => {
   return (
