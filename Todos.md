@@ -1,8 +1,6 @@
 TODO's:
 
-Testimonials section
-
-AirBnb & Booking Section
+AirBnb & Booking \buttons on Apartment page & cards
 
 Icons
 
@@ -18,3 +16,5 @@ Bozena:\
 
     Photos
     Mirow
+
+Main photo - cut the bottom

@@ -32,7 +32,6 @@ export const NavBar = () => {
                 height={400}
                 sizes="(max-width: 768px) 100vw, 400px"
               />
-              {/* // TODO: Fix the size of an icons */}
             </Link>
             {/* Mobile menu button */}
             <button
@@ -48,6 +47,7 @@ export const NavBar = () => {
                 <Link
                   key={item.name}
                   href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
                   className="relative block w-fit text-lg font-semibold leading-6 text-gray-900 
                   after:absolute after:block after:h-[3px] after:w-full after:origin-left after:scale-x-0
                    after:bg-blue-300 after:transition after:duration-300 after:content-[''] after:hover:scale-x-100"
