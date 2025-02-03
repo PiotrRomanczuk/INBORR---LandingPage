@@ -1,7 +1,7 @@
 import { apartmentsList } from "../apartmentsList";
 
 import { Mainpic } from "./MainPic";
-import { UtilsSection } from "@/components/sections/UtilsSection";
+import { UtilsSection } from "@/components/sections/Apartments/UtilsSection";
 import { AccordionComp } from "../../../components/AccordionComp";
 import { GoogleMaps } from "@/components/GoogleMaps";
 
