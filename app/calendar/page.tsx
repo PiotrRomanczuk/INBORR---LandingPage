@@ -1,48 +1,54 @@
-'use client';
-
-import { parseICSToJSON } from './ParseICSToJson';
-import { MultiDateRangeCalendar } from './MultiDateRangeCalendar';
+import { parseICSToJSON } from "./@components/ParseICSToJson";
+import { MultiDateRangeCalendar } from "./@components/MultiDateRangeCalendar";
 
 export async function fetchICSData(link: URL) {
-	const response = await fetch(link);
-	const icsData = await response.text();
-	return icsData;
+  const response = await fetch(link);
+  const icsData = await response.text();
+  return icsData;
 }
 
-const AirBnb_Link = new URL('http:localhost:3000/calendar/airbnb');
+const AirBnb_Link = new URL("http:localhost:3000/calendar/airbnb");
 const Booking_Link = new URL(
-	'https://ical.booking.com/v1/export?t=be015c14-cbeb-44d5-b285-9a3e8928d745'
+  "https://ical.booking.com/v1/export?t=be015c14-cbeb-44d5-b285-9a3e8928d745",
 );
-const airbnbICSData = await fetchICSData(AirBnb_Link);
-const bookingICSData = await fetchICSData(Booking_Link);
 
-const airbnbJsonEvents = parseICSToJSON(airbnbICSData);
-const bookingJsonEvents = parseICSToJSON(bookingICSData);
+async function getCalendarData() {
+  const airbnbICSData = await fetchICSData(AirBnb_Link);
+  const bookingICSData = await fetchICSData(Booking_Link);
 
-const jsonEvents = [...airbnbJsonEvents, ...bookingJsonEvents];
+  const airbnbJsonEvents = parseICSToJSON(airbnbICSData);
+  const bookingJsonEvents = parseICSToJSON(bookingICSData);
 
-export default function Page() {
-	const selectedRanges = jsonEvents.map((event) => ({
-		from: new Date(event.DTSTART),
-		to: new Date(event.DTEND),
-	}));
+  return {
+    airbnbJsonEvents,
+    bookingJsonEvents,
+  };
+}
 
-	return (
-		<>
-			<MultiDateRangeCalendar selectedRanges={selectedRanges} />
-			<div>Calendar</div>
+export default async function Page() {
+  const { airbnbJsonEvents, bookingJsonEvents } = await getCalendarData();
+  const jsonEvents = [...airbnbJsonEvents, ...bookingJsonEvents];
+  const selectedRanges = jsonEvents.map((event) => ({
+    from: new Date(event.DTSTART),
+    to: new Date(event.DTEND),
+  }));
 
-			{jsonEvents.map((event) => {
-				console.log(event);
-				return (
-					<div key={event.UID}>
-						<p>UID: {event.UID}</p>
-						<p>Start Date: {event.DTSTART}</p>
-						<p>End Date: {event.DTEND}</p>
-						{/* <p>Summary: {event.SUMMARY}</p> */}
-					</div>
-				);
-			})}
-		</>
-	);
+  return (
+    <>
+      <MultiDateRangeCalendar selectedRanges={selectedRanges} />
+      <div>Calendar</div>
+
+      {jsonEvents.map((event) => {
+        console.log(event);
+        return (
+          <div key={event.UID}>
+            <p>UID: {event.UID}</p>
+            <p>Start Date: {event.DTSTART}</p>
+            <p>End Date: {event.DTEND}</p>
+            {/* <p>Summary: {event.SUMMARY}</p> */}
+          </div>
+        );
+      })}
+    </>
+  );
 }
