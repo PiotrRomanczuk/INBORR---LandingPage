@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { UtilsSection } from "../sections/UtilsSection";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 interface CardVerticalProps {
   imageSrc?: string;
@@ -40,8 +41,10 @@ export const CardApartment: FC<CardVerticalProps> = ({
   buildingType,
   builtYear,
 }) => {
+  const isSmallScreen = useMediaQuery(768);
+
   const ImageSection = (
-    <Link href={hrefLink} className="pointer w-3/5">
+    <Link href={hrefLink} className="pointer w-full md:w-3/5">
       <Image
         src={imageSrc || ""}
         width={1200}
@@ -54,8 +57,8 @@ export const CardApartment: FC<CardVerticalProps> = ({
   );
 
   const ContentSection = (
-    <div className="flex w-2/5 flex-col justify-between">
-      <div className="flex flex-col p-6">
+    <div className="flex w-full flex-col justify-between md:w-2/5">
+      <div className="flex flex-col p-4 md:p-6">
         <Link href={hrefLink} className="pointer">
           <div className="flex flex-col">
             <div className="text-xl font-semibold lg:text-2xl">{title}</div>
@@ -78,8 +81,8 @@ export const CardApartment: FC<CardVerticalProps> = ({
         </Link>
       </div>
       <div
-        className={`mt-4 flex  justify-between gap-4 rounded-md border border-blue-500 px-4 py-6 text-center text-xl transition-colors ${
-          imagePosition === "left" ? "ml-2" : "mr-2"
+        className={`mt-4 flex flex-col justify-between gap-2 rounded-md border border-blue-500 px-2 py-4 text-center text-xl transition-colors md:flex-row md:gap-4 md:px-4 md:py-6 ${
+          imagePosition === "left" ? "ml-0 md:ml-2" : "mr-0 md:mr-2"
         }`}
       >
         <Link href={airbnbLink} className="border ">
@@ -93,16 +96,16 @@ export const CardApartment: FC<CardVerticalProps> = ({
   );
 
   return (
-    <div className="flex w-full flex-row  transition duration-300 hover:scale-105">
-      {imagePosition === "left" ? (
+    <div className="flex w-full flex-col transition duration-300 hover:scale-105 md:flex-row">
+      {!isSmallScreen && imagePosition === "left" ? (
         <>
           {ImageSection}
           {ContentSection}
         </>
       ) : (
         <>
-          {ContentSection}
           {ImageSection}
+          {ContentSection}
         </>
       )}
     </div>
