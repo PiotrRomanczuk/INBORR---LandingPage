@@ -1,3 +1,5 @@
+"use client";
+
 import { apartmentsList } from "../apartmentsList";
 
 import { Mainpic } from "./MainPic";
@@ -6,6 +8,8 @@ import { AccordionComp } from "../../../components/AccordionComp";
 import { GoogleMaps } from "@/components/GoogleMaps";
 
 import ApartNotFound from "./ApartNotFound";
+import Calendar from "./calendar/Calendar";
+import CalendarComponent from "./calendar/Calendar";
 
 export default function Page({ params }: { params: { apartmentId: string } }) {
   const apartment = apartmentsList.find(
@@ -51,6 +55,7 @@ export default function Page({ params }: { params: { apartmentId: string } }) {
           <AccordionComp data={apartment.accordionData} />
           <div></div>
           <GoogleMaps />
+          <CalendarComponent />
         </div>
       )}
     </>

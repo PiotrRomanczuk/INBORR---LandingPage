@@ -1,6 +1,6 @@
 "use client";
 
-import { testimonials_data } from "./testimonials_data";
+import { Testimonials_data } from "./Testimonials_data";
 import { Testimonial } from "./Testimonial";
 import { motion } from "framer-motion";
 import { cardVariants } from "./Variants";
@@ -24,7 +24,7 @@ export function Testimonials() {
         </motion.div>
         <div className="mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">
           <div className="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">
-            {testimonials_data.map((testimonial, index) => (
+            {Testimonials_data.map((testimonial, index) => (
               <motion.div key={index} variants={cardVariants}>
                 <Testimonial
                   key={testimonial.author.handle}

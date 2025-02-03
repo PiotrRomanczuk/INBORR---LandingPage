@@ -1,4 +1,4 @@
-export const testimonials_data = [
+export const Testimonials_data = [
   {
     body: "Świetny apartament. Czysty , doskonale wyposażony. Jedno z niewielu miejsc, w których się zatrzymałem, które jest tak dobrze zorganizowane.",
     author: {
