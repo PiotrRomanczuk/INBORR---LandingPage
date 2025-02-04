@@ -30,8 +30,8 @@ export const Apartments = () => {
               builtYear={apartment.builtYear}
               hrefLink={apartment.hrefLink}
               imagePosition={isEven ? "left" : "right"}
-              airbnbLink={apartment.airbnbLink}
-              bookingLink={apartment.bookingLink}
+              airbnbLink={apartment.reservedLinks.airbnbLink}
+              bookingLink={apartment.reservedLinks.bookingLink}
             />
           </motion.div>
         );

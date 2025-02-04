@@ -60,7 +60,7 @@ export const apartmentsList: IApartment[] = [
     buildingType: "blok",
     builtYear: 1950,
     localization: "Centrum, Mirów",
-    mainPic: "/chlodna/1.jpeg",
+    mainPic: "/chlodna/Inborr-Skyline-Chlodna-apartament-salon.jpg",
     pics: [
       {
         src: "/chlodna/Inborr-Chlodna-wejscie-budynek-apartament.jpg",
@@ -133,12 +133,22 @@ export const apartmentsList: IApartment[] = [
       },
     ],
     hrefLink: "/apartamenty/chlodna",
-    airbnbLink: new URL(
-      "https://www.airbnb.pl/rooms/1024727561187007898?_set_bev_on_new_domain=1700305802_ZWNlMmZlODc0OTMy&source_impression_id=p3_1701941187_lcWLDPPjA3yPukzD",
-    ),
-    bookingLink: new URL(
-      "https://www.airbnb.pl/rooms/1024727561187007898?_set_bev_on_new_domain=1700305802_ZWNlMmZlODc0OTMy&source_impression_id=p3_1701941187_lcWLDPPjA3yPukzD",
-    ),
+    reservedLinks: {
+      airbnbLink: new URL(
+        "https://www.airbnb.pl/rooms/1024727561187007898?_set_bev_on_new_domain=1700305802_ZWNlMmZlODc0OTMy&source_impression_id=p3_1701941187_lcWLDPPjA3yPukzD",
+      ),
+      bookingLink: new URL(
+        "https://www.airbnb.pl/rooms/1024727561187007898?_set_bev_on_new_domain=1700305802_ZWNlMmZlODc0OTMy&source_impression_id=p3_1701941187_lcWLDPPjA3yPukzD",
+      ),
+    },
+    calendarLinks: {
+      airbnb: new URL(
+        "https://www.airbnb.com/calendar/ical/921541253367297308.ics?s=3500d8b515272c463f72ae3529949d95&locale=pl",
+      ),
+      booking: new URL(
+        "https://ical.booking.com/v1/export?t=be015c14-cbeb-44d5-b285-9a3e8928d745",
+      ),
+    },
   },
   {
     apartmentId: 2,
@@ -201,7 +211,7 @@ export const apartmentsList: IApartment[] = [
     buildingType: "blok",
     builtYear: 1950,
     localization: "Centrum, Rondo ONZ",
-    mainPic: "/pereca/1.jpeg",
+    mainPic: "/pereca/Inborr-Pereca-apartament-Salon and sofa.jpg",
     pics: [
       {
         src: "/pereca/Inborr-Pereca-Bedroom sypaialnia.jpg",
@@ -277,11 +287,21 @@ export const apartmentsList: IApartment[] = [
     ],
 
     hrefLink: "/apartamenty/pereca",
-    airbnbLink: new URL(
-      "https://www.airbnb.pl/rooms/1024727561187007898?_set_bev_on_new_domain=1700305802_ZWNlMmZlODc0OTMy&source_impression_id=p3_1701941187_lcWLDPPjA3yPukzD",
-    ),
-    bookingLink: new URL(
-      "https://www.airbnb.pl/rooms/1024727561187007898?_set_bev_on_new_domain=1700305802_ZWNlMmZlODc0OTMy&source_impression_id=p3_1701941187_lcWLDPPjA3yPukzD",
-    ),
+    reservedLinks: {
+      airbnbLink: new URL(
+        "https://www.airbnb.pl/rooms/921541253367297308?viralityEntryPoint=1&unique_share_id=EA1D5AD0-2222-4DA9-AF69-4104CF386DB1&slcid=439a43665ea04d648a78683b9444a000&s=76&feature=share&adults=1&channel=native&slug=DgkUchXQ",
+      ),
+      bookingLink: new URL(
+        "https://www.booking.com/hotel/pl/sky-apartment-comfy-suite-pereca.pl.html?aid=1263239&label=PShare-Pulse-EgVfYD%401738518237&sid=d4e97663c83b5caba0087180fea308d9&dist=0&keep_landing=1&sb_price_type=total&type=total&",
+      ),
+    },
+    calendarLinks: {
+      airbnb: new URL(
+        "https://www.airbnb.com/calendar/ical/921541253367297308.ics?s=3500d8b515272c463f72ae3529949d95&locale=pl",
+      ),
+      booking: new URL(
+        "https://ical.booking.com/v1/export?t=be015c14-cbeb-44d5-b285-9a3e8928d745",
+      ),
+    },
   },
 ];

@@ -8,7 +8,9 @@ import {
 function CustomAccordionItem({ question, answer, value }) {
   return (
     <AccordionItem value={value}>
-      <AccordionTrigger className='justify-items-start'>{question}</AccordionTrigger>
+      <AccordionTrigger className="justify-items-start">
+        {question}
+      </AccordionTrigger>
       <AccordionContent className="font-light">{answer}</AccordionContent>
     </AccordionItem>
   );

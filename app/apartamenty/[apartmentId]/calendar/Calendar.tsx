@@ -1,28 +1,40 @@
 import { parseICSToJSON, getEventDates } from "./@components/ParseICSToJson";
 import { MultiDateRangeCalendar } from "./@components/MultiDateRangeCalendar";
 
-export default async function CalendarComponent() {
-  const airbnbICSData = await fetch("http://inborr.pl/api/calendar/airbnb");
-  const bookingICSData = await fetch("http://inborr.pl/api/calendar/booking");
+// interface CalendarProps {
+//   apartmentName: string;
+// }
 
-  const airbnbICSDataString = await airbnbICSData.text();
-  const bookingICSDataString = await bookingICSData.text();
+// async function fetchAndProcessICSData(apartmentName: string) {
+//   const airbnbICSData = await fetch(
+//     `http://inborr.pl/api/calendar/${apartmentName}/airbnb`,
+//   );
+//   const bookingICSData = await fetch(
+//     `http://inborr.pl/api/calendar/${apartmentName}/booking`,
+//   );
 
-  const airbnbJsonEvents = parseICSToJSON(airbnbICSDataString);
-  const bookingJsonEvents = parseICSToJSON(bookingICSDataString);
+//   const airbnbICSDataString = await airbnbICSData.text();
+//   const bookingICSDataString = await bookingICSData.text();
 
-  const jsonEvents = [...airbnbJsonEvents, ...bookingJsonEvents];
+//   const airbnbJsonEvents = parseICSToJSON(airbnbICSDataString);
+//   const bookingJsonEvents = parseICSToJSON(bookingICSDataString);
 
-  const eventDates = getEventDates(jsonEvents);
+//   const jsonEvents = [...airbnbJsonEvents, ...bookingJsonEvents];
 
-  const selectedRanges = eventDates.map((date) => ({
-    from: new Date(date),
-    to: new Date(date),
-  }));
+//   return getEventDates(jsonEvents);
+// }
+
+async function CalendarComponent() {
+  // const eventDates = await fetchAndProcessICSData(apartmentName);
+
+  // const selectedRanges = eventDates.map((date) => ({
+  //   from: new Date(date),
+  //   to: new Date(date),
+  // }));
 
   return (
-    <>
-      <MultiDateRangeCalendar selectedRanges={selectedRanges} />
-    </>
+    <>{/* <MultiDateRangeCalendar selectedRanges={selectedRanges} /> */}</>
   );
 }
+
+export default CalendarComponent;

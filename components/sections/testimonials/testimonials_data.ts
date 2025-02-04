@@ -4,7 +4,7 @@ export const Testimonials_data = [
     author: {
       name: "Leslie Alexander",
       handle: "lesliealexander",
-      imageUrl: "/pereca/3.jpeg",
+      imageUrl: "/profile_avatar.jpg",
     },
   },
   {
@@ -12,7 +12,7 @@ export const Testimonials_data = [
     author: {
       name: "John Doe",
       handle: "johndoe",
-      imageUrl: "/pereca/3.jpeg",
+      imageUrl: "/profile_avatar.jpg",
     },
   },
   {
@@ -20,7 +20,7 @@ export const Testimonials_data = [
     author: {
       name: "Jane Smith",
       handle: "janesmith",
-      imageUrl: "/pereca/3.jpeg",
+      imageUrl: "/profile_avatar.jpg",
     },
   },
   {
@@ -28,7 +28,7 @@ export const Testimonials_data = [
     author: {
       name: "Alice Johnson",
       handle: "alicejohnson",
-      imageUrl: "/pereca/3.jpeg",
+      imageUrl: "/profile_avatar.jpg",
     },
   },
   // {
@@ -36,7 +36,7 @@ export const Testimonials_data = [
   //   author: {
   //     name: "Bob Brown",
   //     handle: "bobbrown",
-  //     imageUrl: "/pereca/3.jpeg",
+  //     imageUrl: "profile_avatar.jpg",
   //   },
   // },
   // {
@@ -44,7 +44,7 @@ export const Testimonials_data = [
   //   author: {
   //     name: "Charlie Davis",
   //     handle: "charliedavis",
-  //     imageUrl: "/pereca/3.jpeg",
+  //     imageUrl: "profile_avatar.jpg",
   //   },
   // },
 ];

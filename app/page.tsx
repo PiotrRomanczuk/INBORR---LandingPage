@@ -9,7 +9,7 @@ import SEO_Content from "@/components/sections/SEO_Content/SEO_Content";
 
 export default function Home() {
   return (
-    <main className="flex flex-col justify-between bg-white">
+    <main className="relative mx-auto flex max-w-screen-xl flex-col justify-between overflow-x-hidden bg-white">
       <HeroTailwind />
       <Content />
       <Apartments />

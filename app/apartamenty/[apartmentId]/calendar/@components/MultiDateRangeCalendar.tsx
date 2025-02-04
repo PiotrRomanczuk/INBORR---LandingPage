@@ -1,8 +1,9 @@
+"use client";
+
 import React from "react";
 import { Calendar } from "@/components/ui/calendar";
 import { Card, CardContent } from "@/components/ui/card";
 import { isWithinInterval } from "date-fns";
-
 type Range = {
   from: Date;
   to: Date;

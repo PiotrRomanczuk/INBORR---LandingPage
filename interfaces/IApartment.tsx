@@ -27,6 +27,12 @@ export interface IApartment {
     alt: string;
   }[];
   hrefLink: string;
-  airbnbLink: URL;
-  bookingLink: URL;
+  reservedLinks: {
+    airbnbLink: URL;
+    bookingLink: URL;
+  };
+  calendarLinks: {
+    airbnb: URL;
+    booking: URL;
+  };
 }

@@ -42,22 +42,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={openSans.className}>
       <body className="relative mx-auto max-w-screen-xl overflow-x-hidden scroll-smooth">
-        {/* <Suspense fallback={<Loading />}> */}
         <NavBar />
-        {/* <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          // disableTransitionOnChange
-        > */}
-        <div className="bg-white pt-24">
-          {children}
-          {/* <SpeedInsights /> */}
-          {/* <Analytics /> */}
-        </div>
-        {/* </ThemeProvider> */}
+        <div className="bg-white pt-24">{children}</div>
         <Footer />
-        {/* </Suspense> */}
       </body>
     </html>
   );

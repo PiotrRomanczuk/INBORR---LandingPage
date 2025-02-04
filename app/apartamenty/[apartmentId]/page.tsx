@@ -4,12 +4,12 @@ import { apartmentsList } from "../apartmentsList";
 
 import { Mainpic } from "./MainPic";
 import { UtilsSection } from "@/components/sections/Apartments/UtilsSection";
-import { AccordionComp } from "../../../components/AccordionComp";
+import { AccordionComp } from "@/components/AccordionComp";
 import { GoogleMaps } from "@/components/GoogleMaps";
 
 import ApartNotFound from "./ApartNotFound";
-import Calendar from "./calendar/Calendar";
-import CalendarComponent from "./calendar/Calendar";
+
+// import CalendarComponent from "./calendar/Calendar";
 
 export default function Page({ params }: { params: { apartmentId: string } }) {
   const apartment = apartmentsList.find(
@@ -53,9 +53,8 @@ export default function Page({ params }: { params: { apartmentId: string } }) {
           </div>
 
           <AccordionComp data={apartment.accordionData} />
-          <div></div>
           <GoogleMaps />
-          <CalendarComponent />
+          {/* <CalendarComponent apartmentName={apartment.shortName} /> */}
         </div>
       )}
     </>
