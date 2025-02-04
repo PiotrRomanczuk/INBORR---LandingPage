@@ -62,11 +62,25 @@ export const apartmentsList: IApartment[] = [
     localization: "Centrum, Mirów",
     mainPic: "/chlodna/Inborr-Skyline-Chlodna-apartament-salon.jpg",
     pics: [
+      // Living room
       {
-        src: "/chlodna/Inborr-Chlodna-wejscie-budynek-apartament.jpg",
-        alt: "Building entrance",
+        src: "/chlodna/Inborr-Skyline-Chlodna-apartament-salon.jpg",
+        alt: "Living room view",
       },
-      { src: "/chlodna/Inborr-Chlodna-zameksmart.jpg", alt: "Smart lock" },
+      {
+        src: "/chlodna/Inborr-Skyline-Chlodna-salon-apartament.jpg",
+        alt: "Main living room",
+      },
+      {
+        src: "/chlodna/Inborr-Syline-Chlodna-salon2-apartament.jpg",
+        alt: "Living room view 2",
+      },
+
+      // Kitchen
+      {
+        src: "/chlodna/Inborr-Skyline-Chlodna-kuchniaaneks-apartament.jpg",
+        alt: "Kitchen annex",
+      },
       {
         src: "/chlodna/Inborr-Skyline-Chlodna-Kuchnia1-apartament.jpg",
         alt: "Kitchen view 1",
@@ -76,21 +90,15 @@ export const apartmentsList: IApartment[] = [
         alt: "Kitchen view 2",
       },
       {
-        src: "/chlodna/Inborr-Skyline-Chlodna-Lazienka1-apartament.jpg",
-        alt: "Bathroom view",
+        src: "/chlodna/Inborr-apartament-kuchnia-skyline.jpg",
+        alt: "Skyline kitchen view",
       },
       {
-        src: "/chlodna/Inborr-Skyline-Chlodna-apartament-salon.jpg",
-        alt: "Living room view",
+        src: "/chlodna/Kuchnia-Inborr-Skyline-Chlodna.jpg",
+        alt: "Skyline kitchen alternate view",
       },
-      {
-        src: "/chlodna/Inborr-Skyline-Chlodna-kuchniaaneks-apartament.jpg",
-        alt: "Kitchen annex",
-      },
-      {
-        src: "/chlodna/Inborr-Skyline-Chlodna-salon-apartament.jpg",
-        alt: "Main living room",
-      },
+
+      // Bedroom
       {
         src: "/chlodna/Inborr-Skyline-Chlodna-sypialnia-apartament.jpg",
         alt: "Bedroom view",
@@ -100,36 +108,41 @@ export const apartmentsList: IApartment[] = [
         alt: "Bedroom alternate view",
       },
       {
-        src: "/chlodna/Inborr-Syline-Chlodna-salon2-apartament.jpg",
-        alt: "Living room view 2",
+        src: "/chlodna/Sypialnia-Inborr-Skyline-apartament.jpg",
+        alt: "Skyline bedroom view",
+      },
+
+      // Bathroom
+      {
+        src: "/chlodna/Inborr-Skyline-Chlodna-Lazienka1-apartament.jpg",
+        alt: "Bathroom view",
+      },
+      // Building exterior & entrance
+      {
+        src: "/chlodna/Inborr-Chlodna-wejscie-budynek-apartament.jpg",
+        alt: "Building entrance",
       },
       {
-        src: "/chlodna/Inborr-apartament-kuchnia-skyline.jpg",
-        alt: "Skyline kitchen view",
-      },
-      {
-        src: "/chlodna/Kuchnia-Inborr-Skyline-Chlodna.jpg",
-        alt: "Skyline kitchen alternate view",
+        src: "/chlodna/Inborr-Chlodna-zameksmart.jpg",
+        alt: "Smart lock",
       },
       {
         src: "/chlodna/Skyline-Chlodna-Inborr-parking-apartament.jpg",
         alt: "Parking area",
       },
+
+      // Building views
       {
-        src: "/chlodna/Sypialnia-Inborr-Skyline-apartament.jpg",
-        alt: "Skyline bedroom view",
-      },
-      {
-        src: "/chlodna/Chlodna-Inborr-apartamenty-Mirow.jpg",
-        alt: "Apartments Mirow view",
+        src: "/chlodna/Inborr-Chlodna-apartament-Skyline.jpg",
+        alt: "Skyline view",
       },
       {
         src: "/chlodna/Inborr-Chlodna-apartament-Skyline-night.jpg",
         alt: "Skyline night view",
       },
       {
-        src: "/chlodna/Inborr-Chlodna-apartament-Skyline.jpg",
-        alt: "Skyline view",
+        src: "/chlodna/Chlodna-Inborr-apartamenty-Mirow.jpg",
+        alt: "Apartments Mirow view",
       },
     ],
     hrefLink: "/apartamenty/chlodna",
@@ -213,16 +226,37 @@ export const apartmentsList: IApartment[] = [
     localization: "Centrum, Rondo ONZ",
     mainPic: "/pereca/Inborr-Pereca-apartament-Salon and sofa.jpg",
     pics: [
+      // Living Room
       {
-        src: "/pereca/Inborr-Pereca-Bedroom sypaialnia.jpg",
-        alt: "Bedroom view",
+        src: "/pereca/Inborr-Pereca-apartament-Salon and sofa.jpg",
+        alt: "Living room with sofa",
       },
-      { src: "/pereca/Inborr-Pereca-Kuchnia kitchen.jpg", alt: "Kitchen view" },
       {
-        src: "/pereca/Inborr-Pereca-Lazienka-apartament.jpg",
-        alt: "Bathroom view",
+        src: "/pereca/Inborr-Pereca-apatrament-salon z fotelem.jpg",
+        alt: "Living room with armchair",
       },
-      { src: "/pereca/Inborr-Pereca-Sky-Szafa.jpg", alt: "Wardrobe" },
+      {
+        src: "/pereca/Inborr-Sky-Apartament-Pereca-salon.jpg",
+        alt: "Sky apartment living room",
+      },
+      {
+        src: "/pereca/Inborr-Sky-Pereca-apartament-Salon 1.jpg",
+        alt: "Sky apartment living room view",
+      },
+      {
+        src: "/pereca/Inborr-Pereca-Sky-salon bez fotela.jpg",
+        alt: "Living room without armchair",
+      },
+      {
+        src: "/pereca/Inborr-Pereca-Sky-futon-Fotel.jpg",
+        alt: "Futon and armchair",
+      },
+
+      // Kitchen
+      {
+        src: "/pereca/Inborr-Pereca-Kuchnia kitchen.jpg",
+        alt: "Kitchen view",
+      },
       {
         src: "/pereca/Inborr-Pereca-Sky-aneks kuchenny z kwiatami.jpg",
         alt: "Kitchen annex with flowers",
@@ -232,57 +266,70 @@ export const apartmentsList: IApartment[] = [
         alt: "Apartment kitchen annex",
       },
       {
-        src: "/pereca/Inborr-Pereca-Sky-futon-Fotel.jpg",
-        alt: "Futon and armchair",
+        src: "/pereca/Inborr-Pereca-kuchenka 2.jpg",
+        alt: "Kitchen stove",
       },
+
+      // Bedroom
       {
-        src: "/pereca/Inborr-Pereca-Sky-salon bez fotela.jpg",
-        alt: "Living room without armchair",
-      },
-      { src: "/pereca/Inborr-Pereca-Sky-widok z okna.jpg", alt: "Window view" },
-      { src: "/pereca/Inborr-Pereca-Speed test.jpg", alt: "Speed test" },
-      {
-        src: "/pereca/Inborr-Pereca-apartament-Salon and sofa.jpg",
-        alt: "Living room with sofa",
-      },
-      {
-        src: "/pereca/Inborr-Pereca-apatrament-salon z fotelem.jpg",
-        alt: "Living room with armchair",
-      },
-      { src: "/pereca/Inborr-Pereca-key box.jpg", alt: "Key box" },
-      { src: "/pereca/Inborr-Pereca-kuchenka 2.jpg", alt: "Kitchen stove" },
-      {
-        src: "/pereca/Inborr-Pereca2-centrum-apartament.jpg",
-        alt: "Central apartment view",
-      },
-      {
-        src: "/pereca/Inborr-Sky-Apartament-Pereca-salon.jpg",
-        alt: "Sky apartment living room",
-      },
-      {
-        src: "/pereca/Inborr-Sky-Pereca-Altanka śmieci Trash disposal.jpg",
-        alt: "Trash disposal area",
-      },
-      {
-        src: "/pereca/Inborr-Sky-Pereca-apartament-Salon 1.jpg",
-        alt: "Sky apartment living room view",
-      },
-      {
-        src: "/pereca/Inborr-apartament-Pereca-bath-ropes.jpg",
-        alt: "Bathroom with towel ropes",
+        src: "/pereca/Inborr-Pereca-Bedroom sypaialnia.jpg",
+        alt: "Bedroom view",
       },
       {
         src: "/pereca/Inborr-apartament-Pereca-bedroom-double-bed.jpg",
         alt: "Bedroom with double bed",
       },
-      { src: "/pereca/Pereca2-Budynek-Inborr.jpg", alt: "Building exterior" },
+      {
+        src: "/pereca/Inborr-Pereca-Sky-Szafa.jpg",
+        alt: "Wardrobe",
+      },
+
+      // Bathroom
+      {
+        src: "/pereca/Inborr-Pereca-Lazienka-apartament.jpg",
+        alt: "Bathroom view",
+      },
+      {
+        src: "/pereca/Inborr-apartament-Pereca-bath-ropes.jpg",
+        alt: "Bathroom with towel ropes",
+      },
+
+      // Building & Exterior
+      {
+        src: "/pereca/Pereca2-Budynek-Inborr.jpg",
+        alt: "Building exterior",
+      },
       {
         src: "/pereca/Pereca2-Hall na dole Inborr.jpg",
         alt: "Ground floor hall",
       },
       {
+        src: "/pereca/Inborr-Pereca-key box.jpg",
+        alt: "Key box",
+      },
+      {
+        src: "/pereca/Inborr-Sky-Pereca-Altanka śmieci Trash disposal.jpg",
+        alt: "Trash disposal area",
+      },
+
+      // Views & Area
+      {
+        src: "/pereca/Inborr-Pereca-Sky-widok z okna.jpg",
+        alt: "Window view",
+      },
+      {
+        src: "/pereca/Inborr-Pereca2-centrum-apartament.jpg",
+        alt: "Central apartment view",
+      },
+      {
         src: "/pereca/Pereca2-restauracje-Inborr.jpg",
         alt: "Restaurants view",
+      },
+
+      // Utilities
+      {
+        src: "/pereca/Inborr-Pereca-Speed test.jpg",
+        alt: "Speed test",
       },
     ],
 

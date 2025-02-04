@@ -25,7 +25,7 @@ export const ServiceCard = ({
         tabIndex={0}
       >
         <div className="mb-8 flex items-center justify-center text-blue-300">
-          <span className="scale-150">{icon}</span>
+          <span className="scale-[2]">{icon}</span>
         </div>
 
         <div className="flex flex-1 flex-col">

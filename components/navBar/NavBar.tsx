@@ -95,6 +95,7 @@ export const NavBar = () => {
                   <Link
                     key={item.name}
                     href={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
                     className="relative -mx-3 block w-fit rounded-lg px-3 py-2 text-xl font-semibold leading-7 text-gray-900 
                     after:absolute after:block after:h-[3px] after:w-full after:origin-left after:scale-x-0 
                     after:bg-black after:transition after:duration-300 after:content-[''] hover:bg-gray-50 

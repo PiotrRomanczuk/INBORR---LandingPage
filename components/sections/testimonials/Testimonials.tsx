@@ -1,6 +1,6 @@
 "use client";
 
-import { Testimonials_data } from "./Testimonials_data";
+import { Testimonials_data } from "./testimonials_data";
 import { Testimonial } from "./Testimonial";
 import { motion } from "framer-motion";
 import { cardVariants } from "./Variants";

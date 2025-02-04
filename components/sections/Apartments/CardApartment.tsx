@@ -4,13 +4,13 @@ import Image from "next/image";
 import { UtilsSection } from "./UtilsSection";
 
 interface CardVerticalProps {
-  imageSrc?: string;
+  imageSrc: string;
   title: string;
   location: string;
   description: any;
   hrefLink: string;
   icon?: () => void;
-  imagePosition?: "left" | "right";
+  imagePosition?: "left" | "right" | "sm:left" | "sm:right";
   bedroomsNb: number;
   area: number;
   floor: number;
@@ -38,22 +38,25 @@ export const CardApartment: FC<CardVerticalProps> = ({
   builtYear,
 }) => {
   const ImageSection = (
-    <Link href={hrefLink} className="pointer w-full sm:w-3/5">
-      <div className="relative h-64 sm:h-auto">
+    <Link
+      href={hrefLink}
+      className="pointer mx-2 w-full transition-all duration-300 hover:scale-105 sm:w-3/5"
+    >
+      <div className="relative h-64 sm:h-[400px]">
         <Image
-          src={imageSrc || "/default-image.jpg"} // Provide a default image
-          alt={`Image of ${title}`}
-          layout="fill"
-          objectFit="cover"
-          className="rounded-lg"
-          loading="lazy"
+          src={imageSrc}
+          alt={`Zdjęcie ${title}`}
+          fill
+          sizes="(max-width: 768px) 100vw, 60vw"
+          className="rounded-lg object-cover"
+          priority
         />
       </div>
     </Link>
   );
 
   const ContentSection = (
-    <div className="flex w-full flex-col justify-between p-4 sm:w-2/5 sm:p-6">
+    <div className="flex w-full flex-col justify-between p-4 sm:w-2/5">
       <div>
         <Link href={hrefLink} className="pointer">
           <div className="flex flex-col">
@@ -74,39 +77,34 @@ export const CardApartment: FC<CardVerticalProps> = ({
           </div>
         </Link>
       </div>
-      <div
-        className={`mt-4 flex justify-center gap-4 rounded-md border border-blue-500 px-4 py-6 text-center text-3xl transition-colors ${
-          imagePosition === "left" ? "sm:ml-2" : "sm:mr-2"
-        }`}
+      <Link
+        href="https://rezerwacje.inborr.pl"
+        className="flex items-center justify-center p-2 text-xl font-bold md:text-3xl"
       >
-        <Link
-          href="https://rezerwacje.inborr.pl"
-          className="flex items-center justify-center border p-2"
-        >
-          {/* <Image
-            src="/bookable.png"
-            alt="bookable"
-            width={320}
-            height={800}
-            className="h-4 w-4"
-          /> */}
+        <div className="mt-4 flex justify-center gap-4 rounded-md px-4 py-6 text-center text-3xl transition-all duration-300 hover:scale-105 hover:bg-blue-500 ">
           Zarezerwuj
-        </Link>
-      </div>
+        </div>
+      </Link>
     </div>
   );
 
   return (
-    <div className="flex w-full flex-col transition duration-300 hover:scale-105 sm:flex-row">
-      {imagePosition === "left" ? (
+    <div className="flex w-full flex-col transition duration-300  sm:flex-row">
+      {imagePosition.includes("sm:right") ? (
         <>
-          {ImageSection}
-          {ContentSection}
+          <div className="block sm:hidden">
+            {ImageSection}
+            {ContentSection}
+          </div>
+          <div className="hidden sm:flex">
+            {ContentSection}
+            {ImageSection}
+          </div>
         </>
       ) : (
         <>
-          {ContentSection}
           {ImageSection}
+          {ContentSection}
         </>
       )}
     </div>
