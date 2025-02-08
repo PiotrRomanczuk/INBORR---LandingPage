@@ -4,6 +4,7 @@ import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { FormSchema } from "./FormSchema";
 import z from "zod";
+import { toast } from "@/components/ui/use-toast";
 
 export const ContactForm = () => {
   const {
@@ -38,7 +39,7 @@ export const ContactForm = () => {
       });
 
       if (!response.ok) {
-        // console.log(response);
+        console.log(response);
         setSendingError(true);
         console.log(`Failed to send email. Status: ${response.status}`);
       }
@@ -179,9 +180,16 @@ export const ContactForm = () => {
         <button
           type="submit"
           className="rounded-lg border border-blue-400 bg-blue-400 px-6 py-2 text-white transition duration-300 hover:bg-pink-400"
+          onClick={() => {
+            toast({
+              title: "Email sent successfully",
+              description: "We have received your email and will respond to it as soon as possible.",
+            });
+          }}
         >
           Wyślij
         </button>
+
       </div>
     </form>
   );

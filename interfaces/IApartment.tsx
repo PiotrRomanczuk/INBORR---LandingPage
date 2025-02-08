@@ -21,6 +21,7 @@ export interface IApartment {
   buildingType: string;
   builtYear: number;
   localization: string;
+  
   mainPic: string;
   pics: {
     src: string;
@@ -30,7 +31,9 @@ export interface IApartment {
   reservedLinks: {
     airbnbLink: URL;
     bookingLink: URL;
+    bookableLink: URL;
   };
+
   calendarLinks: {
     airbnb: URL;
     booking: URL;

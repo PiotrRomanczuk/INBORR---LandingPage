@@ -14,12 +14,7 @@ export const TextAnimation = () => {
           "Twoje miejsce w Warszawie",
           //  - z nami zawsze blisko wszystkiego!
           1000,
-          "Z nami zawsze z poczuciem domu",
-          //  - !
-          1000,
-          "Wynajmij komfort w Warszawie",
-          //  - z nami każdy moment staje się wyjątkowy!
-          1000,
+      
         ]}
         //  Pull request genereator, I'm a pull request hand;es
         speed={30}

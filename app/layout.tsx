@@ -10,6 +10,7 @@ import { Footer } from "../components/ui/Footer";
 import { Roboto } from "next/font/google";
 import { Open_Sans } from "next/font/google";
 import { ThemeProvider } from "@/theme-provider";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "Inborr",
@@ -44,6 +45,7 @@ export default function RootLayout({
       <body className="relative mx-auto max-w-screen-xl overflow-x-hidden scroll-smooth">
         <NavBar />
         <div className="bg-white pt-24">{children}</div>
+        <Toaster />
         <Footer />
       </body>
     </html>

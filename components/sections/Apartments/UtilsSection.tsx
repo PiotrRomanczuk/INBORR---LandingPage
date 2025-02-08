@@ -8,7 +8,9 @@ import {
   Maximize,
   ArrowUp10,
   ChefHat,
+  MapPin,
 } from "lucide-react";
+
 
 import { UtilsCard } from "@/components/cards/utilsCard";
 
@@ -18,7 +20,7 @@ interface UtilsSectionProps {
   floor: any;
   kitchenStyle: any;
   buildingType: any;
-  builtYear: any;
+  localization: any;
 }
 
 // TODO: Make every utilSection comes after another
@@ -28,7 +30,7 @@ export const UtilsSection: React.FC<UtilsSectionProps> = ({
   floor,
   kitchenStyle,
   buildingType,
-  builtYear,
+  localization,
 }) => {
   return (
     <section className="grid w-full grid-cols-2 justify-between gap-4 pt-4 text-xs text-gray-900 xl:text-xl">
@@ -54,9 +56,9 @@ export const UtilsSection: React.FC<UtilsSectionProps> = ({
         icon={<Building />}
       />
       <UtilsCard
-        title="Rok budowy:"
-        description={builtYear}
-        icon={<BedDouble />}
+        title="Lokalizacja:"
+        description={localization}
+        icon={<MapPin />}
       />
     </section>
   );

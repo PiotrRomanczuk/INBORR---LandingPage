@@ -38,8 +38,7 @@ export const ImageSideTilt = () => {
             </p>
           </blockquote>
           <figcaption className="mt-6 text-sm leading-6 text-black">
-            <strong className="font-semibold text-black">Julia T.</strong>{" "}
-            Zadowolona klientka
+            <strong className="font-semibold text-black">Julia T.</strong>
           </figcaption>
         </figure>
       </div>

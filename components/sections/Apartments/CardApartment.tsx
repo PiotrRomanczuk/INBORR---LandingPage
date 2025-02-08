@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { UtilsSection } from "./UtilsSection";
+import { ReserveDialog } from "@/app/apartamenty/[apartmentId]/ReserveDialog";
 
 interface CardVerticalProps {
   imageSrc: string;
@@ -12,13 +13,15 @@ interface CardVerticalProps {
   icon?: () => void;
   imagePosition?: "left" | "right" | "sm:left" | "sm:right";
   bedroomsNb: number;
+  localization: string;
   area: number;
   floor: number;
   kitchenStyle: string;
   buildingType: string;
-  builtYear: number;
+  // builtYear: number;
   airbnbLink: URL;
   bookingLink: URL;
+  bookableLink: URL;
 }
 
 export const CardApartment: FC<CardVerticalProps> = ({
@@ -35,7 +38,8 @@ export const CardApartment: FC<CardVerticalProps> = ({
   floor,
   kitchenStyle,
   buildingType,
-  builtYear,
+  localization,
+  bookableLink
 }) => {
   const ImageSection = (
     <Link
@@ -72,20 +76,23 @@ export const CardApartment: FC<CardVerticalProps> = ({
               floor={floor}
               kitchenStyle={kitchenStyle}
               buildingType={buildingType}
-              builtYear={builtYear}
+              localization={localization}
             />
           </div>
         </Link>
       </div>
-      <Link
-        href="https://rezerwacje.inborr.pl"
+      <div
         className="flex items-center justify-center p-2 text-xl font-bold md:text-3xl"
       >
-        <div className="mt-4 flex justify-center gap-4 rounded-md px-4 py-6 text-center text-3xl transition-all duration-300 hover:scale-105 hover:bg-blue-500 ">
-          Zarezerwuj
-        </div>
-      </Link>
+
+        <ReserveDialog className="mt-4 flex justify-center gap-4 rounded-md px-4 py-6 text-center text-3xl transition-all duration-300 hover:scale-105 hover:bg-blue-500" 
+        bookingLink={bookingLink}
+        airbnbLink={airbnbLink}
+        bookableLink={bookableLink}
+        />
+      </div>
     </div>
+
   );
 
   return (

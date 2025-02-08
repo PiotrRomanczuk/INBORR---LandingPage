@@ -4,7 +4,7 @@ import { Testimonials_data } from "./testimonials_data";
 import { Testimonial } from "./Testimonial";
 import { motion } from "framer-motion";
 import { cardVariants } from "./Variants";
-import { containerVariants } from "../Services/ServiceVariants";
+import { containerVariants } from "../services/ServiceVariants";
 
 export function Testimonials() {
   return (
@@ -15,7 +15,7 @@ export function Testimonials() {
           variants={containerVariants}
         >
           <h2 className="text-base/7 font-semibold text-indigo-600">
-            Każdy Gość jest dla nas bardzo ważny
+            Gość jest dla nas najważniejszy
           </h2>
           <p className="text-balance text-l mt-2 font-semibold tracking-tight text-gray-900 sm:text-2xl">
             Cenimy każdą wystawioną opinię i bardzo dziękujemy, że dzielicie się

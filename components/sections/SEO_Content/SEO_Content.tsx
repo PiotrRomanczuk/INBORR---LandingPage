@@ -29,8 +29,7 @@ const SEO_Content = () => {
                 <span className="mr-2">•</span>
                 <p className="text-gray-700">
                   <strong>Atrakcyjne lokalizacje</strong> – nasze mieszkania
-                  znajdują się w centralnych dzielnicach Warszawy, takich jak
-                  Śródmieście, Mokotów czy Wola.
+                  znajdują się w centrum Warszawy, zawsze blisko stacji metra.
                 </p>
               </li>
               <li className="flex items-start">
@@ -41,14 +40,14 @@ const SEO_Content = () => {
                   kuchennego.
                 </p>
               </li>
-              <li className="flex items-start">
+              {/* <li className="flex items-start">
                 <span className="mr-2">•</span>
                 <p className="text-gray-700">
                   <strong>Elastyczność rezerwacji</strong> – dostosowujemy się
                   do Twoich potrzeb, oferując elastyczne godziny zameldowania i
                   wymeldowania.
                 </p>
-              </li>
+              </li> */}
               <li className="flex items-start">
                 <span className="mr-2">•</span>
                 <p className="text-gray-700">
@@ -76,9 +75,10 @@ const SEO_Content = () => {
               Nasze mieszkania - Twoje miejsce w Warszawie
             </h2>
             <p className="leading-relaxed text-gray-700">
-              W naszej ofercie znajdziesz apartamenty o różnej wielkości: od
+              {/* W naszej ofercie znajdziesz apartamenty o różnej wielkości: od
               przytulnych kawalerek po przestronne mieszkania idealne dla
-              rodzin. Dbamy o każdy szczegół, aby zapewnić naszym gościom
+              rodzin. */}
+               W naszych apartamentach dbamy o każdy szczegół, aby zapewnić naszym gościom
               niezapomniany pobyt.
             </p>
           </div>

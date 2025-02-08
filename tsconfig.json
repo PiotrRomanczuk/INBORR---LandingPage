@@ -33,7 +33,7 @@
     "app/kontakt/pereca/page.jsx",
     "app/apartamenty/[apartmentId]/page.jsx",
     "components/sections/Content/ImageSideTilt.tsx",
-    "app/api/nodemailer/route.js"
+    "app/api/nodemailer/route.ts"
   ],
   "exclude": ["node_modules"]
 }

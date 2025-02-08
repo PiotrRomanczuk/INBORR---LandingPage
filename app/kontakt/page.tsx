@@ -1,5 +1,5 @@
 import { ContactData } from "./ContactData";
-import { ContactForm } from "./ContactForm";
+import { ContactForm } from "./form/ContactForm";
 
 export default function Home() {
   return (

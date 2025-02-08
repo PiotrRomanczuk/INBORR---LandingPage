@@ -22,13 +22,13 @@ export const apartmentsList: IApartment[] = [
         question:
           "Czy mogą Państwo wystawić fakturę proforma, celem opłacenia pobytu?",
         answer:
-          "Tak, wystawienie faktury proforma jest możliwe, w momencie dokonania rezerwacji. Wtedy jestem w stanie określić wartość z przysługującymi zniżkami i ofertami. Proszę o informację (wiadomość systemową) o takiej potrzebie.",
+          "Tak, fakturę wystawiamy po pobycie, lub jeśli potrzeba – przed, w przypadku rezerwacji z przedpłatą.",
       },
       {
         value: "item-2",
         question: "Mogę tam zaparkować? Ile kosztuje parking za noc?",
         answer:
-          "Tak, budynek znajduje się na terenie płatnego parkingu. Dzienna opłata za parking wynosi około 57 PLN (od 08:00 do 20:00), noc jest bezpłatna. W pobliżu (20m) znajduje się płatny parking (144 PLN/dzień), lub 250 m kolejny jeden 70-80PLN/dzień.",
+          "Tak, budynek znajduje się w obszarze płatnego parkingu miejskiego. Dzienna opłata za parking wynosi około 57 PLN (od 08:00 do 20:00), noc i weekendy, święta -  parkowanie bezpłatne. W pobliżu (500 m) znajduje się płatny parking (Chłodna 51), lub 600 m w centrum Browary Warszawskie.",
       },
       {
         value: "item-3",
@@ -42,7 +42,7 @@ export const apartmentsList: IApartment[] = [
         question:
           "Jakie są godziny zameldowania i wymeldowania w obiekcie Sky Apartment Comfy Suite Pereca?",
         answer:
-          "Zameldowanie w obiekcie Sky Apartment Comfy Suite Pereca rozpoczyna się o 15:00, a wymeldować się można do 11:00.",
+          "Zameldowanie w Skyline Comfy at Chłodna rozpoczyna się o 16:00, a wymeldować się można do 10:00",
       },
       {
         value: "item-5",
@@ -57,7 +57,7 @@ export const apartmentsList: IApartment[] = [
     bedrooms: 1,
     bathrooms: 1,
     kitchenStyle: "aneks",
-    buildingType: "blok",
+    buildingType: "wielopiętrowy",
     builtYear: 1950,
     localization: "Centrum, Mirów",
     mainPic: "/chlodna/Inborr-Skyline-Chlodna-apartament-salon.jpg",
@@ -153,9 +153,13 @@ export const apartmentsList: IApartment[] = [
       bookingLink: new URL(
         "https://www.airbnb.pl/rooms/1024727561187007898?_set_bev_on_new_domain=1700305802_ZWNlMmZlODc0OTMy&source_impression_id=p3_1701941187_lcWLDPPjA3yPukzD",
       ),
+      bookableLink: new URL(
+        "https://rezerwacje.inborr.pl/",
+      ),
     },
     calendarLinks: {
       airbnb: new URL(
+
         "https://www.airbnb.com/calendar/ical/921541253367297308.ics?s=3500d8b515272c463f72ae3529949d95&locale=pl",
       ),
       booking: new URL(
@@ -186,13 +190,13 @@ export const apartmentsList: IApartment[] = [
         question:
           "Czy mogą Państwo wystawić fakturę proforma, celem opłacenia pobytu?",
         answer:
-          "Tak, wystawienie faktury proforma jest możliwe, w momencie dokonania rezerwacji. Wtedy jestem w stanie określić wartość z przysługującymi zniżkami i ofertami. Proszę o informację (wiadomość systemową) o takiej potrzebie.",
+          "Tak, fakturę wystawiamy po pobycie, lub jeśli potrzeba – przed, w przypadku rezerwacji z przedpłatą.",
       },
       {
         value: "item-2",
         question: "Mogę tam zaparkować? Ile kosztuje parking za noc?",
         answer:
-          "Tak, budynek znajduje się na terenie płatnego parkingu. Dzienna opłata za parking wynosi około 57 PLN (od 08:00 do 20:00), noc jest bezpłatna. W pobliżu (20m) znajduje się płatny parking (144 PLN/dzień), lub 250 m kolejny jeden 70-80PLN/dzień.",
+          "Tak, budynek znajduje się w obszarze płatnego parkingu miejskiego. Dzienna opłata za parking wynosi około 57 PLN (od 08:00 do 20:00), noc i weekendy, święta -  parkowanie bezpłatne. W pobliżu (20m) znajduje się płatny parking (144 PLN/dzień), lub 500 m w centrum Browary Warszawskie.",
       },
       {
         value: "item-3",
@@ -206,7 +210,7 @@ export const apartmentsList: IApartment[] = [
         question:
           "Jakie są godziny zameldowania i wymeldowania w obiekcie Sky Apartment Comfy Suite Pereca?",
         answer:
-          "Zameldowanie w obiekcie Sky Apartment Comfy Suite Pereca rozpoczyna się o 15:00, a wymeldować się można do 11:00.",
+          "Zameldowanie w Sky Apartment Comfy Suite Pereca rozpoczyna się o 15:00, a wymeldować się można do 11:00.",
       },
       {
         value: "item-5",
@@ -221,7 +225,7 @@ export const apartmentsList: IApartment[] = [
     bedrooms: 1,
     bathrooms: 1,
     kitchenStyle: "aneks",
-    buildingType: "blok",
+    buildingType: "wielopiętrowy",
     builtYear: 1950,
     localization: "Centrum, Rondo ONZ",
     mainPic: "/pereca/Inborr-Pereca-apartament-Salon and sofa.jpg",
@@ -341,9 +345,13 @@ export const apartmentsList: IApartment[] = [
       bookingLink: new URL(
         "https://www.booking.com/hotel/pl/sky-apartment-comfy-suite-pereca.pl.html?aid=1263239&label=PShare-Pulse-EgVfYD%401738518237&sid=d4e97663c83b5caba0087180fea308d9&dist=0&keep_landing=1&sb_price_type=total&type=total&",
       ),
+      bookableLink: new URL(
+        "https://rezerwacje.inborr.pl/",
+      ),
     },
     calendarLinks: {
       airbnb: new URL(
+
         "https://www.airbnb.com/calendar/ical/921541253367297308.ics?s=3500d8b515272c463f72ae3529949d95&locale=pl",
       ),
       booking: new URL(

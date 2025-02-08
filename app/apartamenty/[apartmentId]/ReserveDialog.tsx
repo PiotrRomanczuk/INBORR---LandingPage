@@ -8,14 +8,23 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import Link from "next/link";
 
-export function ReserveDialog() {
+interface ReserveDialogProps {
+  className: string;
+  bookingLink: URL;
+  airbnbLink: URL;
+  bookableLink: URL;
+}
+
+
+export function ReserveDialog({ className, bookingLink, airbnbLink, bookableLink }: ReserveDialogProps) {
   return (
     <Dialog>
       <DialogTrigger asChild>
         <Button
           variant="outline"
-          className="rounded-lg border border-blue-400 bg-blue-400 px-6 py-2 text-white transition duration-300 hover:bg-pink-400"
+          className={className}
         >
           Zarezerwuj
         </Button>
@@ -23,17 +32,24 @@ export function ReserveDialog() {
       <DialogContent className="p-x-2 sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Zarezerwuj na:</DialogTitle>
-          {/* <DialogDescription>
-            Make changes to your profile here. Click save when youre done.
-          </DialogDescription> */}
         </DialogHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">AIRBNB</div>
-          <div className="grid grid-cols-4 items-center gap-4">BOOKING</div>
+
+        <Button>
+          <Link href="https://rezerwacje.inborr.pl">Bookable</Link>
+        </Button>
+
+
+          <DialogDescription>
+            Mozesz nas zarezerwowac na stronach:
+
+          </DialogDescription>
+        <div className="flex flex-row justify-between gap-4 py-2">
+
+          <div className="flex items-center gap-4">AIRBNB</div>
+          <div className="flex items-center gap-4">BOOKING</div>
         </div>
-        {/* <DialogFooter>
-          <Button type="submit">Save changes</Button>
-        </DialogFooter> */}
+
+    
       </DialogContent>
     </Dialog>
   );

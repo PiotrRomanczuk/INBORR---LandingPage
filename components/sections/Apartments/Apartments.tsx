@@ -27,11 +27,12 @@ export const Apartments = () => {
               floor={apartment.floor}
               kitchenStyle={apartment.kitchenStyle}
               buildingType={apartment.buildingType}
-              builtYear={apartment.builtYear}
+              localization={apartment.localization}
               hrefLink={apartment.hrefLink}
               imagePosition={isEven ? "left" : "right"}
               airbnbLink={apartment.reservedLinks.airbnbLink}
               bookingLink={apartment.reservedLinks.bookingLink}
+              bookableLink={apartment.reservedLinks.bookableLink}
             />
           </motion.div>
         );
