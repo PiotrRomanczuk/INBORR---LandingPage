@@ -44,7 +44,7 @@ export const UtilsSection: React.FC<UtilsSectionProps> = ({
         description={area + " m2"}
         icon={<Maximize />}
       />
-      <UtilsCard title="Pietro:" description={floor} icon={<ArrowUp10 />} />
+      <UtilsCard title="Piętro:" description={floor} icon={<ArrowUp10 />} />
       <UtilsCard
         title="Typ kuchni:"
         description={kitchenStyle}

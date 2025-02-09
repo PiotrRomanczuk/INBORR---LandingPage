@@ -50,8 +50,8 @@ export const ContactData = () => {
             />
           </dt>
           <dd>
-            <a className="hover:text-gray-900" href="mailto:hello@example.com">
-              kontakt@inborr.com
+            <a className="hover:text-gray-900" href="mailto:biuro@inborr.pl">
+              biuro@inborr.pl
             </a>
           </dd>
         </div>

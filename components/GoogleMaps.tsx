@@ -9,7 +9,7 @@ import {
   useMarkerRef,
 } from "@vis.gl/react-google-maps";
 
-export const GoogleMaps = () => {
+export const GoogleMaps = ({ lat, lng }: { lat: number; lng: number }) => {
   const [markerRef, marker] = useMarkerRef();
 
   const apiKey = "AIzaSyBYUnqb46_-4Rpwcxf7yxMVvQwOG8Ikp40";
@@ -31,16 +31,18 @@ export const GoogleMaps = () => {
             margin: "4vh 0 4vh 0",
             padding: "0 0 0 4vh",
           }}
-          defaultCenter={{ lat: 52.237769375971396, lng: 20.989952066912494 }}
+          defaultCenter={{ lat: lat, lng: lng }}
           defaultZoom={15}
           gestureHandling={"greedy"}
           disableDefaultUI={true}
+
         >
           <Marker
             ref={markerRef}
-            position={{ lat: 52.237769375971396, lng: 20.989952066912494 }}
+            position={{ lat: lat, lng: lng }}
           />
         </Map>
+
       </APIProvider>
     </div>
   );

@@ -35,7 +35,7 @@ export const HeroTailwind = () => {
         <div className="bg-white lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 ">
           <Image
             className="mx-auto aspect-[3/2] w-full object-cover lg:aspect-auto lg:h-full lg:w-full"
-            src="/warsaw-min.jpg"
+            src="/warsaw.jpg"
             width={800}
             height={1200}
             alt=""

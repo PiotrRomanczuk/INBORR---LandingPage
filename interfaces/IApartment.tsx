@@ -20,8 +20,12 @@ export interface IApartment {
   kitchenStyle: string;
   buildingType: string;
   builtYear: number;
-  localization: string;
+  localization: string; 
+  lattitude: number; 
+  longitude: number 
+  ;
   
+
   mainPic: string;
   pics: {
     src: string;

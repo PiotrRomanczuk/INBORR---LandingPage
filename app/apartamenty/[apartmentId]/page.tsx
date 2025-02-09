@@ -10,6 +10,7 @@ import GalleryLightbox from "@/components/gallery/GalleryLightbox";
 import { ReserveDialog } from "./ReserveDialog";
 
 import ApartNotFound from "./ApartNotFound";
+import CalendarComponent from "./calendar/Calendar";
 
 // import CalendarComponent from "./calendar/Calendar";
 
@@ -63,9 +64,8 @@ export default function Page({ params }: { params: { apartmentId: string } }) {
               );
             })}
           </div>
-
           <AccordionComp data={apartment.accordionData} />
-          <GoogleMaps />
+          <GoogleMaps lat={apartment.lattitude} lng={apartment.longitude} />
           {/* <CalendarComponent apartmentName={apartment.shortName} /> */}
         </div>
       )}

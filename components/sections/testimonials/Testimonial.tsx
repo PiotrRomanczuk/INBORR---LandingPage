@@ -32,7 +32,7 @@ export function Testimonial({
             <div className="font-semibold text-gray-900">
               {testimonial.author.name}
             </div>
-            <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
+            {/* <div className="text-gray-600">{`@${testimonial.author.handle}`}</div> */}
           </div>
         </figcaption>
       </figure>

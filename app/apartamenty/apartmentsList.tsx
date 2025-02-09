@@ -60,7 +60,11 @@ export const apartmentsList: IApartment[] = [
     buildingType: "wielopiętrowy",
     builtYear: 1950,
     localization: "Centrum, Mirów",
+    lattitude: 52.237769375971396,
+    longitude: 20.989952066912494,
     mainPic: "/chlodna/Inborr-Skyline-Chlodna-apartament-salon.jpg",
+
+
     pics: [
       // Living room
       {
@@ -221,14 +225,18 @@ export const apartmentsList: IApartment[] = [
     ],
     rooms: ["kuchnia", "salon", "sypialnia", "lazienka"],
     area: 28,
-    floor: 13,
+    floor: 14,
     bedrooms: 1,
     bathrooms: 1,
     kitchenStyle: "aneks",
     buildingType: "wielopiętrowy",
     builtYear: 1950,
     localization: "Centrum, Rondo ONZ",
+    lattitude: 52.234436403787896,
+    longitude: 20.996200972297228,
     mainPic: "/pereca/Inborr-Pereca-apartament-Salon and sofa.jpg",
+
+
     pics: [
       // Living Room
       {

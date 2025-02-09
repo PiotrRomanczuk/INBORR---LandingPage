@@ -2,33 +2,36 @@ export const Testimonials_data = [
   {
     body: "Świetny apartament. Czysty , doskonale wyposażony. Jedno z niewielu miejsc, w których się zatrzymałem, które jest tak dobrze zorganizowane.",
     author: {
-      name: "Leslie Alexander",
-      handle: "lesliealexander",
+      name: "Magda K.",
+      handle: "",
       imageUrl: "/profile_avatar.jpg",
     },
   },
   {
     body: "Super! Byliśmy zachwyceni. Widać dbałość o każdy szczegół w apartamencie, aby gość czuł się jak u siebie. Wewnątrz apartamentu bardzo przytulnie i miła atmosfera. Dodatkowo kontakt z właścicielką bardzo sprawny i widać, że wynajmujący jest dla niej bardzo ważny. ",
     author: {
-      name: "John Doe",
-      handle: "johndoe",
+      name: "Paweł T.",
+      handle: "pawel",
       imageUrl: "/profile_avatar.jpg",
     },
+
   },
   {
     body: "Mieszkanie było w idealnym stanie i miało wszystko, czego możesz potrzebować, a nawet więcej. Lokalizacja jest doskonała, blisko metra, dworca autobusowego, rynku, 20 minut spacerem od zabytkowego centrum. ",
     author: {
-      name: "Jane Smith",
-      handle: "janesmith",
+      name: "Piotr R.",
+      handle: "piotr",
       imageUrl: "/profile_avatar.jpg",
+
     },
   },
   {
     body: "Wszystko zostało przemyślane w najdrobniejszych szczegółach. Jest wszystko, czego potrzebujesz, a nawet więcej. Bardzo szczegółowe instrukcje dotyczące zameldowania, poszło gładko. Podziękowania dla gospodyni za czystość i dbałość o podróżnych.",
     author: {
-      name: "Alice Johnson",
-      handle: "alicejohnson",
+      name: "Marzena L.",
+      handle: "marzena",
       imageUrl: "/profile_avatar.jpg",
+
     },
   },
   // {

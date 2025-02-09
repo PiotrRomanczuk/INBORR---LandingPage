@@ -21,11 +21,13 @@ export const MultiDateRangeCalendar: React.FC<MultiDateRangeCalendarProps> = ({
       isWithinInterval(date, { start: range.from!, end: range.to! }),
     );
   };
-
   return (
-    <Card>
-      <CardContent className="mx-auto flex flex-col items-center justify-center">
-        <h1 className="mb-4 text-xl font-bold">Apartment Availability</h1>
+    <div className="flex flex-col items-center justify-center">
+      <Card>
+        <CardContent className="mx-auto flex flex-col items-center justify-center">
+          <h1 className="mb-4 text-xl font-bold">Apartment Availability</h1>
+
+
         <div className="mt-4">
           <Calendar
             mode="single"
@@ -35,7 +37,9 @@ export const MultiDateRangeCalendar: React.FC<MultiDateRangeCalendarProps> = ({
         </div>
       </CardContent>
     </Card>
+    </div>
   );
 };
+
 
 export default MultiDateRangeCalendar;
