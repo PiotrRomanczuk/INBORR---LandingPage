@@ -14,7 +14,7 @@ export const TextInfoSide = () => {
         <div className="max-w-xl">
           <p className="mt-6">
             Naszym celem jest zapewnienie komfortowego pobytu, tak, abyś po
-            wejściu do naszych miejsc poczuł się jak w domu, albo jak z wizytą u
+            wejściu do naszych miejsc poczuł się jak w domu albo jak z wizytą u
             przyjaciół. Nasze własne doświadczenia z podróży przełożyły się na
             pomysł stworzenia apartamentów, w których znajdziesz większość
             potrzebnych rzeczy na miejscu.

@@ -20,8 +20,8 @@ const ServiceHeader = () => {
             Co zapewniamy
           </h2>
           <p className="text-body-color dark:text-dark-6 text-base">
-            Ponizej znajduje sie lista uslug, które oferujemy w kazdym z naszych
-            apartamentow
+            Poniżej znajduje się lista usług, które oferujemy w każdym z naszych
+            apartamentów
           </p>
         </motion.div>
       </div>

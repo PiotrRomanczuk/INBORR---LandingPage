@@ -24,7 +24,7 @@ export function ReserveDialog({ className, bookingLink, airbnbLink, bookableLink
       <DialogTrigger asChild>
         <Button
           variant="outline"
-          className={className}
+          className={`${className} bg-white text-black py-6 hover:bg-black hover:text-white transition-colors duration-300 border border-black rounded-sm px-6 font-medium`}
         >
           Zarezerwuj
         </Button>
