@@ -20,16 +20,13 @@ export const GoogleMaps = ({ lat, lng }: { lat: number; lng: number }) => {
 
   return (
     <div className="flex h-full w-full items-center justify-between">
-      <div>To mieszkanie znajduje się: </div>
-      {/* <div>{apiKey}</div> */}
-      {/* <div>{process.env.NODE_ENV}</div> */}
       <APIProvider apiKey={apiKey}>
         <Map
           style={{
-            width: "50vw",
+            width: "100%",
             height: "50vh",
-            margin: "4vh 0 4vh 0",
-            padding: "0 0 0 4vh",
+            margin: "2vh",
+            padding: "0",
           }}
           defaultCenter={{ lat: lat, lng: lng }}
           defaultZoom={15}

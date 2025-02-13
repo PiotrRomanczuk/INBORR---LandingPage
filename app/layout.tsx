@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 import "./globals.css";
 
@@ -11,6 +12,7 @@ import { Roboto } from "next/font/google";
 import { Open_Sans } from "next/font/google";
 import { ThemeProvider } from "@/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
+import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Inborr",
@@ -42,12 +44,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={openSans.className}>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      
+
+      
+      </Head>
       <body className="relative mx-auto max-w-screen-xl overflow-x-hidden scroll-smooth">
         <NavBar />
         <div className="bg-white pt-24">{children}</div>
         <Toaster />
         <Footer />
       </body>
+      {
+        process.env.NODE_ENV === 'production' &&
+          <GoogleAnalytics />
+      }
     </html>
   );
 }

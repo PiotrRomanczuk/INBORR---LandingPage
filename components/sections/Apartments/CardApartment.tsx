@@ -44,15 +44,15 @@ export const CardApartment: FC<CardVerticalProps> = ({
   const ImageSection = (
     <Link
       href={hrefLink}
-      className="pointer mx-2 w-full transition-all duration-300 hover:scale-105 sm:w-3/5"
+      className="pointer mx-2 w-full sm:w-3/5"
     >
-      <div className="relative h-64 sm:h-[400px]">
+      <div className="relative h-64 sm:h-[400px] overflow-hidden rounded-lg">
         <Image
           src={imageSrc}
           alt={`Zdjęcie ${title}`}
           fill
           sizes="(max-width: 768px) 100vw, 60vw"
-          className="rounded-lg object-cover"
+          className="rounded-lg object-cover transition-all duration-300 hover:scale-110"
           priority
         />
       </div>

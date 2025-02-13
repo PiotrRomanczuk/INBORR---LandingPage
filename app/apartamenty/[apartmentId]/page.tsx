@@ -65,8 +65,10 @@ export default function Page({ params }: { params: { apartmentId: string } }) {
             })}
           </div>
           <AccordionComp data={apartment.accordionData} />
-          <GoogleMaps lat={apartment.lattitude} lng={apartment.longitude} />
-          {/* <CalendarComponent apartmentName={apartment.shortName} /> */}
+          <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+            <CalendarComponent apartmentName={apartment.shortName} />
+            <GoogleMaps lat={apartment.lattitude} lng={apartment.longitude} />
+          </div>
         </div>
       )}
     </>

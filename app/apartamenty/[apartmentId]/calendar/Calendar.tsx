@@ -1,5 +1,9 @@
+'use client';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { parseICSToJSON, getEventDates } from "./@components/ParseICSToJson";
-import { MultiDateRangeCalendar } from "./@components/MultiDateRangeCalendar";
+
+// Lazy load the MultiDateRangeCalendar component
+const MultiDateRangeCalendar = lazy(() => import('./@components/MultiDateRangeCalendar'));
 
 interface CalendarProps {
   apartmentName: string;
@@ -10,10 +14,10 @@ async function fetchAndProcessICSData(apartmentName: string) {
   console.log(apartmentName);
   console.log('fetching iCal data');
   const airbnbICSData = await fetch(
-    `http://inborr.pl/api/calendar/${apartmentName}/airbnb`,
+    `http://localhost:3000//api/calendar/${apartmentName}/airbnb`,
   );
   const bookingICSData = await fetch(
-    `http://inborr.pl/api/calendar/${apartmentName}/booking`,
+    `http://localhost:3000//api/calendar/${apartmentName}/booking`,
   );
 
   const airbnbICSDataString = await airbnbICSData.text();
@@ -27,18 +31,26 @@ async function fetchAndProcessICSData(apartmentName: string) {
   return getEventDates(jsonEvents);
 }
 
-async function CalendarComponent({ apartmentName }: CalendarProps) {
-  const eventDates = await fetchAndProcessICSData(apartmentName);
+function CalendarComponent({ apartmentName }: CalendarProps) {
+  const [selectedRanges, setSelectedRanges] = useState<Array<{ from: Date; to: Date }>>([]);
 
-  const selectedRanges = eventDates.map((date) => ({
-    from: new Date(date),
-    to: new Date(date),
-  }));
+  useEffect(() => {
+    const fetchData = async () => {
+      const eventDates = await fetchAndProcessICSData(apartmentName);
+      const ranges = eventDates.map((date) => ({
+        from: new Date(date),
+        to: new Date(date),
+      }));
+      setSelectedRanges(ranges);
+    };
 
-  console.log(selectedRanges);
+    fetchData();
+  }, [apartmentName]);
 
   return (
-    <><MultiDateRangeCalendar selectedRanges={selectedRanges} /></>
+    <Suspense fallback={<div>Loading calendar...</div>}>
+      <MultiDateRangeCalendar selectedRanges={selectedRanges} />
+    </Suspense>
   );
 }
 
