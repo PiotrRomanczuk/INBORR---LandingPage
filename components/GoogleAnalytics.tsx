@@ -1,20 +1,19 @@
+'use client'
+
 import Script from 'next/script'
 import { useEffect } from 'react'
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 
 const GA_TRACKING_ID = 'GTM-NKBH5W2W'
 
-export default () => {
-  const router = useRouter()
+const GoogleAnalytics = () => {
+  const pathname = usePathname()
+  
   useEffect(() => {
-    const handleRouteChange = (url: string) => {
-      window.gtag('config', GA_TRACKING_ID, { page_path: url })
+    if (pathname) {
+      window.gtag('config', GA_TRACKING_ID, { page_path: pathname })
     }
-    router.events.on('routeChangeComplete', handleRouteChange)
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange)
-    }
-  }, [router.events])
+  }, [pathname])
 
   return (
     <>
@@ -39,3 +38,5 @@ export default () => {
     </>
   )
 }
+
+export default GoogleAnalytics
