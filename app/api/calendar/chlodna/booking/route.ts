@@ -1,6 +1,6 @@
 export async function GET(request: Request) {
   const link = new URL(
-    "https://ical.booking.com/v1/export?t=be015c14-cbeb-44d5-b285-9a3e8928d745",
+    "https://ical.booking.com/v1/export?t=792cb4ca-a15c-40cb-b4e8-0bfcb12d7f3b",
   );
   try {
     const response = await fetch(link);

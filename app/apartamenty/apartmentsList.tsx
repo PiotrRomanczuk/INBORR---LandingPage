@@ -164,10 +164,10 @@ export const apartmentsList: IApartment[] = [
     calendarLinks: {
       airbnb: new URL(
 
-        "https://www.airbnb.com/calendar/ical/921541253367297308.ics?s=3500d8b515272c463f72ae3529949d95&locale=pl",
+        "https://www.airbnb.pl/calendar/ical/1024727561187007898.ics?s=d6fa8ab96065f48e224f40e44feff419",
       ),
       booking: new URL(
-        "https://ical.booking.com/v1/export?t=be015c14-cbeb-44d5-b285-9a3e8928d745",
+        "https://ical.booking.com/v1/export?t=792cb4ca-a15c-40cb-b4e8-0bfcb12d7f3b",
       ),
     },
   },

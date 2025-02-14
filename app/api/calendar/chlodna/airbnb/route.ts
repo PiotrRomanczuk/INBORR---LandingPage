@@ -1,6 +1,6 @@
 export async function GET(request: Request) {
   const link = new URL(
-    "https://www.airbnb.com/calendar/ical/921541253367297308.ics?s=3500d8b515272c463f72ae3529949d95&locale=pl",
+    "https://www.airbnb.pl/calendar/ical/1024727561187007898.ics?s=d6fa8ab96065f48e224f40e44feff419",
   );
   try {
     const response = await fetch(link);

@@ -24,7 +24,7 @@ export function ReserveDialog({ className, bookingLink, airbnbLink, bookableLink
       <DialogTrigger asChild>
         <Button
           variant="outline"
-          className={`${className} bg-white text-black py-6 hover:bg-black hover:text-white transition-colors duration-300 border border-black rounded-sm px-6 font-medium`}
+          className={`${className} `}
         >
           Zarezerwuj
         </Button>
@@ -45,8 +45,12 @@ export function ReserveDialog({ className, bookingLink, airbnbLink, bookableLink
           </DialogDescription>
         <div className="flex flex-row justify-between gap-4 py-2">
 
-          <div className="flex items-center gap-4">AIRBNB</div>
-          <div className="flex items-center gap-4">BOOKING</div>
+          <Link href={airbnbLink.toString()} className="relative block w-fit text-lg font-semibold leading-6 text-gray-900 
+                  after:absolute after:block after:h-[3px] after:w-full after:origin-left after:scale-x-0
+                   after:bg-blue-300 after:transition after:duration-300 after:content-[''] after:hover:scale-x-100">AIRBNB</Link>
+          <Link href={bookingLink.toString()} className="relative block w-fit text-lg font-semibold leading-6 text-gray-900 
+                  after:absolute after:block after:h-[3px] after:w-full after:origin-left after:scale-x-0
+                   after:bg-blue-300 after:transition after:duration-300 after:content-[''] after:hover:scale-x-100">BOOKING</Link>
         </div>
 
     
