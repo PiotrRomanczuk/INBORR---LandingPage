@@ -11,7 +11,6 @@ import {
   MapPin,
 } from "lucide-react";
 
-
 import { UtilsCard } from "@/components/cards/utilsCard";
 
 interface UtilsSectionProps {

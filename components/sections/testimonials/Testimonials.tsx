@@ -4,7 +4,7 @@ import { Testimonials_data } from "./testimonials_data";
 import { Testimonial } from "./Testimonial";
 import { motion } from "framer-motion";
 import { cardVariants } from "./Variants";
-import { containerVariants } from "../services/ServiceVariants";
+import { containerVariants } from "../Services/ServiceVariants";
 
 export function Testimonials() {
   return (
