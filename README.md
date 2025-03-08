@@ -1,45 +1,108 @@
-ToDo's:
+# Inborr Apartment Rentals
 
-    Apartment dynamic routes
-    
-    Testimonials section
-    
-    Email contact form
-    
-    Dialog - share'ing button
-        Toast - as an confirmation for copying link
-    
-    Implementation of the reservations dashboard
+A modern Next.js application for short-term apartment rentals in Warsaw, featuring a responsive design, dynamic routing, and interactive components.
 
-    Optional:
-        Hover Card on main apartment Card
+## 🌟 Features
 
-Done:
+- **Dynamic Apartment Listings**: Browse through available apartments with detailed information
+- **Interactive Gallery**: View high-quality images of each apartment
+- **Booking System**: Easy-to-use reservation dashboard
+- **Contact Form**: Direct email communication with property owners
+- **Responsive Design**: Optimized for all device sizes
+- **Multi-language Support**: Available in Polish and English
+- **SEO Optimized**: Enhanced visibility for search engines
+- **Dark/Light Mode**: Theme switching capability
+- **Interactive Maps**: Location visualization using Google Maps
+- **Testimonials**: Real customer reviews and feedback
 
-    Spinner on loading page ✅
-    
-    Image in the background ✅
-    
-    Card component on main page✅
-    
-    Apartments model site ✅
-    
-    Gallery!!! ✅
-    
-    Accordion for a FAQ apartments ✅
+## 🚀 Tech Stack
 
-## Getting Started
+- **Framework**: Next.js 14
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **Animations**: Framer Motion
+- **Maps**: Google Maps API
+- **Email**: Mailgun
+- **Analytics**: Google Analytics
+- **Form Handling**: React Hook Form
+- **Type Safety**: TypeScript
+- **State Management**: React Context
+- **Image Optimization**: Next.js Image Component
 
-First, run the development server:
+## 📦 Installation
 
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/inborr.git
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Create a `.env` file in the root directory with the following variables:
+```env
+MAILGUN_API_KEY=your_mailgun_api_key
+MAILGUN_DOMAIN=your_mailgun_domain
+RECIPIENT_EMAIL=your_email
+GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+```
+
+4. Run the development server:
+```bash
 npm run dev
+```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🏗️ Project Structure
 
-## Deploy on Vercel
+```
+inborr/
+├── app/                # Next.js app directory
+│   ├── api/           # API routes
+│   ├── apartments/    # Apartment pages
+│   └── kontakt/       # Contact pages
+├── components/        # Reusable components
+├── lib/              # Utility functions
+├── public/           # Static assets
+└── styles/           # Global styles
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🔧 Configuration
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The project uses several configuration files:
+
+- `tailwind.config.js` - Tailwind CSS configuration
+- `next.config.js` - Next.js configuration
+- `components.json` - shadcn/ui configuration
+
+## 📱 Responsive Design
+
+The application is fully responsive and optimized for:
+- Mobile devices
+- Tablets
+- Desktop computers
+
+## 🚀 Deployment
+
+The application is configured for deployment on Vercel:
+
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Configure environment variables
+4. Deploy
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details
+
+## 👥 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📞 Support
+
+For support, email [your-email@example.com](mailto:your-email@example.com)
