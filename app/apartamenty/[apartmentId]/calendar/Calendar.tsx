@@ -1,23 +1,24 @@
-'use client';
-import { lazy, Suspense, useEffect, useState } from 'react';
+"use client";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { parseICSToJSON, getEventDates } from "./@components/ParseICSToJson";
 
 // Lazy load the MultiDateRangeCalendar component
-const MultiDateRangeCalendar = lazy(() => import('./@components/MultiDateRangeCalendar'));
+const MultiDateRangeCalendar = lazy(
+  () => import("./@components/MultiDateRangeCalendar"),
+);
 
 interface CalendarProps {
   apartmentName: string;
 }
 
 async function fetchAndProcessICSData(apartmentName: string) {
-
   console.log(apartmentName);
-  console.log('fetching iCal data');
+  console.log("fetching iCal data");
   const airbnbICSData = await fetch(
-    `http://localhost:3000//api/calendar/${apartmentName}/airbnb`,
+    `http://inborr.pl/api/calendar/${apartmentName}/airbnb`,
   );
   const bookingICSData = await fetch(
-    `http://localhost:3000//api/calendar/${apartmentName}/booking`,
+    `http://inborr.pl/api/calendar/${apartmentName}/booking`,
   );
 
   const airbnbICSDataString = await airbnbICSData.text();
@@ -32,7 +33,9 @@ async function fetchAndProcessICSData(apartmentName: string) {
 }
 
 function CalendarComponent({ apartmentName }: CalendarProps) {
-  const [selectedRanges, setSelectedRanges] = useState<Array<{ from: Date; to: Date }>>([]);
+  const [selectedRanges, setSelectedRanges] = useState<
+    Array<{ from: Date; to: Date }>
+  >([]);
 
   useEffect(() => {
     const fetchData = async () => {

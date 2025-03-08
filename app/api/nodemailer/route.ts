@@ -2,10 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 
 import FormData from "form-data"; // form-data v4.0.1
 import Mailgun from "mailgun.js"; // mailgun.js v11.1.0
-import { CloudCog } from "lucide-react";
-
-
-const nodemailer = require("nodemailer");
 
 export async function GET(req: NextRequest) {
   try {
@@ -13,7 +9,7 @@ export async function GET(req: NextRequest) {
     await sendSimpleMessage();
     return NextResponse.json(
       { success: "Email sent successfully" },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error: unknown) {
     if (error instanceof Error) {
@@ -28,10 +24,11 @@ export async function GET(req: NextRequest) {
   }
 }
 
-
 async function sendSimpleMessage() {
   if (!process.env.MAILGUN_API_KEY) {
-    throw new Error("MAILGUN_API_KEY is not configured in environment variables");
+    throw new Error(
+      "MAILGUN_API_KEY is not configured in environment variables",
+    );
   }
 
   const mailgun = new Mailgun(FormData);
@@ -57,35 +54,34 @@ async function sendSimpleMessage() {
 export async function POST(req: NextRequest) {
   try {
     const { firstName, lastName, email, phone, message } = await req.json();
-    
+
     await sendFormMessage({
       firstName,
       lastName,
       email,
       phone,
-      message
+      message,
     });
-    
+
     return NextResponse.json(
       { success: "Email sent successfully" },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error: unknown) {
     console.error("Error sending email:", error);
     return NextResponse.json(
       { error: "Failed to send email" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
-
 
 async function sendFormMessage({
   firstName,
   lastName,
   email,
   phone,
-  message
+  message,
 }: {
   firstName: string;
   lastName: string;
@@ -94,7 +90,9 @@ async function sendFormMessage({
   message: string;
 }) {
   if (!process.env.MAILGUN_API_KEY) {
-    throw new Error("MAILGUN_API_KEY is not configured in environment variables");
+    throw new Error(
+      "MAILGUN_API_KEY is not configured in environment variables",
+    );
   }
 
   const mailgun = new Mailgun(FormData);
