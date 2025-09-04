@@ -155,7 +155,7 @@ export const apartmentsList: IApartment[] = [
         "https://www.airbnb.pl/rooms/1024727561187007898?_set_bev_on_new_domain=1700305802_ZWNlMmZlODc0OTMy&source_impression_id=p3_1701941187_lcWLDPPjA3yPukzD",
       ),
       bookingLink: new URL(
-        "https://www.airbnb.pl/rooms/1024727561187007898?_set_bev_on_new_domain=1700305802_ZWNlMmZlODc0OTMy&source_impression_id=p3_1701941187_lcWLDPPjA3yPukzD",
+        "https://www.booking.com/hotel/pl/skyline-cool-space-at-chlodna.pl.html?aid=1263239&label=PShare-Pulse-IdIA5b%401755528048&sid=946de9355dcafe7b521169e2f6643929&dist=0&keep_landing=1&sb_price_type=total&type=total&",
       ),
       bookableLink: new URL(
         "https://rezerwacje.inborr.pl/",
