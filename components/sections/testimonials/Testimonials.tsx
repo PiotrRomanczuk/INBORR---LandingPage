@@ -4,7 +4,7 @@ import { Testimonials_data } from "./testimonials_data";
 import { Testimonial } from "./Testimonial";
 import { motion } from "framer-motion";
 import { cardVariants } from "./Variants";
-import { containerVariants } from "../Services/ServiceVariants";
+import { containerVariants } from "../services/serviceVariants";
 
 export function Testimonials() {
   return (
@@ -17,7 +17,7 @@ export function Testimonials() {
           <h2 className="text-base/7 font-semibold text-indigo-600">
             Gość jest dla nas najważniejszy
           </h2>
-          <p className="text-balance text-l mt-2 font-semibold tracking-tight text-gray-900 sm:text-2xl">
+          <p className="text-l mt-2 text-balance font-semibold tracking-tight text-gray-900 sm:text-2xl">
             Cenimy każdą wystawioną opinię i bardzo dziękujemy, że dzielicie się
             Państwo z nami odczuciami i radami.
           </p>
@@ -25,7 +25,10 @@ export function Testimonials() {
         <div className="mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">
           <div className="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">
             {Testimonials_data.map((testimonial, index) => (
-              <motion.div key={index} variants={cardVariants}>
+              <motion.div
+                key={index}
+                // variants={cardVariants}
+              >
                 <Testimonial
                   key={testimonial.author.handle}
                   testimonial={testimonial}
