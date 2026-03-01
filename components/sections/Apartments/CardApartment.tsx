@@ -81,10 +81,9 @@ export const CardApartment: FC<CardVerticalProps> = ({
         </Link>
       </div>
       <div
-        className="flex items-center justify-center pt-2 text-xl font-bold md:text-3xl"
+        className="flex items-center justify-center pt-2"
       >
-
-        <ReserveDialog className="bg-background text-foreground py-3 sm:py-5 md:py-8 hover:bg-foreground hover:text-background transition-colors text-lg sm:text-2xl md:text-4xl duration-300 border border-foreground rounded-sm px-6 font-medium" 
+        <ReserveDialog className="bg-foreground text-background px-8 py-3 text-base sm:text-lg font-medium rounded-md shadow-md hover:shadow-lg hover:bg-foreground/90 transition-all duration-300"
         bookingLink={bookingLink}
         airbnbLink={airbnbLink}
         bookableLink={bookableLink}

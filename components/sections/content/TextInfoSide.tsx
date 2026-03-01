@@ -4,13 +4,13 @@ import { STATS } from "./STATS";
 export const TextInfoSide = () => {
   return (
     <div className="px-6 lg:px-0">
-      <div className="text-base leading-7 text-gray-700 lg:max-w-lg">
+      <div className="text-base leading-7 text-muted-foreground lg:max-w-lg">
         <p className="text-lg font-semibold leading-7 text-primary">
           Wartości INBORR
         </p>
-        <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           Jakość i komfort
-        </h1>
+        </h2>
         <div className="max-w-xl">
           <p className="mt-6">
             Naszym celem jest zapewnienie komfortowego pobytu, tak, abyś po
@@ -37,13 +37,13 @@ export const TextInfoSide = () => {
       </div>
       {/* <StatsAnimation /> */}
       {/* ------------------------------------------------------------------------------------------ */}
-      <dl className="mt-10 grid grid-cols-2 gap-4 sm:gap-8 md:gap-12 border-t border-gray-900/10 pt-10 ">
+      <dl className="mt-10 grid grid-cols-2 gap-4 sm:gap-8 md:gap-12 border-t border-border pt-10 ">
         {STATS.map((stat, statIdx) => (
           <div key={statIdx}>
-            <dt className="text-lg font-semibold leading-6 text-gray-600">
+            <dt className="text-lg font-semibold leading-6 text-muted-foreground">
               {stat.label}
             </dt>
-            <dd className="mt-2 text-3xl font-bold leading-10 tracking-tight text-gray-900">
+            <dd className="mt-2 text-3xl font-bold leading-10 tracking-tight text-foreground">
               {stat.value}
             </dd>
           </div>

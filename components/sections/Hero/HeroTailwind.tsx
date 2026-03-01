@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { TextAnimation } from "@/components/ui/TextAnimation";
 
 export const HeroTailwind = () => {
@@ -20,14 +21,19 @@ export const HeroTailwind = () => {
             </svg>
             <div className="relative px-6 py-20 sm:py-40 lg:px-8 lg:py-56 lg:pr-0">
               <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
-                <div className=" sm:mb-10 sm:flex"></div>
-                <h1 className=" text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
                   <TextAnimation />
                 </h1>
-                <p className="mt-6 text-base sm:text-lg md:text-xl leading-8 text-gray-600">
+                <p className="mt-6 text-base sm:text-lg md:text-xl leading-8 text-muted-foreground">
                   Wynajem na dni i tygodnie – city break, workation czy pobyt
                   biznesowy – zadbamy o jakość i Twój komfort.
                 </p>
+                <Link
+                  href="/apartamenty"
+                  className="mt-8 inline-flex min-h-[44px] items-center rounded-md bg-primary px-8 py-3 text-base font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                >
+                  Zobacz apartamenty
+                </Link>
               </div>
             </div>
           </div>

@@ -20,17 +20,17 @@ export const ImageSideTilt = () => {
       //   children: 2
       // }
     >
-      <div className="relative overflow-hidden rounded-3xl  bg-gray-900 p-6 shadow-2xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 lg:pr-4 lg:pt-64 xl:px-10 xl:pb-10">
+      <div className="relative overflow-hidden rounded-3xl bg-foreground p-6 shadow-2xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 lg:pr-4 lg:pt-64 xl:px-10 xl:pb-10">
         <Image
           className="absolute inset-0 h-full w-full object-cover"
           src="/pereca/Inborr-Pereca-Sky-widok z okna.jpg"
           width={1000}
           height={1000}
-          alt=""
+          alt="Widok z okna apartamentu Inborr na Pereca w Warszawie"
         />
 
         <figure className="scale3d-90 relative isolate rounded-2xl bg-white bg-opacity-40 p-6  text-black backdrop-blur-lg lg:ml-36 lg:mt-12">
-          <blockquote className="text-xl font-semibold leading-8 text-gray-900">
+          <blockquote className="text-xl font-semibold leading-8 text-foreground">
             <p>
               “Kochaliśmy nasz pobyt! Mieszkanie było łatwe do znalezienia;
               bardzo łatwe samodzielne zameldowanie (i wymeldowanie). Było

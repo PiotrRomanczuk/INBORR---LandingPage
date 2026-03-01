@@ -10,7 +10,7 @@ export const UtilsCard: React.FC<UtilsCardProps> = ({
   icon,
 }) => {
   return (
-    <div className="flex flex-col dark:fill-white">
+    <div className="flex flex-col">
       <div className="">{title}</div>
 
       <div className="flex gap-4 pt-2 font-light">

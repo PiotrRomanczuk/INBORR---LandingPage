@@ -6,11 +6,11 @@ import React from "react";
 
 export const ImageSide = () => {
   return (
-    <div className="relative overflow-hidden rounded-3xl border-2 bg-gray-900 p-3 sm:p-6 shadow-2xl transition duration-200 hover:scale-105 sm:px-8 lg:max-w-lg lg:px-8 lg:pb-8 lg:pr-4 lg:pt-64 xl:px-10 xl:pb-10">
+    <div className="relative overflow-hidden rounded-3xl border-2 bg-foreground p-3 sm:p-6 shadow-2xl transition duration-200 hover:scale-105 sm:px-8 lg:max-w-lg lg:px-8 lg:pb-8 lg:pr-4 lg:pt-64 xl:px-10 xl:pb-10">
       <Image
         className="absolute inset-0 h-full w-full object-cover"
         src="/pereca/Inborr-Pereca-Sky-widok z okna.jpg"
-        alt=""
+        alt="Widok z okna apartamentu Inborr na Pereca w Warszawie"
       />
       <figure className="relative isolate rounded-2xl bg-white bg-opacity-40 p-6 text-black backdrop-blur-lg lg:ml-36 lg:mt-12">
         {/* <img
@@ -18,7 +18,7 @@ export const ImageSide = () => {
             alt=""
             className="h-12 w-auto"
           /> */}
-        <blockquote className="text-xl font-semibold leading-8 text-gray-900">
+        <blockquote className="text-xl font-semibold leading-8 text-foreground">
           <p>
             “Kochaliśmy nasz pobyt! Mieszkanie było łatwe do znalezienia; bardzo
             łatwe samodzielne zameldowanie (i wymeldowanie). Było bardzo czysto

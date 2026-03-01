@@ -55,21 +55,29 @@ export const ContactForm = () => {
   const onSubmit: SubmitHandler<FormFields> = async (data) => {
     const { firstName, lastName, email, phone, message } = data;
     try {
-      await sendEmail(firstName, lastName, email, phone, message);
+      const result = await sendEmail(firstName, lastName, email, phone, message);
+      if (!result) {
+        toast({
+          title: "Nie udało się wysłać wiadomości",
+          description: "Spróbuj ponownie później.",
+          variant: "destructive",
+        });
+        return;
+      }
       toast({
-        title: "Email sent successfully",
-        description: "We have received your email and will respond to it as soon as possible.",
+        title: "Wiadomość wysłana",
+        description: "Otrzymaliśmy Twoją wiadomość i odpowiemy najszybciej jak to możliwe.",
       });
     } catch {
       toast({
-        title: "Failed to send email",
-        description: "Please try again later.",
+        title: "Nie udało się wysłać wiadomości",
+        description: "Spróbuj ponownie później.",
         variant: "destructive",
       });
     }
   };
 
-  const onError = (errors: FieldErrors<FormFields>) => {};
+  const onError = (_errors: FieldErrors<FormFields>) => {};
 
   return (
     <form
@@ -78,13 +86,13 @@ export const ContactForm = () => {
     >
       <div className=" relative">
         {errors.firstName && (
-          <p id="first-name-error" role="alert" className="absolute right-0 top-0 text-blue-400">
+          <p id="first-name-error" role="alert" className="absolute right-0 top-0 text-destructive">
             {errors.firstName.message}
           </p>
         )}
         <label
           htmlFor="first-name"
-          className="block text-sm sm:text-base font-semibold leading-6 text-gray-900"
+          className="block text-sm sm:text-base font-semibold leading-6 text-foreground"
         >
           Imię
         </label>
@@ -98,20 +106,20 @@ export const ContactForm = () => {
             {...register("firstName", {
               required: "Proszę podać imię",
             })}
-            className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            className="block w-full rounded-md border-0 px-3.5 py-2 text-foreground shadow-sm ring-1 ring-inset ring-input placeholder:text-muted-foreground focus:ring-2 focus:ring-inset focus:ring-ring sm:text-sm sm:leading-6"
           />
         </div>
       </div>
       <div className="mt-2.5">
         <label
           htmlFor="last-name"
-          className="block text-sm sm:text-base font-semibold leading-6 text-gray-900"
+          className="block text-sm sm:text-base font-semibold leading-6 text-foreground"
         >
           Nazwisko
         </label>
         <div className="relative mt-2.5">
           {errors.lastName && (
-            <p id="last-name-error" role="alert" className="absolute -top-8 right-0 text-blue-400">
+            <p id="last-name-error" role="alert" className="absolute -top-8 right-0 text-destructive">
               {errors.lastName.message}
             </p>
           )}
@@ -124,20 +132,20 @@ export const ContactForm = () => {
             {...register("lastName", {
               required: "Proszę podać nazwisko",
             })}
-            className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            className="block w-full rounded-md border-0 px-3.5 py-2 text-foreground shadow-sm ring-1 ring-inset ring-input placeholder:text-muted-foreground focus:ring-2 focus:ring-inset focus:ring-ring sm:text-sm sm:leading-6"
           />
         </div>
       </div>
       <div className="sm:col-span-2">
         <label
           htmlFor="email"
-          className="block text-sm sm:text-base font-semibold leading-6 text-gray-900"
+          className="block text-sm sm:text-base font-semibold leading-6 text-foreground"
         >
           Email
         </label>
         <div className="relative mt-2.5">
           {errors.email && (
-            <p id="email-error" role="alert" className="absolute -top-8 right-0 text-blue-400">
+            <p id="email-error" role="alert" className="absolute -top-8 right-0 text-destructive">
               {errors.email.message}
             </p>
           )}
@@ -150,20 +158,20 @@ export const ContactForm = () => {
             {...register("email", {
               required: "Proszę podać swoj email",
             })}
-            className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            className="block w-full rounded-md border-0 px-3.5 py-2 text-foreground shadow-sm ring-1 ring-inset ring-input placeholder:text-muted-foreground focus:ring-2 focus:ring-inset focus:ring-ring sm:text-sm sm:leading-6"
           />
         </div>
       </div>
       <div className="sm:col-span-2">
         <label
           htmlFor="phone-number"
-          className="block text-sm sm:text-base font-semibold leading-6 text-gray-900"
+          className="block text-sm sm:text-base font-semibold leading-6 text-foreground"
         >
           Numer telefonu
         </label>
         <div className="relative mt-2.5">
           {errors.phone && (
-            <p id="phone-error" role="alert" className="absolute -top-8 right-0 text-blue-400">
+            <p id="phone-error" role="alert" className="absolute -top-8 right-0 text-destructive">
               {errors.phone.message}
             </p>
           )}
@@ -176,20 +184,20 @@ export const ContactForm = () => {
             {...register("phone", {
               required: "Proszę podać numer telefonu",
             })}
-            className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            className="block w-full rounded-md border-0 px-3.5 py-2 text-foreground shadow-sm ring-1 ring-inset ring-input placeholder:text-muted-foreground focus:ring-2 focus:ring-inset focus:ring-ring sm:text-sm sm:leading-6"
           />
         </div>
       </div>
       <div className="sm:col-span-2">
         <label
           htmlFor="message"
-          className="block text-sm sm:text-base font-semibold leading-6 text-gray-900"
+          className="block text-sm sm:text-base font-semibold leading-6 text-foreground"
         >
           Wiadomość
         </label>
         <div className="relative mt-2.5">
           {errors.message && (
-            <p id="message-error" role="alert" className="absolute -top-8 right-0 text-blue-400">
+            <p id="message-error" role="alert" className="absolute -top-8 right-0 text-destructive">
               {errors.message.message}
             </p>
           )}
@@ -198,7 +206,7 @@ export const ContactForm = () => {
             rows={4}
             aria-invalid={!!errors.message}
             aria-describedby={errors.message ? "message-error" : undefined}
-            className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            className="block w-full rounded-md border-0 px-3.5 py-2 text-foreground shadow-sm ring-1 ring-inset ring-input placeholder:text-muted-foreground focus:ring-2 focus:ring-inset focus:ring-ring sm:text-sm sm:leading-6"
             defaultValue={""}
             {...register("message", {
               required: "Proszę napisać wiadomość",
@@ -209,7 +217,7 @@ export const ContactForm = () => {
       <div className="mt-8 flex justify-end">
         <button
           type="submit"
-          className="rounded-lg border border-blue-400 bg-blue-400 px-6 py-2 text-white transition duration-300 hover:bg-pink-400"
+          className="rounded-md bg-primary px-6 py-2 text-primary-foreground transition duration-300 hover:bg-primary/90"
         >
           Wyślij
         </button>

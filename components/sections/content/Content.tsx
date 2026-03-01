@@ -11,14 +11,16 @@ export function Content() {
         <div className="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-16 px-6 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <motion.div
             initial={{ x: -100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <ImageSideTilt />
           </motion.div>
           <motion.div
             initial={{ x: 100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <TextInfoSide />

@@ -14,10 +14,10 @@ export function Testimonials() {
           className="mx-auto max-w-2xl animate-fade-in text-center"
           variants={containerVariants}
         >
-          <h2 className="text-base/7 font-semibold text-indigo-600">
+          <h2 className="text-base/7 font-semibold text-primary">
             Gość jest dla nas najważniejszy
           </h2>
-          <p className="text-l mt-2 text-balance font-semibold tracking-tight text-gray-900 sm:text-2xl">
+          <p className="text-l mt-2 text-balance font-semibold tracking-tight text-foreground sm:text-2xl">
             Cenimy każdą wystawioną opinię i bardzo dziękujemy, że dzielicie się
             Państwo z nami odczuciami i radami.
           </p>
@@ -27,7 +27,7 @@ export function Testimonials() {
             {Testimonials_data.map((testimonial, index) => (
               <motion.div
                 key={index}
-                // variants={cardVariants}
+                variants={cardVariants}
               >
                 <Testimonial
                   key={testimonial.author.handle}

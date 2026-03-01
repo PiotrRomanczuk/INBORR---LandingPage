@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 const openSans = Open_Sans({
   weight: ["300", "500", "700"],
   style: "normal",
-  preload: true,
+  subsets: ["latin", "latin-ext"],
   display: "swap",
 });
 

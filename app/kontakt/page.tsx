@@ -21,6 +21,9 @@ export default function Home() {
           <Image src="/pereca/Pereca2-Budynek-Inborr.jpg" alt="Warsaw Pereca" fill className="object-cover" />
         </div>
       </div>
+      <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24">
+        <ContactForm />
+      </div>
     </div>
   );
 }

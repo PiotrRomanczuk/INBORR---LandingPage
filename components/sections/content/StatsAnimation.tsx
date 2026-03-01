@@ -14,14 +14,14 @@ const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), {
 
 export const StatsAnimation = () => {
   return (
-    <dl className="mt-10 grid grid-cols-2 gap-8 border-t border-gray-900/10 pt-10 sm:grid-cols-3 md:grid-cols-4">
+    <dl className="mt-10 grid grid-cols-2 gap-8 border-t border-border pt-10 sm:grid-cols-3 md:grid-cols-4">
       {stats.map((stat, statIdx) => (
         <div key={statIdx}>
-          <div className="align-center h-12 text-center font-semibold leading-6 text-gray-600">
+          <div className="align-center h-12 text-center font-semibold leading-6 text-muted-foreground">
             {stat.label}
           </div>
           <AnimatedNumbers
-            className="align-center mt-2 border-2 text-center text-3xl font-bold leading-10 tracking-tight text-gray-900"
+            className="align-center mt-2 border-2 text-center text-3xl font-bold leading-10 tracking-tight text-foreground"
             transitions={(index) => ({
               type: "spring",
               duration: index,

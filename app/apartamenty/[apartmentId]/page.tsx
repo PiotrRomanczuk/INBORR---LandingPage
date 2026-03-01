@@ -30,7 +30,7 @@ export default function Page({ params }: { params: { apartmentId: string } }) {
               <Mainpic imageSrc={apartment.mainPic} />
               <div className="-mt-3 flex justify-center gap-4 text-sm text-black">
                 <GalleryLightbox slides={apartment.pics} />
-                <ReserveDialog className="rounded-lg border border-blue-400 bg-blue-400 px-6 py-2 text-white transition duration-300 hover:bg-pink-400" 
+                <ReserveDialog className="rounded-md bg-primary px-6 py-2 text-primary-foreground transition duration-300 hover:bg-primary/90" 
                 bookingLink={apartment.reservedLinks.bookingLink}
                 airbnbLink={apartment.reservedLinks.airbnbLink}
                 bookableLink={apartment.reservedLinks.bookableLink}
@@ -40,7 +40,7 @@ export default function Page({ params }: { params: { apartmentId: string } }) {
 
             <div className="flex flex-col items-start py-4 text-lg text-black md:w-1/3 md:text-xl">
               {apartment.name}
-              <div className="text-sm font-light text-gray-700 xl:text-lg">
+              <div className="text-sm font-light text-muted-foreground xl:text-lg">
                 {apartment.location}
               </div>
 
@@ -55,10 +55,10 @@ export default function Page({ params }: { params: { apartmentId: string } }) {
               />
             </div>
           </div>
-          <div className="border-y-2 border-blue-400 py-4">
+          <div className="border-y-2 border-border py-4">
             {apartment.description.long.map((paragraph, idx) => {
               return (
-                <div className="pt-2 text-sm text-gray-900" key={idx}>
+                <div className="pt-2 text-sm text-foreground" key={idx}>
                   {paragraph}
                 </div>
               );

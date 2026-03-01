@@ -11,9 +11,10 @@ export default function Error({
     <div className="flex h-screen flex-col items-center justify-center pt-20">
       <div className="pb-10 text-5xl">Something went wrong!</div>
       <button
-        className="tansition rounded-2xl bg-blue-300 p-20 text-3xl uppercase duration-300 hover:bg-blue-500"
+        onClick={() => reset()}
+        className="rounded-2xl bg-primary px-12 py-6 text-xl text-primary-foreground transition duration-300 hover:bg-primary/90"
       >
-        Try again
+        Spróbuj ponownie
       </button>
     </div>
   );

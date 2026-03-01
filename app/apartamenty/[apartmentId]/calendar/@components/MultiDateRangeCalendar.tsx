@@ -26,10 +26,10 @@ export const MultiDateRangeCalendar: React.FC<MultiDateRangeCalendarProps> = ({
       <Card className="w-full max-w-md shadow-lg">
         <CardContent className="p-6">
           <div className="mb-6 space-y-1 text-center">
-            <h1 className="text-xl font-bold text-gray-900">
+            <h3 className="text-xl font-bold text-foreground">
               Kalendarz dostępności
-            </h1>
-            <h2 className="text-xl font-semibold text-gray-700">mieszkania</h2>
+            </h3>
+            <p className="text-xl font-semibold text-muted-foreground">mieszkania</p>
           </div>
 
           <div className="mt-4">

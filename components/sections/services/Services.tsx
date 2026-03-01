@@ -22,7 +22,7 @@ export const Services = () => {
             <motion.div
               key={index}
               className="my-2 w-full px-4 md:w-1/3"
-              // variants={cardVariants}
+              variants={cardVariants}
             >
               <ServiceCard {...service} />
             </motion.div>
