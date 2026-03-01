@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
 import { ContactData } from "./ContactData";
 import { ContactForm } from "./form/ContactForm";
 
 import Image from "next/image";
 
+export const metadata: Metadata = {
+  title: "Kontakt | Inborr - Apartamenty w Warszawie",
+  description:
+    "Skontaktuj sie z nami. Inborr - komfortowe apartamenty na wynajem krotkoterminowy w Warszawie.",
+};
 
 export default function Home() {
   return (

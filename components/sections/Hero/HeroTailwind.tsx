@@ -6,7 +6,7 @@ import { TextAnimation } from "@/components/ui/TextAnimation";
 export const HeroTailwind = () => {
   return (
     <section className="bg-white">
-      <div className="animate-fill-forwards relative animate-fade-in opacity-0">
+      <div className="relative animate-fade-in">
         <div className="mx-auto max-w-7xl">
           <div className="relative z-10 lg:w-full lg:max-w-2xl lg:pt-14">
             {/* // Horizontal cut */}
@@ -38,7 +38,7 @@ export const HeroTailwind = () => {
             src="/warsaw.jpg"
             width={800}
             height={1200}
-            alt=""
+            alt="Apartament Inborr w Warszawie"
           />
         </div>
       </div>

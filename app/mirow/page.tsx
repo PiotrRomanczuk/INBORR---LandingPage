@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import WarsawArticle from "./WarsawArticle";
+
+export const metadata: Metadata = {
+  title: "Mirow | Inborr - Apartamenty w Warszawie",
+  description:
+    "Informacje o lokalizacji Mirow. Inborr - apartamenty na wynajem krotkoterminowy w Warszawie.",
+};
 
 export default function Home() {
   return (

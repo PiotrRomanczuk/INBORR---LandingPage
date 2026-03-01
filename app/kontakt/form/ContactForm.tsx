@@ -1,10 +1,12 @@
 "use client";
 import { useState } from "react";
 
-import { SubmitHandler, useForm } from "react-hook-form";
+import { SubmitHandler, useForm, FieldErrors } from "react-hook-form";
 import { FormSchema } from "./FormSchema";
 import z from "zod";
 import { toast } from "@/components/ui/use-toast";
+
+type FormFields = z.infer<typeof FormSchema>;
 
 export const ContactForm = () => {
   const {
@@ -15,7 +17,6 @@ export const ContactForm = () => {
 
   const [sendingError, setSendingError] = useState(false);
 
-  type FormFields = z.infer<typeof FormSchema>;
   const sendEmail = async (
     firstName: string,
     lastName: string,
@@ -39,27 +40,36 @@ export const ContactForm = () => {
       });
 
       if (!response.ok) {
-        console.log(response);
         setSendingError(true);
-        console.log(`Failed to send email. Status: ${response.status}`);
+        return;
       }
 
-      console.log(`Email sent successfully. Status: ${response.status}`);
-      setSendingError(true);
+      setSendingError(false);
       return response.json();
     } catch (error) {
-      console.error("Error sending email:", error);
+      setSendingError(true);
       throw error;
     }
   };
 
-  const onSubmit: SubmitHandler<FormFields> = (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<FormFields> = async (data) => {
     const { firstName, lastName, email, phone, message } = data;
-    sendEmail(firstName, lastName, email, phone, message);
+    try {
+      await sendEmail(firstName, lastName, email, phone, message);
+      toast({
+        title: "Email sent successfully",
+        description: "We have received your email and will respond to it as soon as possible.",
+      });
+    } catch {
+      toast({
+        title: "Failed to send email",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+    }
   };
 
-  const onError = (errors: any, e: any) => console.log(errors, e);
+  const onError = (errors: FieldErrors<FormFields>) => {};
 
   return (
     <form
@@ -67,9 +77,11 @@ export const ContactForm = () => {
       className=" px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48"
     >
       <div className=" relative">
-        <p className="absolute right-0 top-0 text-blue-400">
-          {errors.firstName?.message}
-        </p>
+        {errors.firstName && (
+          <p id="first-name-error" role="alert" className="absolute right-0 top-0 text-blue-400">
+            {errors.firstName.message}
+          </p>
+        )}
         <label
           htmlFor="first-name"
           className="block text-sm font-semibold leading-6 text-gray-900"
@@ -81,6 +93,8 @@ export const ContactForm = () => {
             type="text"
             id="first-name"
             autoComplete="first-name"
+            aria-invalid={!!errors.firstName}
+            aria-describedby={errors.firstName ? "first-name-error" : undefined}
             {...register("firstName", {
               required: "Proszę podać imię",
             })}
@@ -96,13 +110,17 @@ export const ContactForm = () => {
           Nazwisko
         </label>
         <div className="relative mt-2.5">
-          <p className="absolute -top-8 right-0 text-blue-400">
-            {errors.lastName?.message}
-          </p>
+          {errors.lastName && (
+            <p id="last-name-error" role="alert" className="absolute -top-8 right-0 text-blue-400">
+              {errors.lastName.message}
+            </p>
+          )}
           <input
             type="text"
             id="last-name"
             autoComplete="family-name"
+            aria-invalid={!!errors.lastName}
+            aria-describedby={errors.lastName ? "last-name-error" : undefined}
             {...register("lastName", {
               required: "Proszę podać nazwisko",
             })}
@@ -118,13 +136,17 @@ export const ContactForm = () => {
           Email
         </label>
         <div className="relative mt-2.5">
-          <p className="absolute -top-8 right-0 text-blue-400">
-            {errors.email?.message}
-          </p>
+          {errors.email && (
+            <p id="email-error" role="alert" className="absolute -top-8 right-0 text-blue-400">
+              {errors.email.message}
+            </p>
+          )}
           <input
             type="email"
             id="email"
             autoComplete="email"
+            aria-invalid={!!errors.email}
+            aria-describedby={errors.email ? "email-error" : undefined}
             {...register("email", {
               required: "Proszę podać swoj email",
             })}
@@ -140,13 +162,17 @@ export const ContactForm = () => {
           Numer telefonu
         </label>
         <div className="relative mt-2.5">
-          <p className="absolute -top-8 right-0 text-blue-400">
-            {errors.phone?.message}
-          </p>
+          {errors.phone && (
+            <p id="phone-error" role="alert" className="absolute -top-8 right-0 text-blue-400">
+              {errors.phone.message}
+            </p>
+          )}
           <input
             type="tel"
             id="phone-number"
             autoComplete="tel"
+            aria-invalid={!!errors.phone}
+            aria-describedby={errors.phone ? "phone-error" : undefined}
             {...register("phone", {
               required: "Proszę podać numer telefonu",
             })}
@@ -162,12 +188,16 @@ export const ContactForm = () => {
           Wiadomość
         </label>
         <div className="relative mt-2.5">
-          <p className="absolute -top-8 right-0 text-blue-400">
-            {errors.message?.message}
-          </p>
+          {errors.message && (
+            <p id="message-error" role="alert" className="absolute -top-8 right-0 text-blue-400">
+              {errors.message.message}
+            </p>
+          )}
           <textarea
             id="message"
             rows={4}
+            aria-invalid={!!errors.message}
+            aria-describedby={errors.message ? "message-error" : undefined}
             className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             defaultValue={""}
             {...register("message", {
@@ -180,12 +210,6 @@ export const ContactForm = () => {
         <button
           type="submit"
           className="rounded-lg border border-blue-400 bg-blue-400 px-6 py-2 text-white transition duration-300 hover:bg-pink-400"
-          onClick={() => {
-            toast({
-              title: "Email sent successfully",
-              description: "We have received your email and will respond to it as soon as possible.",
-            });
-          }}
         >
           Wyślij
         </button>

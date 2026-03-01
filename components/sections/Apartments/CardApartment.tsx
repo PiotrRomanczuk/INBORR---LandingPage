@@ -8,7 +8,7 @@ interface CardVerticalProps {
   imageSrc: string;
   title: string;
   location: string;
-  description: any;
+  description: string;
   hrefLink: string;
   icon?: () => void;
   imagePosition?: "left" | "right" | "sm:left" | "sm:right";
@@ -53,7 +53,6 @@ export const CardApartment: FC<CardVerticalProps> = ({
           fill
           sizes="(max-width: 768px) 100vw, 60vw"
           className="rounded-lg object-cover transition-all duration-300 hover:scale-110"
-          priority
         />
       </div>
     </Link>
@@ -65,7 +64,7 @@ export const CardApartment: FC<CardVerticalProps> = ({
         <Link href={hrefLink} className="pointer">
           <div className="flex flex-col">
             <h2 className="text-xl font-semibold lg:text-2xl">{title}</h2>
-            <p className="mt-2 text-sm font-light text-gray-700 lg:text-lg">
+            <p className="mt-2 text-sm font-light text-muted-foreground lg:text-lg">
               {location}
             </p>
           </div>
@@ -85,7 +84,7 @@ export const CardApartment: FC<CardVerticalProps> = ({
         className="flex items-center justify-center pt-2 text-xl font-bold md:text-3xl"
       >
 
-        <ReserveDialog className="bg-white text-black py-8 hover:bg-black hover:text-white transition-colors text-4xl duration-300 border border-black rounded-sm px-6 font-medium" 
+        <ReserveDialog className="bg-background text-foreground py-3 sm:py-5 md:py-8 hover:bg-foreground hover:text-background transition-colors text-lg sm:text-2xl md:text-4xl duration-300 border border-foreground rounded-sm px-6 font-medium" 
         bookingLink={bookingLink}
         airbnbLink={airbnbLink}
         bookableLink={bookableLink}
