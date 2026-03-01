@@ -24,7 +24,7 @@ export const HeroTailwind = () => {
                 <h1 className=" text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
                   <TextAnimation />
                 </h1>
-                <p className="mt-6 text-lg leading-8 text-gray-600">
+                <p className="mt-6 text-base sm:text-lg md:text-xl leading-8 text-gray-600">
                   Wynajem na dni i tygodnie – city break, workation czy pobyt
                   biznesowy – zadbamy o jakość i Twój komfort.
                 </p>

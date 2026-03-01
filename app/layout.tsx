@@ -33,7 +33,8 @@ export const metadata: Metadata = {
 const openSans = Open_Sans({
   weight: ["300", "500", "700"],
   style: "normal",
-  preload: false,
+  preload: true,
+  display: "swap",
 });
 
 export default function RootLayout({

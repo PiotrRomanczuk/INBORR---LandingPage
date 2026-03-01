@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <footer className="space-between flex items-center justify-center gap-12 bg-gray-200 py-6 text-black ">
+    <footer className="space-between flex items-center justify-center gap-4 sm:gap-8 md:gap-12 bg-muted py-6 text-foreground ">
       <Link href="/kontakt" className="hover:text-gray-500 transition-colors duration-300">
         biuro@inborr.pl
       </Link>

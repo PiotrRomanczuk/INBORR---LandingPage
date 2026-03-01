@@ -36,7 +36,7 @@ export const NavBar = () => {
             {/* Mobile menu button */}
             <button
               type="button"
-              className="z-10 -m-2.5 rounded-md p-2.5 text-gray-700 lg:hidden"
+              className="z-10 -m-2.5 rounded-md p-2.5 text-foreground lg:hidden"
               onClick={toggleMobileMenu}
             >
               <span className="sr-only">Open main menu</span>
@@ -81,7 +81,7 @@ export const NavBar = () => {
             </Link>
             <button
               type="button"
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
+              className="-m-2.5 rounded-md p-2.5 text-foreground"
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Close menu</span>

@@ -14,12 +14,12 @@ import {
 import { UtilsCard } from "@/components/cards/utilsCard";
 
 interface UtilsSectionProps {
-  bedroomsNb: any;
-  area: any;
-  floor: any;
-  kitchenStyle: any;
-  buildingType: any;
-  localization: any;
+  bedroomsNb: number;
+  area: number;
+  floor: number;
+  kitchenStyle: string;
+  buildingType: string;
+  localization: string;
 }
 
 // TODO: Make every utilSection comes after another
@@ -32,7 +32,7 @@ export const UtilsSection: React.FC<UtilsSectionProps> = ({
   localization,
 }) => {
   return (
-    <section className="grid w-full grid-cols-2 justify-between gap-4 pt-4 text-xs text-gray-900 xl:text-xl">
+    <section className="grid w-full grid-cols-2 justify-between gap-4 pt-4 text-xs sm:text-sm text-foreground xl:text-xl">
       <UtilsCard
         title="Liczba sypialni:"
         description={bedroomsNb}

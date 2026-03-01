@@ -3,7 +3,7 @@
 import { hasCookie, setCookie } from "cookies-next";
 import { useEffect, useState } from "react";
 
-export const CookieConsent = (props: any) => {
+export const CookieConsent = () => {
   const [showConsent, setShowConsent] = useState(true);
 
   useEffect(() => {
@@ -21,8 +21,8 @@ export const CookieConsent = (props: any) => {
 
   return (
     <div className="fixed inset-0 z-10 bg-blue-200 bg-opacity-70">
-      <div className="fixed bottom-0 flex w-full justify-between gap-4 bg-gray-100 px-4 py-8 text-black">
-        <span className="text-dark flex text-xs">
+      <div className="fixed bottom-0 flex flex-col sm:flex-row w-full justify-between gap-4 bg-gray-100 px-4 py-8 text-black">
+        <span className="text-foreground flex text-xs">
           Ta stronka uźywa ciasteczek (cookies) do przechowywania informacji o
           Twoich preferencjach i wizycie na stronie.
         </span>
