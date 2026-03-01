@@ -3,7 +3,6 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -30,12 +29,12 @@ export function ReserveDialog({
           Zarezerwuj
         </Button>
       </DialogTrigger>
-      <DialogContent className="p-x-2 sm:max-w-[425px]">
+      <DialogContent className="w-[95vw] sm:w-full p-x-2 sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Zarezerwuj na:</DialogTitle>
         </DialogHeader>
 
-        <Link href="https://rezerwacje.inborr.pl" passHref legacyBehavior>
+        <Link href="https://rezerwacje.inborr.pl">
           <Button>Bookable</Button>
         </Link>
 

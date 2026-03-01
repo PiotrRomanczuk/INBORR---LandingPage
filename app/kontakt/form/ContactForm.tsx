@@ -84,7 +84,7 @@ export const ContactForm = () => {
         )}
         <label
           htmlFor="first-name"
-          className="block text-sm font-semibold leading-6 text-gray-900"
+          className="block text-sm sm:text-base font-semibold leading-6 text-gray-900"
         >
           Imię
         </label>
@@ -105,7 +105,7 @@ export const ContactForm = () => {
       <div className="mt-2.5">
         <label
           htmlFor="last-name"
-          className="block text-sm font-semibold leading-6 text-gray-900"
+          className="block text-sm sm:text-base font-semibold leading-6 text-gray-900"
         >
           Nazwisko
         </label>
@@ -131,7 +131,7 @@ export const ContactForm = () => {
       <div className="sm:col-span-2">
         <label
           htmlFor="email"
-          className="block text-sm font-semibold leading-6 text-gray-900"
+          className="block text-sm sm:text-base font-semibold leading-6 text-gray-900"
         >
           Email
         </label>
@@ -157,7 +157,7 @@ export const ContactForm = () => {
       <div className="sm:col-span-2">
         <label
           htmlFor="phone-number"
-          className="block text-sm font-semibold leading-6 text-gray-900"
+          className="block text-sm sm:text-base font-semibold leading-6 text-gray-900"
         >
           Numer telefonu
         </label>
@@ -183,7 +183,7 @@ export const ContactForm = () => {
       <div className="sm:col-span-2">
         <label
           htmlFor="message"
-          className="block text-sm font-semibold leading-6 text-gray-900"
+          className="block text-sm sm:text-base font-semibold leading-6 text-gray-900"
         >
           Wiadomość
         </label>

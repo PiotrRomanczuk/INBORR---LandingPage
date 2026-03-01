@@ -17,7 +17,7 @@ export default function Home() {
         <div className="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48">
           <ContactData />
         </div>
-        <div className="relative w-full h-full">
+        <div className="relative w-full h-full min-h-[300px] lg:min-h-0 aspect-[4/3] lg:aspect-auto">
           <Image src="/pereca/Pereca2-Budynek-Inborr.jpg" alt="Warsaw Pereca" fill className="object-cover" />
         </div>
       </div>

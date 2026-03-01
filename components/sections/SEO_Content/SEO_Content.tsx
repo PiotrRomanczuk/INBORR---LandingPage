@@ -3,7 +3,7 @@ import React from "react";
 const SEO_Content = () => {
   return (
     <>
-      <div className="container mx-auto max-w-4xl px-4 py-8">
+      <div className="container mx-auto max-w-4xl px-3 sm:px-4 md:px-6 py-8">
         <h1 className="mb-8 text-center text-4xl font-bold text-gray-800">
           Wynajem Krótkoterminowy Mieszkań w Warszawie – Komfort i Wygoda w
           Centrum Miasta

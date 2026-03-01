@@ -26,7 +26,7 @@ export default function Page({ params }: { params: { apartmentId: string } }) {
       ) : (
         <div className="px-4">
           <div className="flex w-full flex-col justify-between rounded-md bg-white pb-4 md:flex-row-reverse">
-            <div className="md:w-2/3 lg:ml-32 xl:ml-52">
+            <div className="md:w-2/3 lg:ml-8 xl:ml-16">
               <Mainpic imageSrc={apartment.mainPic} />
               <div className="-mt-3 flex justify-center gap-4 text-sm text-black">
                 <GalleryLightbox slides={apartment.pics} />

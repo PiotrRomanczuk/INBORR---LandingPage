@@ -8,7 +8,7 @@ interface CardVerticalProps {
   imageSrc: string;
   title: string;
   location: string;
-  description: string;
+  description: { short: string; long: string[] };
   hrefLink: string;
   icon?: () => void;
   imagePosition?: "left" | "right" | "sm:left" | "sm:right";

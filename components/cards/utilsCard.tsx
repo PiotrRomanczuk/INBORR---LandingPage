@@ -1,6 +1,6 @@
 interface UtilsCardProps {
   title: string;
-  description: any;
+  description: string | number;
   icon: React.ReactNode; // Updated to accept React nodes
 }
 

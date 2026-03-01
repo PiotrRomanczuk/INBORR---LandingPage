@@ -25,6 +25,7 @@ export const GoogleMaps = ({ lat, lng }: { lat: number; lng: number }) => {
           style={{
             width: "100%",
             height: "50vh",
+            minHeight: "250px",
             margin: "2vh",
             padding: "0",
           }}

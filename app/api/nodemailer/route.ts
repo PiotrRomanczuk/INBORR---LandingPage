@@ -5,7 +5,6 @@ import Mailgun from "mailgun.js"; // mailgun.js v11.1.0
 
 export async function GET(req: NextRequest) {
   try {
-    console.log("Sending email...");
     await sendSimpleMessage();
     return NextResponse.json(
       { success: "Email sent successfully" },
@@ -13,7 +12,6 @@ export async function GET(req: NextRequest) {
     );
   } catch (error: unknown) {
     if (error instanceof Error) {
-      console.log(error);
       return NextResponse.json({
         error: `Internal Server Error: ${error.message}`,
       });
@@ -44,10 +42,8 @@ async function sendSimpleMessage() {
       subject: "Hello",
       text: "Test email from Mailgun",
     });
-    console.log(data);
   } catch (error) {
-    console.error("Mailgun API Error:", error);
-    throw error; // Re-throw to be caught by the main handler
+    throw error;
   }
 }
 
@@ -68,7 +64,6 @@ export async function POST(req: NextRequest) {
       { status: 200 },
     );
   } catch (error: unknown) {
-    console.error("Error sending email:", error);
     return NextResponse.json(
       { error: "Failed to send email" },
       { status: 500 },
@@ -119,9 +114,7 @@ async function sendFormMessage({
       subject: `New Contact Form Submission from ${firstName} ${lastName}`,
       text: emailContent,
     });
-    console.log("Email sent successfully:", data);
   } catch (error) {
-    console.error("Mailgun API Error:", error);
     throw error;
   }
 }

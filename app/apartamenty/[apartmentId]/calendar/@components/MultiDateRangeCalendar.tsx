@@ -39,7 +39,7 @@ export const MultiDateRangeCalendar: React.FC<MultiDateRangeCalendarProps> = ({
               modifiersClassNames={{
                 highlighted: "bg-red-100 text-red-700 hover:bg-red-200",
               }}
-              className="h-[400px]  rounded-md p-3"
+              className="h-[300px] sm:h-[350px] md:h-[400px] rounded-md p-3"
               classNames={{
                 months: "space-y-4",
                 month: "space-y-4",
