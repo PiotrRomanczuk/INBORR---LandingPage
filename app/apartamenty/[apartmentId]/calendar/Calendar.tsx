@@ -12,24 +12,26 @@ interface CalendarProps {
 }
 
 async function fetchAndProcessICSData(apartmentName: string) {
-  console.log(apartmentName);
-  console.log("fetching iCal data");
-  const airbnbICSData = await fetch(
-    `http://inborr.pl/api/calendar/${apartmentName}/airbnb`,
-  );
-  const bookingICSData = await fetch(
-    `http://inborr.pl/api/calendar/${apartmentName}/booking`,
-  );
+  try {
+    const airbnbICSData = await fetch(
+      `https://inborr.pl/api/calendar/${apartmentName}/airbnb`,
+    );
+    const bookingICSData = await fetch(
+      `https://inborr.pl/api/calendar/${apartmentName}/booking`,
+    );
 
-  const airbnbICSDataString = await airbnbICSData.text();
-  const bookingICSDataString = await bookingICSData.text();
+    const airbnbICSDataString = await airbnbICSData.text();
+    const bookingICSDataString = await bookingICSData.text();
 
-  const airbnbJsonEvents = parseICSToJSON(airbnbICSDataString);
-  const bookingJsonEvents = parseICSToJSON(bookingICSDataString);
+    const airbnbJsonEvents = parseICSToJSON(airbnbICSDataString);
+    const bookingJsonEvents = parseICSToJSON(bookingICSDataString);
 
-  const jsonEvents = [...airbnbJsonEvents, ...bookingJsonEvents];
+    const jsonEvents = [...airbnbJsonEvents, ...bookingJsonEvents];
 
-  return getEventDates(jsonEvents);
+    return getEventDates(jsonEvents);
+  } catch {
+    return [];
+  }
 }
 
 function CalendarComponent({ apartmentName }: CalendarProps) {

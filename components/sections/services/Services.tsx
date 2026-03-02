@@ -8,7 +8,7 @@ import servicesData from "./ServicesData";
 
 export const Services = () => {
   return (
-    <section className="dark:bg-dark pb-12 lg:pb-[90px] lg:pt-[60px]">
+    <section className="dark:bg-background pb-12 lg:pb-[90px] lg:pt-[60px]">
       <div className="container mx-auto">
         <ServiceHeader />
         <motion.div
@@ -22,7 +22,7 @@ export const Services = () => {
             <motion.div
               key={index}
               className="my-2 w-full px-4 md:w-1/3"
-              // variants={cardVariants}
+              variants={cardVariants}
             >
               <ServiceCard {...service} />
             </motion.div>

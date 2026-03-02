@@ -5,7 +5,7 @@ const cardVariants = {
     opacity: 1,
     transition: {
       duration: 1.3,
-      ease: "easeOut",
+      ease: "easeOut" as const,
     },
   },
 };

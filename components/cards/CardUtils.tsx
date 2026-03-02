@@ -5,12 +5,12 @@ import Image from "next/image";
 
 interface CardVerticalProps {
   title: string;
-  icon: any;
+  icon: string;
 }
 
 export const CardUtils: React.FC<CardVerticalProps> = ({ title, icon }) => {
   return (
-    <div className="mx-auto my-2 h-32 w-40 max-w-xs items-center gap-4 rounded-lg bg-white p-2 py-4 shadow-lg transition duration-300 ease-in-out hover:shadow-2xl lg:h-44  lg:w-72 lg:p-6">
+    <div className="mx-auto my-2 h-24 w-32 sm:h-28 sm:w-40 max-w-xs items-center gap-4 rounded-lg bg-white p-2 py-4 shadow-lg transition duration-300 ease-in-out hover:shadow-2xl lg:h-44 lg:w-72 lg:p-6">
       <div className="mb-2 lg:mb-6">
         <Image
           src={icon}

@@ -8,7 +8,7 @@ interface CardVerticalProps {
   imageSrc: string;
   title: string;
   location: string;
-  description: any;
+  description: { short: string; long: string[] };
   hrefLink: string;
   icon?: () => void;
   imagePosition?: "left" | "right" | "sm:left" | "sm:right";
@@ -53,7 +53,6 @@ export const CardApartment: FC<CardVerticalProps> = ({
           fill
           sizes="(max-width: 768px) 100vw, 60vw"
           className="rounded-lg object-cover transition-all duration-300 hover:scale-110"
-          priority
         />
       </div>
     </Link>
@@ -65,7 +64,7 @@ export const CardApartment: FC<CardVerticalProps> = ({
         <Link href={hrefLink} className="pointer">
           <div className="flex flex-col">
             <h2 className="text-xl font-semibold lg:text-2xl">{title}</h2>
-            <p className="mt-2 text-sm font-light text-gray-700 lg:text-lg">
+            <p className="mt-2 text-sm font-light text-muted-foreground lg:text-lg">
               {location}
             </p>
           </div>
@@ -82,10 +81,9 @@ export const CardApartment: FC<CardVerticalProps> = ({
         </Link>
       </div>
       <div
-        className="flex items-center justify-center pt-2 text-xl font-bold md:text-3xl"
+        className="flex items-center justify-center pt-2"
       >
-
-        <ReserveDialog className="bg-white text-black py-8 hover:bg-black hover:text-white transition-colors text-4xl duration-300 border border-black rounded-sm px-6 font-medium" 
+        <ReserveDialog className="bg-foreground text-background px-8 py-3 text-base sm:text-lg font-medium rounded-md shadow-md hover:shadow-lg hover:bg-foreground/90 transition-all duration-300"
         bookingLink={bookingLink}
         airbnbLink={airbnbLink}
         bookableLink={bookableLink}

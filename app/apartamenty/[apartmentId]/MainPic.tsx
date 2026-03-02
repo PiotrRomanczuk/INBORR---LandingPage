@@ -15,7 +15,7 @@ export const Mainpic = ({
         width={1600}
         height={800}
         alt="main-picture"
-        className="h-auto w-auto rounded-3xl"
+        className="h-auto w-full max-w-full rounded-3xl"
         loading="lazy"
       />
     </div>

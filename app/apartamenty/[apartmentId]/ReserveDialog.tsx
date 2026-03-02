@@ -3,7 +3,6 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -30,12 +29,12 @@ export function ReserveDialog({
           Zarezerwuj
         </Button>
       </DialogTrigger>
-      <DialogContent className="p-x-2 sm:max-w-[425px]">
+      <DialogContent className="w-[95vw] sm:w-full p-x-2 sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Zarezerwuj na:</DialogTitle>
         </DialogHeader>
 
-        <Link href="https://rezerwacje.inborr.pl" passHref legacyBehavior>
+        <Link href="https://rezerwacje.inborr.pl">
           <Button>Bookable</Button>
         </Link>
 
@@ -45,17 +44,17 @@ export function ReserveDialog({
         <div className="flex flex-row justify-between gap-4 py-2">
           <Link
             href={airbnbLink.toString()}
-            className="relative block w-fit text-lg font-semibold leading-6 text-gray-900 
+            className="relative block w-fit text-lg font-semibold leading-6 text-foreground
                   after:absolute after:block after:h-[3px] after:w-full after:origin-left after:scale-x-0
-                   after:bg-blue-300 after:transition after:duration-300 after:content-[''] after:hover:scale-x-100"
+                   after:bg-primary after:transition after:duration-300 after:content-[''] after:hover:scale-x-100"
           >
             AIRBNB
           </Link>
           <Link
             href={bookingLink.toString()}
-            className="relative block w-fit text-lg font-semibold leading-6 text-gray-900 
+            className="relative block w-fit text-lg font-semibold leading-6 text-foreground
                   after:absolute after:block after:h-[3px] after:w-full after:origin-left after:scale-x-0
-                   after:bg-blue-300 after:transition after:duration-300 after:content-[''] after:hover:scale-x-100"
+                   after:bg-primary after:transition after:duration-300 after:content-[''] after:hover:scale-x-100"
           >
             BOOKING
           </Link>

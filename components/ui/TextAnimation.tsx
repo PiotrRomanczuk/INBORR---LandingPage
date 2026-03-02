@@ -18,7 +18,7 @@ export const TextAnimation = () => {
         ]}
         //  Pull request genereator, I'm a pull request hand;es
         speed={30}
-        className="min-h-[3.5rem] text-3xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:text-5xl"
+        className="min-h-[3.5rem] text-3xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-5xl"
         repeat={Infinity}
         preRenderFirstString
       />

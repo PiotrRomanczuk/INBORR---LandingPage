@@ -1,11 +1,16 @@
 import Image from "next/image";
+import type { SlideImage, ContainerRect } from "yet-another-react-lightbox";
 import {
   isImageFitCover,
   isImageSlide,
   useLightboxProps,
 } from "yet-another-react-lightbox";
 
-function isNextJsImage(slide: any) {
+interface NextJsSlideImage extends SlideImage {
+  blurDataURL?: string;
+}
+
+function isNextJsImage(slide: NextJsSlideImage): slide is NextJsSlideImage & { width: number; height: number } {
   return (
     isImageSlide(slide) &&
     typeof slide.width === "number" &&
@@ -17,8 +22,8 @@ export default function NextJsImage({
   slide,
   rect,
 }: {
-  slide: any;
-  rect: any;
+  slide: NextJsSlideImage;
+  rect: ContainerRect;
 }) {
   const { imageFit } = useLightboxProps().carousel;
   const cover = isImageSlide(slide) && isImageFitCover(slide, imageFit);
@@ -41,12 +46,11 @@ export default function NextJsImage({
     <div style={{ position: "relative", width, height }}>
       <Image
         fill
-        alt=""
-        src={slide}
+        alt="Zdjecie apartamentu"
+        src={slide.src}
         loading="eager"
         draggable={false}
         placeholder={slide.blurDataURL ? "blur" : undefined}
-        // style={{ objectFit: cover ? "cover" : "contain" }}
         sizes={`${Math.ceil((width / window.innerWidth) * 100)}vw`}
       />
     </div>

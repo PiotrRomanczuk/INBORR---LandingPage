@@ -9,18 +9,18 @@ export default function RegulationPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8"
+      className="min-h-screen bg-muted py-8 px-4 sm:px-6 lg:px-8"
     >
       <motion.div 
         initial={{ y: 20 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
-        className="max-w-3xl mx-auto bg-white shadow-sm rounded-lg overflow-hidden"
+        className="max-w-3xl mx-auto bg-background shadow-sm rounded-lg overflow-hidden"
       >
         <div className="px-4 py-5 sm:p-6">
-          <h1 className="text-3xl font-bold text-gray-900 mb-6">Regulamin korzystania z apartamentów InBoRR</h1>
+          <h1 className="text-3xl font-bold text-foreground mb-6">Regulamin korzystania z apartamentów InBoRR</h1>
 
-          <p className="mb-4 text-sm text-gray-600 text-center">
+          <p className="mb-4 text-sm text-muted-foreground text-center">
             Administratorem obiektów jest: InBoRR Bożena Rutkowska-Romańczuk
             <br />
             NIP: PL5251205185 REGON: 524386382
@@ -196,8 +196,8 @@ function Section({ title, children }: { title: string; children: React.ReactNode
       transition={{ duration: 0.5 }}
       className="mb-6"
     >
-      <h2 className="text-xl font-semibold text-center text-gray-800 mb-2">{title}</h2>
-      <div className="text-gray-700">{children}</div>
+      <h2 className="text-xl font-semibold text-center text-foreground mb-2">{title}</h2>
+      <div className="text-muted-foreground">{children}</div>
     </motion.section>
   )
 }

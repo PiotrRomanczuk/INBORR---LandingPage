@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function WarsawArticle() {
   const LinkClassNames =
-    "text-blue-700 transition-all duration-300 hover:text-blue-900";
+    "text-primary underline underline-offset-4 transition-all duration-300 hover:text-primary/70";
 
   return (
     <article className="mx-auto max-w-4xl px-4 py-8">
