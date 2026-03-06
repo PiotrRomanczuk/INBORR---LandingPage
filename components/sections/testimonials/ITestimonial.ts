@@ -3,6 +3,7 @@ export interface ITestimonial {
   author: {
     name: string;
     handle: string;
-    imageUrl: string;
+    initials: string;
+    accentColor: string;
   };
 }

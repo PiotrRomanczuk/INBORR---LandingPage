@@ -21,7 +21,7 @@ export const Services = () => {
           {servicesData.map((service, index) => (
             <motion.div
               key={index}
-              className="my-2 w-full px-4 md:w-1/3"
+              className="my-2 w-full px-4 sm:w-1/2 md:w-1/3 lg:w-1/4"
               variants={cardVariants}
             >
               <ServiceCard {...service} />

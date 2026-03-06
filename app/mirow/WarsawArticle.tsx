@@ -14,9 +14,10 @@ export default function WarsawArticle() {
       <Image
         src="/chlodna/Chlodna-Inborr-apartamenty-Mirow.jpg"
         alt="Osiedle za Żelazną Bramą"
-        width={600}
-        height={400}
-        className="mx-auto mb-6 rounded-lg"
+        width={800}
+        height={500}
+        className="mx-auto mb-8 rounded-lg shadow-md"
+        priority
       />
 
       <section className="mb-8">
@@ -52,14 +53,6 @@ export default function WarsawArticle() {
         </p>
       </section>
 
-      <Image
-        src="/chlodna/Chlodna-Inborr-apartamenty-Mirow.jpg"
-        alt="Nowoczesna Warszawa"
-        width={600}
-        height={400}
-        className="mx-auto mb-6 rounded-lg"
-      />
-
       <section className="mb-8">
         <h2 className="mb-4 text-2xl font-semibold">Nasza oferta</h2>
         <p className="mb-4">
@@ -90,49 +83,47 @@ export default function WarsawArticle() {
         </ul>
       </section>
 
-      <Image
-        src="/chlodna/Chlodna-Inborr-apartamenty-Mirow.jpg"
-        alt="Okolica Osiedla za Żelazną Bramą"
-        width={600}
-        height={400}
-        className="mx-auto mb-6 rounded-lg"
-      />
-
       <section>
         <h2 className="mb-4 text-2xl font-semibold">Atrakcje w okolicy</h2>
         <p className="mb-4">
           W pobliżu jest wiele miejsc opowiadających o historii Warszawy:
         </p>
         <ul className="list-disc pl-6">
-          <Link
-            href="https://polin.pl/pl?gad_source=1&gclid=EAIaIQobChMIzMr95IKeiwMVpG0PAh02ZwC5EAAYASAAEgJU1fD_BwE"
-            className={LinkClassNames}
-          >
-            <li>
+          <li className="mb-2">
+            <Link
+              href="https://www.1944.pl/"
+              className={LinkClassNames}
+            >
               Interaktywne Muzeum Powstania Warszawskiego na ul. Karolkowej
-            </li>
-          </Link>
-          <Link
-            href="https://polin.pl/pl?gad_source=1&gclid=EAIaIQobChMIzMr95IKeiwMVpG0PAh02ZwC5EAAYASAAEgJU1fD_BwE"
-            className={LinkClassNames}
-          >
-            <li>Muzeum Polin przy ul. Anielewicza</li>
-          </Link>
-          <Link
-            href="https://zzw.waw.pl/nasze-tereny/parki/ogrod-saski/"
-            className={LinkClassNames}
-          >
-            <li>Ogród Saski</li>
-          </Link>
-          <Link
-            href="https://eko.um.warszawa.pl/-/ogrod-krasinskich"
-            className={LinkClassNames}
-          >
-            <li>Park Krasińskich</li>
-          </Link>
-          <li>Zabytkowa Hala Mirowska</li>
-          <li>Nostalgiczne zabytkowe bruki i stare kamienice</li>
-          <li>Piękny zrewitalizowany deptak na Chłodnej/Elektoralnej</li>
+            </Link>
+          </li>
+          <li className="mb-2">
+            <Link
+              href="https://polin.pl/pl"
+              className={LinkClassNames}
+            >
+              Muzeum Polin przy ul. Anielewicza
+            </Link>
+          </li>
+          <li className="mb-2">
+            <Link
+              href="https://zzw.waw.pl/nasze-tereny/parki/ogrod-saski/"
+              className={LinkClassNames}
+            >
+              Ogród Saski
+            </Link>
+          </li>
+          <li className="mb-2">
+            <Link
+              href="https://eko.um.warszawa.pl/-/ogrod-krasinskich"
+              className={LinkClassNames}
+            >
+              Park Krasińskich
+            </Link>
+          </li>
+          <li className="mb-2">Zabytkowa Hala Mirowska</li>
+          <li className="mb-2">Nostalgiczne zabytkowe bruki i stare kamienice</li>
+          <li className="mb-2">Piękny zrewitalizowany deptak na Chłodnej/Elektoralnej</li>
         </ul>
       </section>
     </article>

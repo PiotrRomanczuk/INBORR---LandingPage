@@ -39,7 +39,7 @@ export default function Page({ params }: { params: { apartmentId: string } }) {
             </div>
 
             <div className="flex flex-col items-start py-4 text-lg text-black md:w-1/3 md:text-xl">
-              {apartment.name}
+              <h1 className="text-lg font-semibold md:text-xl">{apartment.name}</h1>
               <div className="text-sm font-light text-muted-foreground xl:text-lg">
                 {apartment.location}
               </div>
