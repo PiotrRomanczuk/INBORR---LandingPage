@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { ITestimonial } from "./ITestimonial";
 
 export function Testimonial({
@@ -21,18 +20,16 @@ export function Testimonial({
           <p>{`"${testimonial.body}"`}</p>
         </blockquote>
         <figcaption className="mt-6 flex items-center gap-x-4">
-          <Image
-            alt={testimonial.author.name}
-            src={testimonial.author.imageUrl}
-            className="size-10 rounded-full bg-card"
-            width={40}
-            height={40}
-          />
+          <div
+            className={`flex size-10 items-center justify-center rounded-full text-sm font-semibold text-white ${testimonial.author.accentColor}`}
+            aria-hidden="true"
+          >
+            {testimonial.author.initials}
+          </div>
           <div>
             <div className="font-semibold text-card-foreground">
               {testimonial.author.name}
             </div>
-            {/* <div className="text-gray-600">{`@${testimonial.author.handle}`}</div> */}
           </div>
         </figcaption>
       </figure>
