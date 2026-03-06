@@ -25,7 +25,7 @@ export default function Page({ params }: { params: { apartmentId: string } }) {
         <ApartNotFound />
       ) : (
         <div className="px-4">
-          <div className="flex w-full flex-col justify-between rounded-md bg-white pb-4 md:flex-row-reverse">
+          <div className="flex w-full flex-col justify-between rounded-md bg-background pb-4 md:flex-row-reverse">
             <div className="md:w-2/3 lg:ml-8 xl:ml-16">
               <Mainpic imageSrc={apartment.mainPic} />
               <div className="-mt-3 flex justify-center gap-4 text-sm text-black">
@@ -55,10 +55,10 @@ export default function Page({ params }: { params: { apartmentId: string } }) {
               />
             </div>
           </div>
-          <div className="border-y-2 border-border py-4">
+          <div className="space-y-3 border-y-2 border-border py-4">
             {apartment.description.long.map((paragraph, idx) => {
               return (
-                <div className="pt-2 text-sm text-foreground" key={idx}>
+                <div className="text-base leading-relaxed text-foreground" key={idx}>
                   {paragraph}
                 </div>
               );

@@ -7,7 +7,7 @@ import { cardVariants, containerVariants } from "./Variants";
 
 export function Testimonials() {
   return (
-    <div className="bg-white py-10 sm:py-16">
+    <div className="bg-background py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
           className="mx-auto max-w-2xl text-center"

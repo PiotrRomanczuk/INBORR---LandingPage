@@ -217,10 +217,10 @@ export const ContactForm = () => {
           />
         </div>
       </div>
-      <div className="mt-8 flex justify-end">
+      <div className="mt-8 flex justify-center">
         <button
           type="submit"
-          className="rounded-md bg-primary px-6 py-2 text-primary-foreground transition duration-300 hover:bg-primary/90"
+          className="w-full rounded-md bg-primary px-6 py-2 text-primary-foreground transition duration-300 hover:bg-primary/90 sm:w-auto"
         >
           Wyślij
         </button>
