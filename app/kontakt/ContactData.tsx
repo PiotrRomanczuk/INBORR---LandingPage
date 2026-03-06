@@ -36,7 +36,7 @@ export const ContactData = () => {
             <PhoneIcon className="h-7 w-6 text-muted-foreground" aria-hidden="true" />
           </dt>
           <dd>
-            <a className="hover:text-foreground" href="tel:+1 (555) 234-5678">
+            <a className="hover:text-foreground" href="tel:+48608555713">
               +48 608 555 713
             </a>
           </dd>

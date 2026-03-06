@@ -2,6 +2,7 @@
 import { useState } from "react";
 
 import { SubmitHandler, useForm, FieldErrors } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { FormSchema } from "./FormSchema";
 import z from "zod";
 import { toast } from "@/components/ui/use-toast";
@@ -13,7 +14,9 @@ export const ContactForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormFields>();
+  } = useForm<FormFields>({
+    resolver: zodResolver(FormSchema),
+  });
 
   const [sendingError, setSendingError] = useState(false);
 
@@ -82,7 +85,7 @@ export const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit, onError)}
-      className=" px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48"
+      className=" px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-16"
     >
       <div className=" relative">
         {errors.firstName && (

@@ -16,7 +16,7 @@ export default function Home() {
       <Services />
       <Testimonials />
       <SEO_Content />
-      {/* <CookieConsent /> */}
+      <CookieConsent />
     </main>
   );
 }
