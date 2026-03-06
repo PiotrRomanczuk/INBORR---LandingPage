@@ -29,7 +29,7 @@ export const Apartments = () => {
               buildingType={apartment.buildingType}
               localization={apartment.localization}
               hrefLink={apartment.hrefLink}
-              imagePosition={isEven ? "left" : "right"}
+              reverseOnDesktop={!isEven}
               airbnbLink={apartment.reservedLinks.airbnbLink}
               bookingLink={apartment.reservedLinks.bookingLink}
               bookableLink={apartment.reservedLinks.bookableLink}
