@@ -35,8 +35,6 @@ export const TextInfoSide = () => {
           <p className="mt-8">Zobacz, co oferują nasze apartamenty.</p>
         </div>
       </div>
-      {/* <StatsAnimation /> */}
-      {/* ------------------------------------------------------------------------------------------ */}
       <dl className="mt-10 grid grid-cols-2 gap-4 sm:gap-8 md:gap-12 border-t border-border pt-10 ">
         {STATS.map((stat, statIdx) => (
           <div key={statIdx}>
