@@ -20,19 +20,17 @@ export const CookieConsent = () => {
   }
 
   return (
-    <div className="fixed inset-0 z-10 bg-background/70">
-      <div className="fixed bottom-0 flex flex-col sm:flex-row w-full justify-between gap-4 bg-muted px-4 py-8">
-        <span className="text-foreground flex text-xs sm:text-sm">
-          Ta stronka używa ciasteczek (cookies) do przechowywania informacji o
-          Twoich preferencjach i wizycie na stronie.
-        </span>
-        <button
-          className="mr-4 rounded-md bg-primary px-4 py-2 text-primary-foreground hover:bg-primary/90 lg:mr-16"
-          onClick={() => acceptCookie()}
-        >
-          Akceptuję
-        </button>
-      </div>
+    <div className="fixed bottom-0 z-10 flex w-full flex-col justify-between gap-4 bg-muted px-4 py-8 sm:flex-row">
+      <span className="text-foreground flex text-xs sm:text-sm">
+        Ta stronka używa ciasteczek (cookies) do przechowywania informacji o
+        Twoich preferencjach i wizycie na stronie.
+      </span>
+      <button
+        className="mr-4 rounded-md bg-primary px-4 py-2 text-primary-foreground hover:bg-primary/90 lg:mr-16"
+        onClick={() => acceptCookie()}
+      >
+        Akceptuję
+      </button>
     </div>
   );
 };

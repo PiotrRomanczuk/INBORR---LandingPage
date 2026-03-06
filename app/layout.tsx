@@ -46,7 +46,7 @@ export default function RootLayout({
     <html lang="pl" className={openSans.className}>
       <body className="relative mx-auto max-w-screen-xl overflow-x-hidden scroll-smooth">
         <NavBar />
-        <div className="bg-white pt-24">{children}</div>
+        <div className="bg-background pt-20">{children}</div>
         <Toaster />
         <Footer />
       </body>
