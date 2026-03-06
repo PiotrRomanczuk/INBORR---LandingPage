@@ -5,7 +5,23 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-function CustomAccordionItem({ question, answer, value }) {
+interface AccordionItemData {
+  value: string;
+  question: string;
+  answer: string;
+}
+
+interface CustomAccordionItemProps {
+  question: string;
+  answer: string;
+  value: string;
+}
+
+interface AccordionCompProps {
+  data: AccordionItemData[];
+}
+
+function CustomAccordionItem({ question, answer, value }: CustomAccordionItemProps) {
   return (
     <AccordionItem value={value}>
       <AccordionTrigger className="justify-items-start">
@@ -16,7 +32,7 @@ function CustomAccordionItem({ question, answer, value }) {
   );
 }
 
-export function AccordionComp({ data }) {
+export function AccordionComp({ data }: AccordionCompProps) {
   return (
     <Accordion type="multiple" className="w-full">
       {data.map((item) => (

@@ -28,11 +28,9 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "components/sections/GoogleMaps1.jsx",
-    "components/AccordionComp.jsx",
     "app/kontakt/chlodna/page.jsx",
     "app/kontakt/pereca/page.jsx",
     "app/apartamenty/[apartmentId]/page.jsx",
-    "components/sections/Content/ImageSideTilt.tsx",
     "app/api/nodemailer/route.ts"
   ],
   "exclude": ["node_modules"]
