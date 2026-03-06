@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export const Apartments = () => {
   return (
-    <section className="my-6 flex flex-col gap-12 px-6">
+    <section className="flex flex-col gap-12 px-6 py-16 md:py-24">
       {apartmentsList.map((apartment, index) => {
         const isEven = index % 2 === 0;
         return (

@@ -8,7 +8,7 @@ import servicesData from "./ServicesData";
 
 export const Services = () => {
   return (
-    <section className="dark:bg-background pb-12 lg:pb-[90px] lg:pt-[60px]">
+    <section className="dark:bg-background py-16 md:py-24">
       <div className="container mx-auto">
         <ServiceHeader />
         <motion.div

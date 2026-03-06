@@ -9,16 +9,12 @@ export const ImageSideTilt = () => {
     <Tilt
       gyroscope={true}
       scale={1.05}
-      max={25}
+      tiltMaxAngleX={20}
+      tiltMaxAngleY={20}
       glareEnable={true}
       glarePosition="left"
       className="parallax-effect-glare-scale z-10 px-6 lg:px-0"
-      tiltMaxAngleX={20}
-      tiltMaxAngleY={20}
       perspective={800}
-      // ReactParallaxTiltProps={
-      //   children: 2
-      // }
     >
       <div className="relative overflow-hidden rounded-3xl bg-foreground p-6 shadow-2xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 lg:pr-4 lg:pt-64 xl:px-10 xl:pb-10">
         <Image
@@ -32,9 +28,9 @@ export const ImageSideTilt = () => {
         <figure className="scale3d-90 relative isolate rounded-2xl bg-white bg-opacity-40 p-6  text-black backdrop-blur-lg lg:ml-36 lg:mt-12">
           <blockquote className="text-xl font-semibold leading-8 text-foreground">
             <p>
-              “Kochaliśmy nasz pobyt! Mieszkanie było łatwe do znalezienia;
+              &ldquo;Kochaliśmy nasz pobyt! Mieszkanie było łatwe do znalezienia;
               bardzo łatwe samodzielne zameldowanie (i wymeldowanie). Było
-              bardzo czysto i mieliśmy wszystko, czego potrzebowaliśmy...”
+              bardzo czysto i mieliśmy wszystko, czego potrzebowaliśmy...&rdquo;
             </p>
           </blockquote>
           <figcaption className="mt-6 text-sm leading-6 text-black">
