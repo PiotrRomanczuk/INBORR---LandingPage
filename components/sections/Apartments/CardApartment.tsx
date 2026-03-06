@@ -11,14 +11,13 @@ interface CardVerticalProps {
   description: { short: string; long: string[] };
   hrefLink: string;
   icon?: () => void;
-  imagePosition?: "left" | "right" | "sm:left" | "sm:right";
+  reverseOnDesktop?: boolean;
   bedroomsNb: number;
   localization: string;
   area: number;
   floor: number;
   kitchenStyle: string;
   buildingType: string;
-  // builtYear: number;
   airbnbLink: URL;
   bookingLink: URL;
   bookableLink: URL;
@@ -30,7 +29,7 @@ export const CardApartment: FC<CardVerticalProps> = ({
   description,
   location,
   hrefLink,
-  imagePosition = "left",
+  reverseOnDesktop = false,
   airbnbLink,
   bookingLink,
   bedroomsNb,
@@ -94,8 +93,8 @@ export const CardApartment: FC<CardVerticalProps> = ({
   );
 
   return (
-    <div className="flex w-full flex-col transition duration-300  sm:flex-row">
-      {imagePosition.includes("sm:right") ? (
+    <div className="flex w-full flex-col transition duration-300 sm:flex-row">
+      {reverseOnDesktop ? (
         <>
           <div className="block sm:hidden">
             {ImageSection}

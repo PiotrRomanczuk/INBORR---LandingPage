@@ -19,13 +19,6 @@ export const TextInfoSide = () => {
             pomysł stworzenia apartamentów, w których znajdziesz większość
             potrzebnych rzeczy na miejscu.
           </p>
-          {/* {/* <p className="mt-8">
-            Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis
-            odio id et. Id blandit molestie auctor fermentum dignissim. Lacus
-            diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices
-            hac adipiscing egestas. Iaculis convallis ac tempor et ut. Ac lorem
-            vel integer orci.
-          </p> */}
           <p className="mt-8">
             Każdy ma swoje oczekiwania w podróży. U nas możesz liczyć na jakość
             pobytu. W standardzie jest wygodne, podwójne łóżko, rozkładana sofa,
@@ -47,15 +40,6 @@ export const TextInfoSide = () => {
           </div>
         ))}
       </dl>
-      {/* ------------------------------------------------------------------------------------------ */}
-      {/* <div className="mt-10 flex">
-        <a
-          href="#"
-          className="text-base font-semibold leading-7 text-indigo-600"
-        >
-          Learn more about our company <span aria-hidden="true">&rarr;</span>
-        </a>
-      </div> */}
     </div>
   );
 };
