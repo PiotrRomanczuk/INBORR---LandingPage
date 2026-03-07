@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { ContactData } from "./ContactData";
 import { ContactForm } from "./form/ContactForm";
-
+import { GoogleMaps } from "@/components/GoogleMaps";
+import { AnimatedSection } from "./AnimatedSection";
 import Image from "next/image";
 
 export const metadata: Metadata = {
@@ -13,17 +14,40 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="relative isolate bg-background">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
-        <div className="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-20">
-          <ContactData />
-        </div>
-        <div className="relative w-full h-full min-h-[300px] lg:min-h-0 aspect-[4/3] lg:aspect-auto">
-          <Image src="/pereca/Pereca2-Budynek-Inborr.jpg" alt="Warsaw Pereca" fill className="object-cover" />
+      <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+          {/* Contact info with building image accent */}
+          <div className="relative overflow-hidden rounded-2xl bg-muted p-8 lg:p-12">
+            <Image
+              src="/pereca/Pereca2-Budynek-Inborr.jpg"
+              alt=""
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover opacity-[0.08]"
+            />
+            <div className="relative">
+              <ContactData />
+            </div>
+          </div>
+
+          {/* Contact form */}
+          <div className="flex flex-col justify-center">
+            <ContactForm />
+          </div>
         </div>
       </div>
-      <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24">
-        <ContactForm />
-      </div>
+
+      {/* Map section */}
+      <AnimatedSection delay={0.2}>
+        <section className="mx-auto max-w-7xl px-6 pb-16 md:pb-24">
+          <h3 className="mb-8 text-2xl font-bold tracking-tight text-foreground">
+            Nasza lokalizacja
+          </h3>
+          <div className="overflow-hidden rounded-2xl">
+            <GoogleMaps lat={52.2326} lng={20.9842} />
+          </div>
+        </section>
+      </AnimatedSection>
     </div>
   );
 }

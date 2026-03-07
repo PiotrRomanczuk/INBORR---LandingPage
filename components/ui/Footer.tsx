@@ -13,12 +13,12 @@ export const Footer = () => {
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8">
-            <Link
-              href="/kontakt"
+            <a
+              href="mailto:biuro@inborr.pl"
               className="text-sm transition-colors duration-300 hover:text-muted-foreground"
             >
               biuro@inborr.pl
-            </Link>
+            </a>
             <a
               href="tel:+48608555713"
               className="text-sm transition-colors duration-300 hover:text-muted-foreground"

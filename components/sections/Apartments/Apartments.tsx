@@ -28,14 +28,13 @@ export const Apartments = () => {
               location={apartment.location}
               description={apartment.description}
               imageSrc={apartment.mainPic}
+              pics={apartment.pics}
               bedroomsNb={apartment.bedrooms}
               area={apartment.area}
               floor={apartment.floor}
+              priceFrom={apartment.priceFrom}
               hrefLink={apartment.hrefLink}
               reverseOnDesktop={!isEven}
-              kitchenStyle={apartment.kitchenStyle}
-              buildingType={apartment.buildingType}
-              localization={apartment.localization}
               airbnbLink={apartment.reservedLinks.airbnbLink}
               bookingLink={apartment.reservedLinks.bookingLink}
               bookableLink={apartment.reservedLinks.bookableLink}
