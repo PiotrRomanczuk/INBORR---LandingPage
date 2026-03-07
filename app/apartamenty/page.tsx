@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { CardApartment } from "@/components/sections/Apartments/CardApartment";
-import { apartmentsList } from "./apartmentsList";
 import { Apartments } from "@/components/sections/Apartments/Apartments";
+import { TrustSignals } from "@/components/sections/Apartments/TrustSignals";
+import { ApartmentsMap } from "@/components/sections/Apartments/ApartmentsMap";
 import { Title } from "./Title";
 
 export const metadata: Metadata = {
@@ -15,6 +15,8 @@ export default function Home() {
     <>
       <Title />
       <Apartments />
+      <TrustSignals />
+      <ApartmentsMap />
     </>
   );
 }

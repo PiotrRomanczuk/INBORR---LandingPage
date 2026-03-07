@@ -1,13 +1,22 @@
+"use client";
+
 import {
   BuildingOffice2Icon,
+  ClockIcon,
   EnvelopeIcon,
   PhoneIcon,
 } from "@heroicons/react/24/outline";
+import { motion } from "framer-motion";
 
 export const ContactData = () => {
   return (
-    <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
-      <div className="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden bg-muted ring-1 ring-border lg:w-1/2"></div>
+    <motion.div
+      className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       <h2 className="text-3xl font-bold tracking-tight text-foreground">
         Skontaktuj się z nami
       </h2>
@@ -16,7 +25,7 @@ export const ContactData = () => {
         formularz, a my postaramy się odpowiedzieć najszybciej, jak to możliwe.
       </p>
       <dl className="mt-10 space-y-4 text-base leading-7 text-muted-foreground">
-        {/* <div className="flex gap-x-4">
+        <div className="flex gap-x-4">
           <dt className="flex-none">
             <span className="sr-only">Address</span>
             <BuildingOffice2Icon
@@ -25,11 +34,11 @@ export const ContactData = () => {
             />
           </dt>
           <dd>
-            Ul.Ludwiki 4 lok.34,
+            Ul. Ludwiki 4 lok.34,
             <br />
             Warszawa, 01-226
           </dd>
-        </div> */}
+        </div>
         <div className="flex gap-x-4">
           <dt className="flex-none">
             <span className="sr-only">Telephone</span>
@@ -55,7 +64,18 @@ export const ContactData = () => {
             </a>
           </dd>
         </div>
+        <div className="flex gap-x-4">
+          <dt className="flex-none">
+            <span className="sr-only">Godziny pracy</span>
+            <ClockIcon className="h-7 w-6 text-muted-foreground" aria-hidden="true" />
+          </dt>
+          <dd>Pon-Pt: 9:00-18:00</dd>
+        </div>
       </dl>
-    </div>
+      <div className="mt-6 flex items-center gap-2 text-sm text-muted-foreground">
+        <div className="h-2 w-2 rounded-full bg-green-500" aria-hidden="true" />
+        Odpowiadamy w ciągu 24h
+      </div>
+    </motion.div>
   );
 };

@@ -21,39 +21,30 @@ const SEO_Content = () => {
           </div>
 
           <div>
-            <h2 className="mb-4 text-2xl font-semibold text-foreground">
+            <h3 className="mb-4 text-2xl font-semibold text-foreground">
               Dlaczego warto wybrać nasz wynajem krótkoterminowy?
-            </h2>
-            <ul className="list-none space-y-4">
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <p className="text-muted-foreground">
-                  <strong>Atrakcyjne lokalizacje</strong> – nasze mieszkania
-                  znajdują się w centrum Warszawy, zawsze blisko stacji metra.
-                </p>
+            </h3>
+            <ul className="list-disc pl-5 space-y-4">
+              <li className="text-muted-foreground">
+                <strong>Atrakcyjne lokalizacje</strong> – nasze mieszkania
+                znajdują się w centrum Warszawy, zawsze blisko stacji metra.
               </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <p className="text-muted-foreground">
-                  <strong>Komfort i wyposażenie</strong> – każde mieszkanie jest
-                  w pełni umeblowane, z dostępem do Wi-Fi, klimatyzacji i aneksu
-                  kuchennego.
-                </p>
+              <li className="text-muted-foreground">
+                <strong>Komfort i wyposażenie</strong> – każde mieszkanie jest
+                w pełni umeblowane, z dostępem do Wi-Fi, klimatyzacji i aneksu
+                kuchennego.
               </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <p className="text-muted-foreground">
-                  <strong>Konkurencyjne ceny</strong> - wysokiej jakości
-                  apartamenty w przystępnych cenach.
-                </p>
+              <li className="text-muted-foreground">
+                <strong>Konkurencyjne ceny</strong> - wysokiej jakości
+                apartamenty w przystępnych cenach.
               </li>
             </ul>
           </div>
 
           <div>
-            <h2 className="mb-4 text-2xl font-semibold text-foreground">
+            <h3 className="mb-4 text-2xl font-semibold text-foreground">
               Poznaj Warszawę z najlepszej strony
-            </h2>
+            </h3>
             <p className="leading-relaxed text-muted-foreground">
               Wynajem krótkoterminowy to idealne rozwiązanie zarówno dla
               turystów, jak i osób podróżujących służbowo. Odkryj piękno
@@ -63,9 +54,9 @@ const SEO_Content = () => {
           </div>
 
           <div>
-            <h2 className="mb-4 text-2xl font-semibold text-foreground">
+            <h3 className="mb-4 text-2xl font-semibold text-foreground">
               Nasze mieszkania - Twoje miejsce w Warszawie
-            </h2>
+            </h3>
             <p className="leading-relaxed text-muted-foreground">
               W naszych apartamentach dbamy o każdy szczegół, aby zapewnić naszym gościom
               niezapomniany pobyt.
@@ -73,9 +64,9 @@ const SEO_Content = () => {
           </div>
 
           <div>
-            <h2 className="mb-4 text-2xl font-semibold text-foreground">
+            <h3 className="mb-4 text-2xl font-semibold text-foreground">
               Skontaktuj się z nami już dziś!
-            </h2>
+            </h3>
             <p className="leading-relaxed text-muted-foreground">
               Zarezerwuj swoje mieszkanie w Warszawie i ciesz się wygodnym
               noclegiem podczas pobytu w stolicy. Sprawdź naszą ofertę i
