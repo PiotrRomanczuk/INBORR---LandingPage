@@ -10,14 +10,6 @@ interface NextJsSlideImage extends SlideImage {
   blurDataURL?: string;
 }
 
-function isNextJsImage(slide: NextJsSlideImage): slide is NextJsSlideImage & { width: number; height: number } {
-  return (
-    isImageSlide(slide) &&
-    typeof slide.width === "number" &&
-    typeof slide.height === "number"
-  );
-}
-
 export default function NextJsImage({
   slide,
   rect,
@@ -28,17 +20,21 @@ export default function NextJsImage({
   const { imageFit } = useLightboxProps().carousel;
   const cover = isImageSlide(slide) && isImageFitCover(slide, imageFit);
 
-  if (!isNextJsImage(slide)) return undefined;
+  if (!isImageSlide(slide)) return undefined;
+
+  // Use provided dimensions or fall back to 4:3 ratio based on container
+  const slideWidth = slide.width ?? rect.width;
+  const slideHeight = slide.height ?? Math.round(rect.width * 0.75);
 
   const width = !cover
     ? Math.round(
-        Math.min(rect.width, (rect.height / slide.height) * slide.width),
+        Math.min(rect.width, (rect.height / slideHeight) * slideWidth),
       )
     : rect.width;
 
   const height = !cover
     ? Math.round(
-        Math.min(rect.height, (rect.width / slide.width) * slide.height),
+        Math.min(rect.height, (rect.width / slideWidth) * slideHeight),
       )
     : rect.height;
 
@@ -46,12 +42,13 @@ export default function NextJsImage({
     <div style={{ position: "relative", width, height }}>
       <Image
         fill
-        alt="Zdjecie apartamentu"
+        alt={slide.alt ?? "Zdjecie apartamentu"}
         src={slide.src}
-        loading="eager"
+        loading="lazy"
         draggable={false}
         placeholder={slide.blurDataURL ? "blur" : undefined}
-        sizes={`${Math.ceil((width / window.innerWidth) * 100)}vw`}
+        sizes={`${Math.ceil((width / rect.width) * 100)}vw`}
+        style={{ objectFit: cover ? "cover" : "contain" }}
       />
     </div>
   );
