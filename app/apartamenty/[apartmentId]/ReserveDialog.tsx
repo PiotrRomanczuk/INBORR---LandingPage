@@ -13,7 +13,7 @@ interface ReserveDialogProps {
   className: string;
   bookingLink: URL;
   airbnbLink: URL;
-  bookableLink: URL;
+  bookableLink?: URL;
 }
 
 export function ReserveDialog({

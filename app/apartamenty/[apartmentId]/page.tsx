@@ -1,76 +1,45 @@
-"use client";
-
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { apartmentsList } from "../apartmentsList";
+import ApartmentPageClient from "./ApartmentPageClient";
 
-import { Mainpic } from "./MainPic";
-import { UtilsSection } from "@/components/sections/Apartments/UtilsSection";
-import { AccordionComp } from "@/components/AccordionComp";
-import { GoogleMaps } from "@/components/GoogleMaps";
-import GalleryLightbox from "@/components/gallery/GalleryLightbox";
-import { ReserveDialog } from "./ReserveDialog";
+export function generateStaticParams() {
+  return apartmentsList.map((apt) => ({
+    apartmentId: apt.shortName,
+  }));
+}
 
-import ApartNotFound from "./ApartNotFound";
-import CalendarComponent from "./calendar/Calendar";
+export function generateMetadata({ params }: { params: { apartmentId: string } }): Metadata {
+  const apartment = apartmentsList.find(
+    (apt) => apt.shortName === params.apartmentId
+  );
 
-// import CalendarComponent from "./calendar/Calendar";
+  if (!apartment) {
+    return { title: "Apartament nie znaleziony | Inborr" };
+  }
+
+  return {
+    title: `${apartment.name} | Inborr Apartamenty Warszawa`,
+    description: apartment.description.short,
+    openGraph: {
+      title: `${apartment.name} | Inborr Apartamenty`,
+      description: apartment.description.short,
+      url: `https://inborr.pl/apartamenty/${apartment.shortName}`,
+      siteName: "Inborr",
+      locale: "pl_PL",
+      type: "website",
+    },
+  };
+}
 
 export default function Page({ params }: { params: { apartmentId: string } }) {
   const apartment = apartmentsList.find(
-    (apartment) => apartment.shortName === params.apartmentId,
+    (apt) => apt.shortName === params.apartmentId
   );
 
-  return (
-    <>
-      {apartment === undefined ? (
-        <ApartNotFound />
-      ) : (
-        <div className="px-4">
-          <div className="flex w-full flex-col justify-between rounded-md bg-background pb-4 md:flex-row-reverse">
-            <div className="md:w-2/3 lg:ml-8 xl:ml-16">
-              <Mainpic imageSrc={apartment.mainPic} />
-              <div className="-mt-3 flex justify-center gap-4 text-sm text-black">
-                <GalleryLightbox slides={apartment.pics} />
-                <ReserveDialog className="rounded-md bg-primary px-6 py-2 text-primary-foreground transition duration-300 hover:bg-primary/90" 
-                bookingLink={apartment.reservedLinks.bookingLink}
-                airbnbLink={apartment.reservedLinks.airbnbLink}
-                bookableLink={apartment.reservedLinks.bookableLink}
-                />
-              </div>
-            </div>
+  if (!apartment) {
+    notFound();
+  }
 
-            <div className="flex flex-col items-start py-4 text-lg text-black md:w-1/3 md:text-xl">
-              <h1 className="text-lg font-semibold md:text-xl">{apartment.name}</h1>
-              <div className="text-sm font-light text-muted-foreground xl:text-lg">
-                {apartment.location}
-              </div>
-
-              <UtilsSection
-                bedroomsNb={apartment.bedrooms}
-                area={apartment.area}
-                floor={apartment.floor}
-                kitchenStyle={apartment.kitchenStyle}
-                buildingType={apartment.buildingType}
-                // builtYear={apartment.builtYear}
-                localization={apartment.localization}
-              />
-            </div>
-          </div>
-          <div className="space-y-3 border-y-2 border-border py-4">
-            {apartment.description.long.map((paragraph, idx) => {
-              return (
-                <div className="text-base leading-relaxed text-foreground" key={idx}>
-                  {paragraph}
-                </div>
-              );
-            })}
-          </div>
-          <AccordionComp data={apartment.accordionData} />
-          <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-            <CalendarComponent apartmentName={apartment.shortName} />
-            <GoogleMaps lat={apartment.lattitude} lng={apartment.longitude} />
-          </div>
-        </div>
-      )}
-    </>
-  );
+  return <ApartmentPageClient apartment={apartment} />;
 }
