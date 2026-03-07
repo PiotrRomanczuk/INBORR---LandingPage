@@ -49,6 +49,7 @@ export function Testimonials() {
                 <Testimonial
                   key={testimonial.author.handle}
                   testimonial={testimonial}
+                  index={index}
                 />
               </motion.div>
             ))}
