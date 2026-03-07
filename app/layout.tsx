@@ -1,14 +1,10 @@
 import type { Metadata } from "next";
-
-import GoogleAnalytics from "@/components/GoogleAnalytics";
-
 import "./globals.css";
-
 import { NavBar } from "../components/navBar/NavBar";
 import { Footer } from "../components/ui/Footer";
-
 import { Open_Sans } from "next/font/google";
 import { Toaster } from "@/components/ui/toaster";
+import { AnalyticsWrapper } from "./AnalyticsWrapper";
 
 export const metadata: Metadata = {
   title: "Inborr | Apartamenty na wynajem krotkoterminowy w Warszawie",
@@ -37,6 +33,26 @@ const openSans = Open_Sans({
   display: "swap",
 });
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  name: "Inborr Apartamenty",
+  description: "Komfortowe apartamenty na wynajem krótkoterminowy w centrum Warszawy",
+  url: "https://inborr.pl",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Warszawa",
+    addressRegion: "Mazowieckie",
+    addressCountry: "PL",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 52.237769,
+    longitude: 20.989952,
+  },
+  priceRange: "200-350 PLN",
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -44,13 +60,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pl" className={openSans.className}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="relative mx-auto max-w-screen-xl overflow-x-hidden scroll-smooth">
         <NavBar />
         <div className="bg-background pt-20">{children}</div>
         <Toaster />
         <Footer />
+        <AnalyticsWrapper />
       </body>
-      {process.env.NODE_ENV === "production" && <GoogleAnalytics />}
     </html>
   );
 }

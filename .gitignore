@@ -38,3 +38,19 @@ next-env.d.ts
 .env
 
 .vercel
+
+# Screenshots and test artifacts
+*.png
+*.jpg
+.playwright-mcp/
+playwright-report/
+test-results/
+screenshots/
+e2e/
+FRONTEND_AUDIT_REPORT.md
+PROJECT_ANALYSIS.md
+UI_UX_AUDIT_REPORT.md
+DEEP_ANALYSIS_REPORT.md
+ARCHITECTURE_ANALYSIS.md
+PERFORMANCE_ANALYSIS.md
+ACCESSIBILITY_AUDIT_REPORT.md
