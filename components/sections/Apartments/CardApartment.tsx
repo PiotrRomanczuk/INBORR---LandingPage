@@ -11,17 +11,16 @@ interface CardVerticalProps {
   description: { short: string; long: string[] };
   hrefLink: string;
   icon?: () => void;
-  imagePosition?: "left" | "right" | "sm:left" | "sm:right";
+  reverseOnDesktop?: boolean;
   bedroomsNb: number;
   localization: string;
   area: number;
   floor: number;
   kitchenStyle: string;
   buildingType: string;
-  // builtYear: number;
   airbnbLink: URL;
   bookingLink: URL;
-  bookableLink: URL;
+  bookableLink?: URL;
 }
 
 export const CardApartment: FC<CardVerticalProps> = ({
@@ -30,7 +29,7 @@ export const CardApartment: FC<CardVerticalProps> = ({
   description,
   location,
   hrefLink,
-  imagePosition = "left",
+  reverseOnDesktop = false,
   airbnbLink,
   bookingLink,
   bedroomsNb,
@@ -83,7 +82,7 @@ export const CardApartment: FC<CardVerticalProps> = ({
       <div
         className="flex items-center justify-center pt-2"
       >
-        <ReserveDialog className="bg-foreground text-background px-8 py-3 text-base sm:text-lg font-medium rounded-md shadow-md hover:shadow-lg hover:bg-foreground/90 transition-all duration-300"
+        <ReserveDialog className="bg-primary text-primary-foreground px-8 py-3 text-base sm:text-lg font-medium rounded-md shadow-md hover:shadow-lg hover:bg-primary/90 transition-all duration-300"
         bookingLink={bookingLink}
         airbnbLink={airbnbLink}
         bookableLink={bookableLink}
@@ -94,24 +93,13 @@ export const CardApartment: FC<CardVerticalProps> = ({
   );
 
   return (
-    <div className="flex w-full flex-col transition duration-300  sm:flex-row">
-      {imagePosition.includes("sm:right") ? (
-        <>
-          <div className="block sm:hidden">
-            {ImageSection}
-            {ContentSection}
-          </div>
-          <div className="hidden sm:flex">
-            {ContentSection}
-            {ImageSection}
-          </div>
-        </>
-      ) : (
-        <>
-          {ImageSection}
-          {ContentSection}
-        </>
-      )}
+    <div
+      className={`flex w-full flex-col transition duration-300 sm:flex-row ${
+        reverseOnDesktop ? "sm:flex-row-reverse" : ""
+      }`}
+    >
+      {ImageSection}
+      {ContentSection}
     </div>
   );
 };

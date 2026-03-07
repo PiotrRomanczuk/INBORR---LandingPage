@@ -3,7 +3,7 @@ import React from "react";
 const SEO_Content = () => {
   return (
     <>
-      <div className="container mx-auto max-w-4xl px-3 sm:px-4 md:px-6 py-8">
+      <div className="container mx-auto max-w-4xl px-3 sm:px-4 md:px-6 py-16 md:py-24">
         <h2 className="mb-8 text-center text-4xl font-bold text-foreground">
           Wynajem Krótkoterminowy Mieszkań w Warszawie – Komfort i Wygoda w
           Centrum Miasta
@@ -40,14 +40,6 @@ const SEO_Content = () => {
                   kuchennego.
                 </p>
               </li>
-              {/* <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <p className="text-muted-foreground">
-                  <strong>Elastyczność rezerwacji</strong> – dostosowujemy się
-                  do Twoich potrzeb, oferując elastyczne godziny zameldowania i
-                  wymeldowania.
-                </p>
-              </li> */}
               <li className="flex items-start">
                 <span className="mr-2">•</span>
                 <p className="text-muted-foreground">
@@ -75,10 +67,7 @@ const SEO_Content = () => {
               Nasze mieszkania - Twoje miejsce w Warszawie
             </h2>
             <p className="leading-relaxed text-muted-foreground">
-              {/* W naszej ofercie znajdziesz apartamenty o różnej wielkości: od
-              przytulnych kawalerek po przestronne mieszkania idealne dla
-              rodzin. */}
-               W naszych apartamentach dbamy o każdy szczegół, aby zapewnić naszym gościom
+              W naszych apartamentach dbamy o każdy szczegół, aby zapewnić naszym gościom
               niezapomniany pobyt.
             </p>
           </div>

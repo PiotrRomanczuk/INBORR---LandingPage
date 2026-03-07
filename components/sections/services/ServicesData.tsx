@@ -1,4 +1,4 @@
-import { Microwave, Wifi, AirVent, Tv, BedDouble, KeyRound, CarFront } from "lucide-react";
+import { Microwave, Wifi, AirVent, Tv, BedDouble, KeyRound, CarFront, ShoppingBag } from "lucide-react";
 
 const servicesData = [
   {
@@ -47,6 +47,13 @@ const servicesData = [
       "Możliwość parkowania w pobliżu apartamentu - informacje przy rezerwacji.",
     icon: <CarFront />,
     ariaLabel: "Parking w pobliżu",
+  },
+  {
+    title: "Pakiet powitalny",
+    details:
+      "Każdego gościa wita zestaw podstawowych produktów: kawa, herbata i słodki upominek.",
+    icon: <ShoppingBag />,
+    ariaLabel: "Pakiet powitalny",
   },
 ];
 

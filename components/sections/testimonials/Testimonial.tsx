@@ -17,7 +17,7 @@ export function Testimonial({
     >
       <figure className="rounded-2xl bg-card p-8 text-sm/6">
         <blockquote className="text-card-foreground">
-          <p>{`"${testimonial.body}"`}</p>
+          <p>{testimonial.body}</p>
         </blockquote>
         <figcaption className="mt-6 flex items-center gap-x-4">
           <div

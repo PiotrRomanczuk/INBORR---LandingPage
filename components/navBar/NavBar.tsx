@@ -25,7 +25,7 @@ export const NavBar = () => {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background shadow-sm">
       <div className="mx-auto max-w-7xl">
-        <div className="px-6 pt-6 pb-4 lg:max-w-2xl lg:pl-8 lg:pr-0">
+        <div className="px-6 pt-6 pb-4">
           <nav
             className="flex items-center justify-between"
             aria-label="Global"
@@ -36,15 +36,15 @@ export const NavBar = () => {
                 alt="Inborr"
                 className="h-12 w-auto transition duration-200 hover:scale-110"
                 src="/logo.png"
-                width={400}
-                height={400}
-                sizes="(max-width: 768px) 100vw, 400px"
+                width={96}
+                height={96}
+                sizes="(max-width: 768px) 48px, 96px"
               />
             </Link>
             {/* Mobile menu button */}
             <button
               type="button"
-              className="z-10 -m-2.5 rounded-md p-2.5 text-foreground lg:hidden"
+              className="z-10 -m-2.5 min-h-[44px] min-w-[44px] rounded-md p-2.5 text-foreground lg:hidden"
               onClick={toggleMobileMenu}
             >
               <span className="sr-only">Open main menu</span>
@@ -62,6 +62,7 @@ export const NavBar = () => {
                     className={`relative block w-fit py-2 px-3 text-lg font-semibold leading-6 text-foreground
                     after:absolute after:block after:h-[3px] after:w-full after:origin-left
                     after:bg-primary after:transition after:duration-300 after:content-['']
+                    focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2
                     ${isActive ? "after:scale-x-100 font-bold" : "after:scale-x-0 after:hover:scale-x-100"}`}
                   >
                     {item.name}
@@ -87,9 +88,9 @@ export const NavBar = () => {
                 alt="Inborr"
                 className="h-12 w-auto transition duration-200 hover:scale-110"
                 src="/logo.png"
-                width={400}
-                height={400}
-                sizes="(max-width: 768px) 100vw, 400px"
+                width={96}
+                height={96}
+                sizes="(max-width: 768px) 48px, 96px"
               />
             </Link>
             <button
@@ -115,6 +116,7 @@ export const NavBar = () => {
                       className={`relative -mx-3 block w-fit rounded-lg px-3 py-2 text-xl font-semibold leading-7 text-foreground
                       after:absolute after:block after:h-[3px] after:w-full after:origin-left
                       after:bg-foreground after:transition after:duration-300 after:content-[''] hover:bg-muted
+                      focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2
                       ${isActive ? "after:scale-x-100 font-bold bg-muted" : "after:scale-x-0 after:hover:scale-x-100"}`}
                     >
                       {item.name}

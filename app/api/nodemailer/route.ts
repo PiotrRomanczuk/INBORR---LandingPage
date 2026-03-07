@@ -1,63 +1,27 @@
 import { NextRequest, NextResponse } from "next/server";
-
-import FormData from "form-data"; // form-data v4.0.1
-import Mailgun from "mailgun.js"; // mailgun.js v11.1.0
-
-export async function GET(req: NextRequest) {
-  try {
-    await sendSimpleMessage();
-    return NextResponse.json(
-      { success: "Email sent successfully" },
-      { status: 200 },
-    );
-  } catch (error: unknown) {
-    if (error instanceof Error) {
-      return NextResponse.json({
-        error: `Internal Server Error: ${error.message}`,
-      });
-    }
-    return NextResponse.json({
-      error: "Internal Server Error",
-    });
-  }
-}
-
-async function sendSimpleMessage() {
-  if (!process.env.MAILGUN_API_KEY) {
-    throw new Error(
-      "MAILGUN_API_KEY is not configured in environment variables",
-    );
-  }
-
-  const mailgun = new Mailgun(FormData);
-  const mg = mailgun.client({
-    username: "api",
-    key: process.env.MAILGUN_API_KEY,
-  });
-
-  try {
-    const data = await mg.messages.create(process.env.MAILGUN_DOMAIN || "", {
-      from: `Mailgun Sandbox <postmaster@${process.env.MAILGUN_DOMAIN}>`,
-      to: [process.env.RECIPIENT_EMAIL || ""],
-      subject: "Hello",
-      text: "Test email from Mailgun",
-    });
-  } catch (error) {
-    throw error;
-  }
-}
+import FormData from "form-data";
+import Mailgun from "mailgun.js";
+import { FormSchema } from "@/app/kontakt/form/FormSchema";
 
 export async function POST(req: NextRequest) {
   try {
-    const { firstName, lastName, email, phone, message } = await req.json();
+    const body = await req.json();
 
-    await sendFormMessage({
-      firstName,
-      lastName,
-      email,
-      phone,
-      message,
-    });
+    // Server-side validation
+    const result = FormSchema.safeParse(body);
+    if (!result.success) {
+      return NextResponse.json(
+        {
+          error: "Invalid form data",
+          details: result.error.flatten().fieldErrors,
+        },
+        { status: 400 },
+      );
+    }
+
+    const { firstName, lastName, email, phone, message } = result.data;
+
+    await sendFormMessage({ firstName, lastName, email, phone, message });
 
     return NextResponse.json(
       { success: "Email sent successfully" },
@@ -98,23 +62,19 @@ async function sendFormMessage({
 
   const emailContent = `
     New Contact Form Submission:
-    
+
     Name: ${firstName} ${lastName}
     Email: ${email}
     Phone: ${phone}
-    
+
     Message:
     ${message}
   `;
 
-  try {
-    const data = await mg.messages.create(process.env.MAILGUN_DOMAIN || "", {
-      from: `Contact Form <postmaster@${process.env.MAILGUN_DOMAIN}>`,
-      to: [process.env.RECIPIENT_EMAIL || ""],
-      subject: `New Contact Form Submission from ${firstName} ${lastName}`,
-      text: emailContent,
-    });
-  } catch (error) {
-    throw error;
-  }
+  await mg.messages.create(process.env.MAILGUN_DOMAIN || "", {
+    from: `Contact Form <postmaster@${process.env.MAILGUN_DOMAIN}>`,
+    to: [process.env.RECIPIENT_EMAIL || ""],
+    subject: `New Contact Form Submission from ${firstName} ${lastName}`,
+    text: emailContent,
+  });
 }

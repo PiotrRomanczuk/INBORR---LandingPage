@@ -6,14 +6,18 @@ import { usePathname } from 'next/navigation'
 
 const GA_TRACKING_ID = 'GTM-NKBH5W2W'
 
-const GoogleAnalytics = () => {
+const GoogleAnalytics = ({ hasConsent }: { hasConsent: boolean }) => {
   const pathname = usePathname()
-  
+
   useEffect(() => {
-    if (pathname) {
+    if (hasConsent && pathname && typeof window.gtag === 'function') {
       window.gtag('config', GA_TRACKING_ID, { page_path: pathname })
     }
-  }, [pathname])
+  }, [pathname, hasConsent])
+
+  if (!hasConsent) {
+    return null;
+  }
 
   return (
     <>
@@ -29,6 +33,9 @@ const GoogleAnalytics = () => {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+            gtag('consent', 'default', {
+              'analytics_storage': 'granted'
+            });
             gtag('config', '${GA_TRACKING_ID}', {
               page_path: window.location.pathname,
             });

@@ -20,12 +20,10 @@ export interface IApartment {
   kitchenStyle: string;
   buildingType: string;
   builtYear: number;
-  localization: string; 
-  lattitude: number; 
-  longitude: number 
-  ;
-  
-
+  localization: string;
+  lattitude: number;
+  longitude: number;
+  priceFrom: number;
   mainPic: string;
   pics: {
     src: string;
@@ -35,11 +33,10 @@ export interface IApartment {
   reservedLinks: {
     airbnbLink: URL;
     bookingLink: URL;
-    bookableLink: URL;
+    bookableLink?: URL;
   };
-
   calendarLinks: {
-    airbnb: URL;
-    booking: URL;
+    airbnb: string;
+    booking: string;
   };
 }
