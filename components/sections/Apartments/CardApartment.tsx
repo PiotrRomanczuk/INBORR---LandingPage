@@ -82,7 +82,7 @@ export const CardApartment: FC<CardVerticalProps> = ({
       <div
         className="flex items-center justify-center pt-2"
       >
-        <ReserveDialog className="bg-foreground text-background px-8 py-3 text-base sm:text-lg font-medium rounded-md shadow-md hover:shadow-lg hover:bg-foreground/90 transition-all duration-300"
+        <ReserveDialog className="bg-primary text-primary-foreground px-8 py-3 text-base sm:text-lg font-medium rounded-md shadow-md hover:shadow-lg hover:bg-primary/90 transition-all duration-300"
         bookingLink={bookingLink}
         airbnbLink={airbnbLink}
         bookableLink={bookableLink}
@@ -93,24 +93,13 @@ export const CardApartment: FC<CardVerticalProps> = ({
   );
 
   return (
-    <div className="flex w-full flex-col transition duration-300 sm:flex-row">
-      {reverseOnDesktop ? (
-        <>
-          <div className="block sm:hidden">
-            {ImageSection}
-            {ContentSection}
-          </div>
-          <div className="hidden sm:flex">
-            {ContentSection}
-            {ImageSection}
-          </div>
-        </>
-      ) : (
-        <>
-          {ImageSection}
-          {ContentSection}
-        </>
-      )}
+    <div
+      className={`flex w-full flex-col transition duration-300 sm:flex-row ${
+        reverseOnDesktop ? "sm:flex-row-reverse" : ""
+      }`}
+    >
+      {ImageSection}
+      {ContentSection}
     </div>
   );
 };

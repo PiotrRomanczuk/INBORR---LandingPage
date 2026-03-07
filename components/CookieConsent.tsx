@@ -42,24 +42,24 @@ export const CookieConsent = ({ onConsentChange }: { onConsentChange?: (consent:
   return (
     <div
       role="alert"
-      className="fixed bottom-0 z-50 flex w-full flex-col justify-between gap-4 bg-muted px-4 py-8 sm:flex-row sm:items-center"
+      className="fixed bottom-0 left-0 right-0 z-50 flex w-full flex-col gap-4 bg-muted px-6 py-6 shadow-lg sm:flex-row sm:items-center sm:justify-between"
     >
-      <span className="text-foreground flex text-xs sm:text-sm">
+      <p className="text-foreground text-xs sm:text-sm">
         Ta stronka używa ciasteczek (cookies) do przechowywania informacji o
         Twoich preferencjach i wizycie na stronie.{" "}
-        <Link href="/regulamin" className="ml-1 underline hover:text-primary">
+        <Link href="/regulamin" className="underline hover:text-primary">
           Polityka prywatności
         </Link>
-      </span>
-      <div className="flex gap-2">
+      </p>
+      <div className="flex shrink-0 gap-3">
         <button
-          className="rounded-md border border-border px-4 py-2 text-foreground hover:bg-accent"
+          className="rounded-md border border-border px-5 py-2.5 text-sm font-medium text-foreground hover:bg-accent"
           onClick={rejectCookie}
         >
           Odrzucam
         </button>
         <button
-          className="rounded-md bg-primary px-4 py-2 text-primary-foreground hover:bg-primary/90"
+          className="rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90"
           onClick={acceptCookie}
         >
           Akceptuję
