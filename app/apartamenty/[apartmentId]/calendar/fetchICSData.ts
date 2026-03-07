@@ -1,11 +1,23 @@
 import { parseICSToJSON, getEventDates } from "./@components/ParseICSToJson";
 
+const VALID_APARTMENTS = ["chlodna", "pereca"] as const;
+
 export async function fetchAndProcessICSData(apartmentName: string) {
+  if (
+    !VALID_APARTMENTS.includes(
+      apartmentName as (typeof VALID_APARTMENTS)[number],
+    )
+  ) {
+    throw new Error(`Invalid apartment name: ${apartmentName}`);
+  }
+
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://inborr.pl";
+
   const airbnbICSData = await fetch(
-    `http://inborr.pl/api/calendar/${apartmentName}/airbnb`,
+    `${baseUrl}/api/calendar/${apartmentName}/airbnb`,
   );
   const bookingICSData = await fetch(
-    `http://inborr.pl/api/calendar/${apartmentName}/booking`,
+    `${baseUrl}/api/calendar/${apartmentName}/booking`,
   );
 
   const airbnbICSDataString = await airbnbICSData.text();
