@@ -20,7 +20,7 @@ interface CardVerticalProps {
   buildingType: string;
   airbnbLink: URL;
   bookingLink: URL;
-  bookableLink: URL;
+  bookableLink?: URL;
 }
 
 export const CardApartment: FC<CardVerticalProps> = ({
