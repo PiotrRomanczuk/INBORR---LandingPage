@@ -1,93 +1,130 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    /* Skyline · Refined Boutique palette */
+    --background: 48 21% 97%;          /* #FAFAF7 porcelain */
+    --foreground: 215 49% 11%;         /* #0E1828 ink */
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
- 
+    --card: 0 0% 100%;                 /* #FFFFFF paper */
+    --card-foreground: 215 49% 11%;
+
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
- 
-    --primary: 220 55% 42%;
+    --popover-foreground: 215 49% 11%;
+
+    --primary: 223 47% 43%;            /* #3A57A1 blue */
     --primary-foreground: 0 0% 100%;
- 
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
- 
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 36%;
- 
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
- 
+
+    --secondary: 222 41% 94%;          /* #E7ECF6 blue-soft */
+    --secondary-foreground: 215 49% 11%;
+
+    --muted: 220 8% 95%;
+    --muted-foreground: 218 7% 47%;    /* #6E7480 muted */
+
+    --accent: 36 41% 60%;              /* #C9A56B gold */
+    --accent-foreground: 215 49% 11%;
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
- 
+    --border: 220 13% 91%;             /* #E6E8EC line */
+    --input: 220 13% 91%;
+    --ring: 223 47% 43%;
+
     --radius: 0.5rem;
- 
-    --chart-1: 12 76% 61%;
- 
-    --chart-2: 173 58% 39%;
- 
-    --chart-3: 197 37% 24%;
- 
-    --chart-4: 43 74% 66%;
- 
-    --chart-5: 27 87% 67%;
-  }
- 
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
- 
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
- 
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
- 
-    --primary: 220 50% 55%;
-    --primary-foreground: 0 0% 100%;
- 
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
- 
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 70%;
- 
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
- 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
- 
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+
+    /* Skyline tokens (raw hex, used by inline styles) */
+    --skyline-bg: #FAFAF7;
+    --skyline-paper: #FFFFFF;
+    --skyline-ink: #0E1828;
+    --skyline-muted: #6E7480;
+    --skyline-line: #E6E8EC;
+    --skyline-blue: #3A57A1;
+    --skyline-blue-deep: #283E73;
+    --skyline-blue-soft: #E7ECF6;
+    --skyline-gold: #C9A56B;
+    --skyline-gold-soft: #F2EADB;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-manrope), system-ui, sans-serif;
   }
+  .font-display {
+    font-family: var(--font-bricolage), system-ui, sans-serif;
+    letter-spacing: -0.03em;
+  }
+}
+
+@layer utilities {
+  .skyline-eyebrow {
+    @apply text-[11px] uppercase tracking-[0.22em] font-semibold;
+  }
+  .skyline-rule {
+    @apply inline-block h-px w-6 align-middle;
+    background: var(--skyline-gold);
+  }
+}
+
+/* Skyline-themed yet-another-react-lightbox controls */
+.yarl__container {
+  backdrop-filter: blur(2px);
+}
+.yarl__button {
+  filter: none;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  margin: 0 12px;
+  color: #fff;
+  backdrop-filter: blur(8px);
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.yarl__button:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.32);
+}
+.yarl__button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--skyline-gold);
+}
+.yarl__navigation_prev,
+.yarl__navigation_next {
+  width: 52px;
+  height: 52px;
+}
+.yarl__counter {
+  background: rgba(14, 24, 40, 0.7);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  backdrop-filter: blur(8px);
+}
+.yarl__thumbnails_thumbnail {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  opacity: 0.6;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+.yarl__thumbnails_thumbnail:hover {
+  opacity: 0.9;
+}
+.yarl__thumbnails_thumbnail_active {
+  border-color: var(--skyline-gold);
+  opacity: 1;
 }
 
 @media (prefers-reduced-motion: reduce) {

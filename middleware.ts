@@ -1,32 +1,36 @@
-import { NextResponse, NextRequest } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
+import createIntlMiddleware from "next-intl/middleware";
+import { routing } from "./i18n/routing";
 
-export function middleware(request: NextRequest) {
-  const res = NextResponse.next();
+const intlMiddleware = createIntlMiddleware(routing);
 
-  const allowedOrigins = [
-    "https://inborr.pl",
-    "https://www.inborr.pl",
-  ];
+const ALLOWED_ORIGINS = [
+  "https://inborr.pl",
+  "https://www.inborr.pl",
+  ...(process.env.NODE_ENV === "development" ? ["http://localhost:3000"] : []),
+];
 
-  if (process.env.NODE_ENV === "development") {
-    allowedOrigins.push("http://localhost:3000");
-  }
-
-  const origin = request.headers.get("origin");
-  if (origin && allowedOrigins.includes(origin)) {
+function applyCorsHeaders(req: NextRequest, res: NextResponse) {
+  const origin = req.headers.get("origin");
+  if (origin && ALLOWED_ORIGINS.includes(origin)) {
     res.headers.set("Access-Control-Allow-Origin", origin);
   }
-
   res.headers.set("Access-Control-Allow-Credentials", "true");
   res.headers.set("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
   res.headers.set(
     "Access-Control-Allow-Headers",
     "Content-Type, Authorization",
   );
-
   return res;
 }
 
+export function middleware(req: NextRequest) {
+  if (req.nextUrl.pathname.startsWith("/api")) {
+    return applyCorsHeaders(req, NextResponse.next());
+  }
+  return intlMiddleware(req);
+}
+
 export const config = {
-  matcher: "/api/:path*",
+  matcher: ["/((?!_next|_vercel|.*\\..*).*)"],
 };

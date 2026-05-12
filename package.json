@@ -35,6 +35,7 @@
     "lucide-react": "^0.294.0",
     "mailgun.js": "^11.1.0",
     "next": "^14.2.32",
+    "next-intl": "^3.26.5",
     "next-themes": "^0.2.1",
     "react": "^18",
     "react-animated-numbers": "^0.17.1",

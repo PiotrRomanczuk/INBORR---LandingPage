@@ -1,52 +1,146 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { TextAnimation } from "@/components/ui/TextAnimation";
+import { useTranslations } from "next-intl";
+import { Search } from "lucide-react";
+import { Link } from "@/i18n/routing";
+
+const SearchField = ({
+  label,
+  value,
+  active = false,
+}: {
+  label: string;
+  value: string;
+  active?: boolean;
+}) => (
+  <div
+    className={`flex-1 rounded-lg px-4 py-3 ${active ? "bg-skyline-blue-soft" : ""}`}
+  >
+    <div
+      className={`text-[10px] font-semibold uppercase tracking-[0.16em] ${active ? "text-skyline-blue" : "text-skyline-muted"}`}
+    >
+      {label}
+    </div>
+    <div className="mt-1 text-[14px] font-medium text-skyline-ink">
+      {value}
+    </div>
+  </div>
+);
+
+const StatBlock = ({ value, label }: { value: string; label: string }) => (
+  <div>
+    <div className="font-display text-[24px] leading-none text-skyline-ink">
+      {value}
+    </div>
+    <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-skyline-muted">
+      {label}
+    </div>
+  </div>
+);
 
 export const HeroTailwind = () => {
+  const t = useTranslations("hero");
+
   return (
-    <section className="bg-background">
-      <div className="relative animate-fade-in">
-        <div className="mx-auto max-w-7xl">
-          <div className="relative z-10 lg:w-full lg:max-w-2xl lg:pt-14">
-            {/* // Horizontal cut */}
-            <svg
-              className="absolute inset-y-0 right-8 hidden h-full w-80 translate-x-1/2 transform fill-background lg:block"
-              viewBox="0 0 100 100"
-              preserveAspectRatio="none"
-              aria-hidden="true"
+    <section className="bg-skyline-bg">
+      <div className="grid grid-cols-1 lg:grid-cols-2">
+        <div className="flex flex-col px-6 pb-16 pt-14 md:px-10 lg:px-12 lg:pb-16 lg:pt-20">
+          <div className="mb-6 flex items-center gap-2 text-skyline-blue">
+            <span className="skyline-rule" aria-hidden />
+            <span className="skyline-eyebrow">{t("eyebrow")}</span>
+          </div>
+
+          <h1
+            className="font-display text-[52px] leading-[0.95] tracking-tight text-skyline-ink sm:text-[64px] lg:text-[80px] xl:text-[88px]"
+            style={{ letterSpacing: "-0.035em" }}
+          >
+            {t("titleLine1")}
+            <br />
+            <span className="text-skyline-blue">{t("titleLine2")}</span>
+            <br />
+            {t("titleLine3")}
+          </h1>
+
+          <p className="mt-6 max-w-[440px] text-[16px] leading-[1.55] text-skyline-muted lg:text-[17px]">
+            {t("subtitle")}
+          </p>
+
+          <div
+            className="mt-10 flex flex-col gap-1 rounded-xl border border-skyline-line bg-white p-2 sm:flex-row sm:items-stretch"
+            style={{ boxShadow: "0 4px 24px -8px rgba(14,24,40,.1)" }}
+          >
+            <SearchField label={t("arrive")} value={t("arriveSample")} active />
+            <SearchField label={t("depart")} value={t("departSample")} />
+            <SearchField label={t("guests")} value={t("guestsSample")} />
+            <Link
+              href="/apartamenty"
+              className="flex items-center justify-center rounded-lg bg-skyline-blue px-5 py-3 text-white transition hover:bg-skyline-blue-deep"
+              aria-label={t("eyebrow")}
             >
-              <polygon points="0,0 90,0 50,100 0,100" />
-            </svg>
-            <div className="relative px-6 py-20 sm:py-40 lg:px-8 lg:py-36 lg:pr-0">
-              <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
-                <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
-                  <TextAnimation />
-                </h1>
-                <p className="mt-6 text-base sm:text-lg md:text-xl leading-8 text-muted-foreground">
-                  Wynajem na dni i tygodnie – city break, workation czy pobyt
-                  biznesowy – zadbamy o jakość i Twój komfort.
-                </p>
-                <Link
-                  href="/apartamenty"
-                  className="mt-8 inline-flex min-h-[44px] items-center rounded-md bg-primary px-8 py-3 text-base font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-                >
-                  Zobacz apartamenty
-                </Link>
+              <Search className="h-4 w-4" aria-hidden />
+            </Link>
+          </div>
+
+          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-[12px] text-skyline-muted">
+            <span className="flex items-center gap-1.5">
+              <span
+                className="inline-block h-1.5 w-1.5 rounded-full"
+                style={{ background: "#3B9D6E" }}
+                aria-hidden
+              />
+              {t("availability")}
+            </span>
+            <span aria-hidden>·</span>
+            <span>{t("freeCancellation")}</span>
+          </div>
+
+          <div className="mt-10 grid max-w-md grid-cols-2 gap-x-6 gap-y-6 border-t border-skyline-line pt-6 sm:grid-cols-4 lg:mt-auto">
+            <StatBlock value="4.9/5" label={t("statGuestsLabel")} />
+            <StatBlock value="2" label={t("statApartmentsLabel")} />
+            <StatBlock value="100m" label={t("statMetroLabel")} />
+            <StatBlock value="24/7" label={t("statCheckinLabel")} />
+          </div>
+        </div>
+
+        <div className="relative min-h-[420px] lg:min-h-[700px]">
+          <Image
+            src="/warsaw.jpg"
+            alt={t("imageAlt")}
+            fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-cover"
+            priority
+          />
+          <div
+            className="absolute bottom-6 left-6 right-6 rounded-xl border border-white/60 p-5 backdrop-blur"
+            style={{ background: "rgba(255,255,255,0.96)" }}
+          >
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <div className="skyline-eyebrow text-skyline-blue">
+                  {t("featuredEyebrow")}
+                </div>
+                <div className="font-display mt-1 text-[18px] font-semibold leading-tight text-skyline-ink sm:text-[20px]">
+                  {t("featuredName")}
+                </div>
+                <div className="mt-1 text-[12px] text-skyline-muted">
+                  {t("featuredSpecs")}
+                </div>
+              </div>
+              <div className="text-right">
+                <div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-skyline-muted">
+                  {t("from")}
+                </div>
+                <div className="font-display mt-0.5 text-[24px] font-semibold leading-none text-skyline-ink sm:text-[28px]">
+                  250 zł
+                  <span className="text-[12px] text-skyline-muted">
+                    {t("perNight")}
+                  </span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="bg-background lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 ">
-          <Image
-            className="mx-auto aspect-[3/2] w-full object-cover lg:aspect-auto lg:h-full lg:w-full"
-            src="/warsaw.jpg"
-            width={800}
-            height={1200}
-            alt="Apartament Inborr w Warszawie"
-            priority
-          />
         </div>
       </div>
     </section>

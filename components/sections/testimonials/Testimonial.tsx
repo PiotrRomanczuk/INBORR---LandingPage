@@ -1,17 +1,17 @@
-import { ITestimonial } from "./ITestimonial";
+import type { ITestimonialMeta } from "./testimonials_data";
 
 export function Testimonial({
   testimonial,
+  body,
 }: {
-  testimonial: ITestimonial;
+  testimonial: ITestimonialMeta;
+  body: string;
 }) {
   return (
-    <div
-      className="pt-8 sm:inline-block sm:w-full sm:px-4"
-    >
+    <div className="pt-8 sm:inline-block sm:w-full sm:px-4">
       <figure className="rounded-2xl bg-card p-8 text-sm/6">
         <blockquote className="text-card-foreground">
-          <p>{testimonial.body}</p>
+          <p>{body}</p>
         </blockquote>
         <figcaption className="mt-6 flex items-center gap-x-4">
           <div

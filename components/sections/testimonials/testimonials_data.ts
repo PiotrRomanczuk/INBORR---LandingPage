@@ -1,8 +1,16 @@
-import { ITestimonial } from "./ITestimonial";
+export interface ITestimonialMeta {
+  bodyKey: number;
+  author: {
+    name: string;
+    handle: string;
+    initials: string;
+    accentColor: string;
+  };
+}
 
-export const Testimonials_data: ITestimonial[] = [
+export const TESTIMONIALS_META: ITestimonialMeta[] = [
   {
-    body: "Świetny apartament. Czysty , doskonale wyposażony. Jedno z niewielu miejsc, w których się zatrzymałem, które jest tak dobrze zorganizowane.",
+    bodyKey: 0,
     author: {
       name: "Magda K.",
       handle: "magda",
@@ -11,7 +19,7 @@ export const Testimonials_data: ITestimonial[] = [
     },
   },
   {
-    body: "Super! Byliśmy zachwyceni. Widać dbałość o każdy szczegół w apartamencie, aby gość czuł się jak u siebie. Wewnątrz apartamentu bardzo przytulnie i miła atmosfera. Dodatkowo kontakt z właścicielką bardzo sprawny i widać, że wynajmujący jest dla niej bardzo ważny. ",
+    bodyKey: 1,
     author: {
       name: "Paweł T.",
       handle: "pawel",
@@ -20,7 +28,7 @@ export const Testimonials_data: ITestimonial[] = [
     },
   },
   {
-    body: "Mieszkanie było w idealnym stanie i miało wszystko, czego możesz potrzebować, a nawet więcej. Lokalizacja jest doskonała, blisko metra, dworca autobusowego, rynku, 20 minut spacerem od zabytkowego centrum. ",
+    bodyKey: 2,
     author: {
       name: "Piotr R.",
       handle: "piotr",
@@ -29,7 +37,7 @@ export const Testimonials_data: ITestimonial[] = [
     },
   },
   {
-    body: "Wszystko zostało przemyślane w najdrobniejszych szczegółach. Jest wszystko, czego potrzebujesz, a nawet więcej. Bardzo szczegółowe instrukcje dotyczące zameldowania, poszło gładko. Podziękowania dla gospodyni za czystość i dbałość o podróżnych.",
+    bodyKey: 3,
     author: {
       name: "Marzena L.",
       handle: "marzena",
