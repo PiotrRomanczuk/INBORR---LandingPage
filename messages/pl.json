@@ -566,5 +566,10 @@
   },
   "loading": {
     "logoAlt": "logo"
+  },
+  "map": {
+    "iframeTitle": "Mapa lokalizacji",
+    "unavailableTitle": "Mapa niedostępna",
+    "openInGoogleMaps": "Otwórz w Google Maps"
   }
 }
