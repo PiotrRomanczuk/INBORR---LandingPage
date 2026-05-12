@@ -566,5 +566,10 @@
   },
   "loading": {
     "logoAlt": "logo"
+  },
+  "map": {
+    "iframeTitle": "Location map",
+    "unavailableTitle": "Map unavailable",
+    "openInGoogleMaps": "Open in Google Maps"
   }
 }
