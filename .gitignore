@@ -39,14 +39,16 @@ next-env.d.ts
 
 .vercel
 
-# Screenshots and test artifacts
-*.png
-*.jpg
+# Screenshots and test artifacts (scoped — do not blanket-ignore *.png/*.jpg
+# or you will silently drop /public images on commit)
 .playwright-mcp/
 playwright-report/
 test-results/
 screenshots/
 e2e/
+.walkthrough/
+/*.png
+/*.jpg
 FRONTEND_AUDIT_REPORT.md
 PROJECT_ANALYSIS.md
 UI_UX_AUDIT_REPORT.md
