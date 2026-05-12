@@ -18,7 +18,25 @@ const config: Config = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["var(--font-manrope)", "system-ui", "sans-serif"],
+        display: ["var(--font-bricolage)", "system-ui", "sans-serif"],
+        bricolage: ["var(--font-bricolage)", "system-ui", "sans-serif"],
+        manrope: ["var(--font-manrope)", "system-ui", "sans-serif"],
+      },
       colors: {
+        skyline: {
+          bg: "#FAFAF7",
+          paper: "#FFFFFF",
+          ink: "#0E1828",
+          muted: "#6E7480",
+          line: "#E6E8EC",
+          blue: "#3A57A1",
+          "blue-deep": "#283E73",
+          "blue-soft": "#E7ECF6",
+          gold: "#C9A56B",
+          "gold-soft": "#F2EADB",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

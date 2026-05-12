@@ -1,126 +1,146 @@
 "use client";
 
 import React, { FC } from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { BedDouble, Maximize, ArrowUp10 } from "lucide-react";
-import { ReserveDialog } from "@/app/apartamenty/[apartmentId]/ReserveDialog";
-import GalleryLightbox from "@/components/gallery/GalleryLightbox";
+import { useTranslations } from "next-intl";
+import { BedDouble, Maximize, ArrowUp10, Users, Heart } from "lucide-react";
+import { Link } from "@/i18n/routing";
 
 interface CardApartmentProps {
   imageSrc: string;
   title: string;
-  location: string;
-  description: { short: string; long: string[] };
-  pics: { src: string; alt: string }[];
+  district: string;
+  description: string;
   hrefLink: string;
-  reverseOnDesktop?: boolean;
   bedroomsNb: number;
   area: number;
   floor: number;
+  sleeps: number;
   priceFrom: number;
-  airbnbLink: URL;
-  bookingLink: URL;
-  bookableLink?: URL;
+  rating?: number;
+  galleryCount?: number;
 }
+
+const Spec = ({
+  icon,
+  label,
+  value,
+}: {
+  icon: React.ReactNode;
+  label: string;
+  value: string | number;
+}) => (
+  <div className="flex items-center gap-3">
+    <div className="flex h-9 w-9 items-center justify-center rounded-md bg-skyline-blue-soft text-skyline-blue">
+      {icon}
+    </div>
+    <div>
+      <div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-skyline-muted">
+        {label}
+      </div>
+      <div className="text-[14px] font-semibold text-skyline-ink">{value}</div>
+    </div>
+  </div>
+);
 
 export const CardApartment: FC<CardApartmentProps> = ({
   imageSrc,
   title,
+  district,
   description,
-  location,
-  pics,
   hrefLink,
-  reverseOnDesktop = false,
-  airbnbLink,
-  bookingLink,
-  bookableLink,
   bedroomsNb,
   area,
   floor,
+  sleeps,
   priceFrom,
+  rating = 4.9,
+  galleryCount = 18,
 }) => {
-  const ImageSection = (
-    <div className="w-full sm:w-3/5">
-      <Link href={hrefLink} className="block">
-        <div className="relative h-64 overflow-hidden rounded-lg sm:h-[400px]">
-          <Image
-            src={imageSrc}
-            alt={`Zdjęcie ${title}`}
-            fill
-            sizes="(max-width: 768px) 100vw, 60vw"
-            className="rounded-lg object-cover transition-all duration-300 hover:scale-110"
-          />
-        </div>
-      </Link>
-      <div className="mt-3">
-        <GalleryLightbox slides={pics} showThumbnails />
-      </div>
-    </div>
-  );
-
-  const ContentSection = (
-    <div className="flex w-full flex-col justify-between p-4 sm:w-2/5">
-      <div>
-        <Link href={hrefLink}>
-          <h2 className="text-xl font-semibold lg:text-2xl">{title}</h2>
-          <p className="mt-1 text-sm font-light text-muted-foreground lg:text-base">
-            {location}
-          </p>
-        </Link>
-
-        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-          {description.short}
-        </p>
-
-        <div className="mt-4 flex items-center gap-4 text-sm text-foreground">
-          <span className="flex items-center gap-1.5">
-            <BedDouble className="h-4 w-4" />
-            {bedroomsNb} {bedroomsNb === 1 ? "sypialnia" : "sypialnie"}
-          </span>
-          <span className="text-border">|</span>
-          <span className="flex items-center gap-1.5">
-            <Maximize className="h-4 w-4" />
-            {area} m²
-          </span>
-          <span className="text-border">|</span>
-          <span className="flex items-center gap-1.5">
-            <ArrowUp10 className="h-4 w-4" />
-            {floor} piętro
-          </span>
-        </div>
-
-        <p className="mt-3 text-lg font-semibold">
-          od {priceFrom} PLN{" "}
-          <span className="text-sm font-normal text-muted-foreground">/ noc</span>
-        </p>
-      </div>
-
-      <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-        <ReserveDialog
-          className="rounded-md bg-primary px-8 py-3 text-base font-medium text-primary-foreground shadow-md transition-all duration-300 hover:bg-primary/90 hover:shadow-lg sm:text-lg"
-          bookingLink={bookingLink}
-          airbnbLink={airbnbLink}
-          bookableLink={bookableLink}
-        />
-        <Link
-          href={hrefLink}
-          className="text-sm font-medium text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
-        >
-          Zobacz szczegóły →
-        </Link>
-      </div>
-    </div>
-  );
+  const t = useTranslations("apartmentsHome");
 
   return (
-    <div
-      className={`flex w-full flex-col transition duration-300 sm:flex-row ${
-        reverseOnDesktop ? "sm:flex-row-reverse" : ""
-      }`}
-    >
-      {ImageSection}
-      {ContentSection}
-    </div>
+    <article className="overflow-hidden rounded-xl border border-skyline-line bg-white">
+      <div className="relative aspect-[16/10] w-full">
+        <Link href={hrefLink} className="block h-full w-full">
+          <Image
+            src={imageSrc}
+            alt={t("cardImageAlt", { title })}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover"
+          />
+        </Link>
+        <div className="absolute left-4 top-4 rounded-md bg-white px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-skyline-blue">
+          {t("perNight", { price: priceFrom })}
+        </div>
+        <button
+          type="button"
+          className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/95 text-skyline-ink/70 transition hover:text-skyline-blue"
+          aria-label={t("favorite")}
+        >
+          <Heart className="h-4 w-4" aria-hidden />
+        </button>
+      </div>
+
+      <div className="p-6">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <div className="text-[11px] uppercase tracking-[0.16em] text-skyline-muted">
+              {district}
+            </div>
+            <h3 className="font-display mt-1 text-[22px] font-semibold leading-tight tracking-tight text-skyline-ink sm:text-[24px]">
+              <Link href={hrefLink}>{title}</Link>
+            </h3>
+          </div>
+          <div className="flex shrink-0 items-center gap-1 rounded-md bg-skyline-gold-soft px-2 py-1 text-[12px] font-semibold text-skyline-ink">
+            <span className="text-skyline-gold" aria-hidden>
+              ★
+            </span>
+            {rating.toFixed(1)}
+          </div>
+        </div>
+
+        <p className="mt-3 text-[13px] leading-relaxed text-skyline-muted">
+          {description}
+        </p>
+
+        <div className="mt-5 grid grid-cols-2 gap-3 border-y border-skyline-line py-4 sm:grid-cols-4">
+          <Spec
+            icon={<Maximize className="h-4 w-4" aria-hidden />}
+            label={t("specArea")}
+            value={`${area} m²`}
+          />
+          <Spec
+            icon={<BedDouble className="h-4 w-4" aria-hidden />}
+            label={t("specBedrooms")}
+            value={bedroomsNb}
+          />
+          <Spec
+            icon={<ArrowUp10 className="h-4 w-4" aria-hidden />}
+            label={t("specFloor")}
+            value={floor}
+          />
+          <Spec
+            icon={<Users className="h-4 w-4" aria-hidden />}
+            label={t("specGuests")}
+            value={sleeps}
+          />
+        </div>
+
+        <div className="mt-5 flex items-center justify-between gap-3">
+          <Link
+            href={hrefLink}
+            className="inline-flex items-center gap-2 rounded-md bg-skyline-blue px-5 py-2.5 text-[13px] font-semibold text-white transition hover:bg-skyline-blue-deep"
+          >
+            {t("viewApartment")}
+            <span aria-hidden>→</span>
+          </Link>
+          <span className="text-[12px] font-medium text-skyline-muted">
+            {t("gallery")} · {galleryCount}
+          </span>
+        </div>
+      </div>
+    </article>
   );
 };

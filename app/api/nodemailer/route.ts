@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import FormData from "form-data";
 import Mailgun from "mailgun.js";
-import { FormSchema } from "@/app/kontakt/form/FormSchema";
+import { FormSchema } from "@/app/[locale]/kontakt/form/FormSchema";
 
 export async function POST(req: NextRequest) {
   try {

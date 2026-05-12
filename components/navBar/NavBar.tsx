@@ -1,12 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
-import { usePathname } from "next/navigation";
+import { useState, useTransition } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
+import { Link, usePathname, useRouter, routing } from "@/i18n/routing";
 import { NAVIGATION } from "./NAVIGATION";
 
 function isActiveLink(pathname: string, href: string): boolean {
@@ -14,65 +14,107 @@ function isActiveLink(pathname: string, href: string): boolean {
   return pathname === href || pathname.startsWith(href + "/");
 }
 
+const Logo = () => (
+  <Image
+    src="/logo.png"
+    alt="Inborr"
+    width={140}
+    height={56}
+    priority
+    className="h-9 w-auto md:h-10"
+  />
+);
+
+function LocaleSwitcher() {
+  const t = useTranslations("nav");
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+  const [isPending, startTransition] = useTransition();
+
+  const otherLocale =
+    routing.locales.find((l) => l !== locale) ?? routing.defaultLocale;
+
+  return (
+    <button
+      onClick={() => {
+        startTransition(() => {
+          router.replace(pathname, { locale: otherLocale });
+        });
+      }}
+      disabled={isPending}
+      type="button"
+      aria-label={t("switchLanguage")}
+      className="flex items-center gap-1.5 text-[13px] font-medium text-skyline-ink/80 transition hover:text-skyline-ink"
+    >
+      {t("languageShort")} <span className="text-[10px]">▾</span>
+    </button>
+  );
+}
+
 export const NavBar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
+  const t = useTranslations("nav");
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background shadow-sm">
-      <div className="mx-auto max-w-7xl">
-        <div className="px-6 pt-6 pb-4">
-          <nav
-            className="flex items-center justify-between"
-            aria-label="Global"
-          >
-            <Link href="/" className="-m-1.5 p-1.5">
+    <header className="sticky top-0 z-50 border-b border-skyline-line bg-skyline-bg/95 backdrop-blur supports-[backdrop-filter]:bg-skyline-bg/80">
+      <div className="mx-auto max-w-screen-xl">
+        <nav
+          className="flex items-center justify-between px-6 py-4 lg:px-12 lg:py-5"
+          aria-label="Global"
+        >
+          <div className="flex items-center gap-10">
+            <Link href="/" className="-m-1 p-1">
               <span className="sr-only">Inborr</span>
-              <Image
-                alt="Inborr"
-                className="h-12 w-auto transition duration-200 hover:scale-110"
-                src="/logo.png"
-                width={96}
-                height={96}
-                sizes="(max-width: 768px) 48px, 96px"
-              />
+              <Logo />
             </Link>
-            {/* Mobile menu button */}
-            <button
-              type="button"
-              className="z-10 -m-2.5 min-h-[44px] min-w-[44px] rounded-md p-2.5 text-foreground lg:hidden"
-              onClick={toggleMobileMenu}
-            >
-              <span className="sr-only">Open main menu</span>
-              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-            </button>
-            <div className="hidden lg:ml-12 lg:flex lg:gap-x-14">
+            <div className="hidden items-center gap-7 lg:flex">
               {NAVIGATION.map((item) => {
-                const isActive = isActiveLink(pathname, item.href);
+                const active = isActiveLink(pathname, item.href);
                 return (
                   <Link
-                    key={item.name}
+                    key={item.key}
                     href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    aria-current={isActive ? "page" : undefined}
-                    className={`relative block w-fit py-2 px-3 text-lg font-semibold leading-6 text-foreground
-                    after:absolute after:block after:h-[3px] after:w-full after:origin-left
-                    after:bg-primary after:transition after:duration-300 after:content-['']
-                    focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2
-                    ${isActive ? "after:scale-x-100 font-bold" : "after:scale-x-0 after:hover:scale-x-100"}`}
+                    aria-current={active ? "page" : undefined}
+                    className="text-[13px] font-medium text-skyline-ink transition"
+                    style={{
+                      opacity: active ? 1 : 0.7,
+                      borderBottom: active
+                        ? "1.5px solid var(--skyline-blue)"
+                        : "1.5px solid transparent",
+                      paddingBottom: 2,
+                    }}
                   >
-                    {item.name}
+                    {t(item.key)}
                   </Link>
                 );
               })}
             </div>
-          </nav>
-        </div>
+          </div>
+
+          <div className="hidden items-center gap-3 lg:flex">
+            <LocaleSwitcher />
+            <Link
+              href="/apartamenty"
+              className="rounded-md bg-skyline-blue px-5 py-2.5 text-[13px] font-semibold text-white transition hover:bg-skyline-blue-deep"
+            >
+              {t("checkAvailability")}
+            </Link>
+          </div>
+
+          {/* Mobile menu button */}
+          <button
+            type="button"
+            className="z-10 -m-2.5 min-h-[44px] min-w-[44px] rounded-md p-2.5 text-skyline-ink lg:hidden"
+            onClick={() => setMobileMenuOpen(true)}
+            aria-label={t("openMenu")}
+          >
+            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+          </button>
+        </nav>
       </div>
+
       <Dialog
         as="div"
         className="lg:hidden"
@@ -80,51 +122,54 @@ export const NavBar = () => {
         onClose={() => setMobileMenuOpen(false)}
       >
         <div className="fixed inset-0 z-50" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-border">
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-skyline-bg px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-skyline-line">
           <div className="flex items-center justify-between">
-            <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
+            <Link
+              href="/"
+              className="-m-1 p-1"
+              onClick={() => setMobileMenuOpen(false)}
+            >
               <span className="sr-only">Inborr</span>
-              <Image
-                alt="Inborr"
-                className="h-12 w-auto transition duration-200 hover:scale-110"
-                src="/logo.png"
-                width={96}
-                height={96}
-                sizes="(max-width: 768px) 48px, 96px"
-              />
+              <Logo />
             </Link>
             <button
               type="button"
-              className="-m-2.5 rounded-md p-2.5 text-foreground"
+              className="-m-2.5 rounded-md p-2.5 text-skyline-ink"
               onClick={() => setMobileMenuOpen(false)}
+              aria-label={t("closeMenu")}
             >
-              <span className="sr-only">Close menu</span>
               <XMarkIcon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-          <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-border">
-              <div className="space-y-2 py-6">
-                {NAVIGATION.map((item) => {
-                  const isActive = isActiveLink(pathname, item.href);
-                  return (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      aria-current={isActive ? "page" : undefined}
-                      className={`relative -mx-3 block w-fit rounded-lg px-3 py-2 text-xl font-semibold leading-7 text-foreground
-                      after:absolute after:block after:h-[3px] after:w-full after:origin-left
-                      after:bg-foreground after:transition after:duration-300 after:content-[''] hover:bg-muted
-                      focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2
-                      ${isActive ? "after:scale-x-100 font-bold bg-muted" : "after:scale-x-0 after:hover:scale-x-100"}`}
-                    >
-                      {item.name}
-                    </Link>
-                  );
-                })}
-              </div>
+          <div className="mt-8 flex flex-col gap-1">
+            {NAVIGATION.map((item) => {
+              const active = isActiveLink(pathname, item.href);
+              return (
+                <Link
+                  key={item.key}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  aria-current={active ? "page" : undefined}
+                  className={`rounded-md px-3 py-3 text-base font-medium ${
+                    active
+                      ? "bg-skyline-blue-soft text-skyline-blue"
+                      : "text-skyline-ink hover:bg-skyline-blue-soft/60"
+                  }`}
+                >
+                  {t(item.key)}
+                </Link>
+              );
+            })}
+            <div className="mt-4 px-3">
+              <LocaleSwitcher />
             </div>
+            <Link
+              href="/apartamenty"
+              onClick={() => setMobileMenuOpen(false)}
+              className="mt-6 rounded-md bg-skyline-blue px-5 py-3 text-center text-[14px] font-semibold text-white"
+            >
+              {t("checkAvailability")}
+            </Link>
           </div>
         </Dialog.Panel>
       </Dialog>

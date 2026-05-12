@@ -1,13 +1,8 @@
-// https://yet-another-react-lightbox.com/
-
 "use client";
 import { useCallback, useState } from "react";
 import Image from "next/image";
 
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
-
-import NextJsImage from "@/components/gallery/NextJsImage";
+import ImageLightbox from "@/components/gallery/ImageLightbox";
 
 const THUMBNAIL_COUNT = 4;
 
@@ -69,14 +64,11 @@ export default function GalleryLightbox({
         </button>
       )}
 
-      <Lightbox
+      <ImageLightbox
         open={open}
-        close={handleClose}
+        onClose={handleClose}
         index={index}
         slides={slides}
-        render={{ slide: NextJsImage }}
-        aria-modal={true}
-        aria-label="Galeria zdjęć"
       />
     </>
   );

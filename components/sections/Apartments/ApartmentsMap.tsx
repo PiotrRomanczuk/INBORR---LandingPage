@@ -7,7 +7,7 @@ import {
   AdvancedMarker,
   Pin,
 } from "@vis.gl/react-google-maps";
-import { apartmentsList } from "@/app/apartamenty/apartmentsList";
+import { apartmentsList } from "@/data/apartments";
 
 const markers = apartmentsList.map((a) => ({
   name: a.name,

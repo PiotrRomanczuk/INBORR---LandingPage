@@ -1,18 +1,6 @@
 export const NAVIGATION = [
-  {
-    name: "Home",
-    href: "/",
-  },
-  {
-    name: "Apartamenty",
-    href: "/apartamenty",
-  },
-  {
-    name: "Mirów",
-    href: "/mirow",
-  },
-  {
-    name: "Kontakt",
-    href: "/kontakt",
-  },
-];
+  { key: "home", href: "/" },
+  { key: "apartments", href: "/apartamenty" },
+  { key: "mirow", href: "/mirow" },
+  { key: "contact", href: "/kontakt" },
+] as const;
